@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+body{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.5;
+}
+.esg {
+    font-size: 17px;
+    font-weight: 400;
+    color: #fff;
+    background-image: url(../images/esg_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /* 배경 꽉채우기*/
+    height: 851px;
+}
+.esg2 {
+    font-size: 12px;
+}
+.int .tit {
+    color: red;
+}
+.sub_tit {
+    font-size: 17px;
+}
