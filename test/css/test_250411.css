@@ -138,7 +138,6 @@ a {
     color: #fff;
     display: block;  /**a에 항상주기**/
     padding: 10px 28px 10px 28px;
-
 }
 .btn .btn_wrap a.all {
     background-color: #3d3d3d;  
