@@ -1,0 +1,46 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+body {
+    font-family: Pretendard, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    height: 1.5;
+    color: #555;
+    word-break: keep-all;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 700;
+    height: 1.3;
+    color: #1d1d1d;
+    margin: 0 0 45px 0;
+}
+.list{
+    margin: 79px 0 0 0;
+}
+.list1 h1 { 
+    background-color: #00AD1D;
+    width: 297px;
+}
+.list2 h1{
+    background-color: #008233;
+    width: 297px;
+}
+.list3 h1{
+    background-color: #003087;
+    width: 297px;
+}
+.list4 h1{
+    background-color: #002554;
+    width: 297px;
+}
