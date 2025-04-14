@@ -1,0 +1,81 @@
+/*html파일에서는 main.css만 호출, 다른 필요한 css는 main.css가 부름*/
+@import url(font.css);
+body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #1d1d1d;
+    word-break: keep-all;
+}
+/**********start ::**************/
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit; /********브라우저가 주는 값 무시해***********/
+    font-weight: inherit;
+}
+li {
+    list-style: none; /*******앞에 동그라미 삭제******/
+}
+* { /**********와일드카드-모두,,, 여백 없애기****************/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /***박스사이즈가 커지니까 고정****/
+}
+.glo .more {
+    color: #00b900 /****버튼거**/
+}
+/********************태그의 초기화 끝********************/
+.wrapper {
+    width: 1260px;    /************ㅣ홈페이지 사이즈ㅣ**************/
+    margin: 0 auto;  /************가운데 정렬**************/
+}
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 120px 0 27px 0;
+}
+.glo .sub_tit {
+    color: #00b900;
+    margin: 0 0 12px 0;
+}
+
+.glo .more a {
+    border: 1px solid #00b900;
+    padding: 8px 38px 8px 38px;
+    margin: 44px 0 40px 0;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    margin: 30px 0 30px 0;
+
+}
+
+.market {
+    background-image: url(../images/bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /* 배경 꽉채우기*/
+    height: 641px;
+    text-align: center;
+}
+.market h1.tit{
+    color: #fff;
+    font-size: 40px;
+    line-height: 1.4;
+    padding: 122px 0 0 0;
+}
+.market p {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.market .more2 a {
+    border: 1px solid #fff;
+    padding: 8px 38px 8px 38px;
+    margin: 44px 0 40px 0;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+
+}

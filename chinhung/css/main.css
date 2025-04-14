@@ -1,0 +1,44 @@
+/*html파일에서는 main.css만 호출, 다른 필요한 css는 main.css가 부름*/
+@import url(font.css);
+body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #1d1d1d;
+    word-break: keep-all;
+}
+/**********start ::**************/
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit; /********브라우저가 주는 값 무시해***********/
+    font-weight: inherit;
+}
+li {
+    list-style: none; /*******앞에 동그라미 삭제******/
+}
+* { /**********와일드카드-모두,,, 여백 없애기****************/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /***박스사이즈가 커지니까 고정****/
+}
+a {
+    color: inherit;   /****버튼거**/
+    text-decoration: none;
+}
+/********************태그의 초기화 끝********************/
+.wrapper {
+    width: 1260px;    /************ㅣ홈페이지 사이즈ㅣ**************/
+    margin: 0 auto;  /************가운데 정렬**************/
+}
+
+header .wrapper {
+    display: flex; /**logo와 gnb를 나란히 좌우로 배치*/
+    justify-content: space-between;
+}
+header .logo {
+    margin: 22px 0 0 0;
+}
+header .logo a img {
+    width: 188px;
+    /*이미지는 넓이나 높이 둘중에 하나만 주면 나머지는 비율에 맞게 조절, 둘다주면 찌그러짐*/
+}
