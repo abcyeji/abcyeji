@@ -25,7 +25,15 @@ a {
     color: inherit;   /****버튼거**/
     text-decoration: none;
 }
+em, address {
+    font-style: normal;/******푸터에 주소 글씨체가 누우니까..글자 기울임 제거*****/
+}
 /********************태그의 초기화 끝********************/
+#wrap {
+    min-width: 1300px;  /****홈페이지 넓이 1260px에 왼쪽,오른쪽에 여백을 20px정도 줌******/
+                        /*****브라우저가 줄어들었을 때 가로스크롤바가 생겼을 때 왼쪽/오른쪽 여백*****/                    
+                        /****1260+20+20=1300px*********/
+}
 .wrapper {
     width: 1260px;    /************ㅣ홈페이지 사이즈ㅣ**************/
     margin: 0 auto;  /************가운데 정렬**************/
@@ -132,10 +140,24 @@ header .gnb ul a {
     color: rgba(255,255,255,0.6);/***흰색 rgb값 255, opactiy***/
     border-top: 1px solid rgba(255,255,255,0.2);
     padding: 12px 0 0 0;
-    
 }
 
 
 footer {
-    margin: 0 0 200px 0;
+    padding: 35px 0 41px 0;
+    background-color: #202020;
+    color: rgba(255,255,255,0.8);
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 40px;
+    color: #fff;
+}
+footer .f_info {
+    margin: 18px 0 17px 0;
+    display: flex;
+    gap: 34px;
+}
+footer .f_info strong{
+    font-weight: 800;
 }
