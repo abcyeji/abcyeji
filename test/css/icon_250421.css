@@ -145,7 +145,7 @@ ul.item li::before {
 
 .blind { /*html표준상 글자를 써야하는데 디자인에는 글자가 없어서 글자를 없애는 클래스*/
     position: absolute;/*기준없음. 사라지면 땡큐, 공간차지x*/
-    clip: rect(0 0 0 0);
+    clip: rect(0,0,0,0);
     width: 1px;
     height: 1px;
     margin: -1px;
