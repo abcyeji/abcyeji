@@ -4,7 +4,7 @@
 	font-family: "NSN";
 	font-weight: 400;
 	font-display: swap;
-	src: url(../font/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype") /*eot파일*/
+	src: url(../font/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), /*eot파일*/
          url(../font/NanumSquareNeoTTF-bRg.woff2) format("woff2"), 
          url(../font/NanumSquareNeoTTF-bRg.woff) format("woff");
 }
@@ -13,7 +13,7 @@
 	font-family: "NSN";
 	font-weight: 700;
 	font-display: swap;
-	src: url(../font/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype") /*eot파일 (뒤에?#iefix붙이기) */
+	src: url(../font/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), /*eot파일 (뒤에?#iefix붙이기) */
          url(../font/NanumSquareNeoTTF-cBd.woff2) format("woff2"), 
          url(../font/NanumSquareNeoTTF-cBd.woff) format("woff");
 }
