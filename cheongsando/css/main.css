@@ -482,7 +482,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='38' height='38' viewBox=
 
 
 footer {
-    padding: 70px 92px 0;
+    padding: 70px 92px 60px;
     color: #3d3d3d;
 }
 footer .f_nav ul {
