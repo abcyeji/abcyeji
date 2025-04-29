@@ -36,8 +36,8 @@
 }
 .news .list ul li a .txt {
     width: calc(100% - 214px); /* calxc는 %와 px계산법 */
-    /* 사진의 넓이는 고정되고 제목(txt)이 들어갈 수 있는 넓이는 브라우저 넓이에 따라 바뀜
-    글자와 사진 전체의 넓이 100% - 사진의 넓이와 여백값 px */
+    /********************** 사진의 넓이는 고정되고 제목(txt)이 들어갈 수 있는 넓이는 브라우저 넓이에 따라 바뀜
+    글자와 사진 전체의 넓이 100% - 사진의 넓이와 여백값 px **********************/
 }
 .news .list ul li a .txt strong {
     font-size: 20px;
@@ -137,7 +137,76 @@
                             width: 15px; /*아이콘사이즈*/
                             height: 15px; /*아이콘사이즈*/
                         } 
+}/*@media*/
+
+
+/***********같이 줄어드는 디자인.....***************/
+.global {
+    margin: 115px 0 0 0;
 }
+.global .wrapper {
+    display: flex; /*txt photo좌우배치*/
+    justify-content: space-between;
+}
+.global .txt { /*콘텐츠두개니까 50% - 둘 사이 여백의 절반*/
+    width: calc(50% - 12px);
+    padding: 40px 0; /*왼쪽 글자의 높이에서 padding만큼 오른쪽 이미지가 늘어남*/
+}
+.global .txt h2 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 22px 0;
+    position: relative; /*after 정렬의 기준*/
+}
+.global .txt h2::after {
+    content: "";
+    position: absolute; /*h2를 기준으로 정렬*/
+    left: 0;
+    bottom: -10px;
+    width: 107px;
+    height: 1px;
+    background-color: #ccc;
+}
+.global .photo { /*********/
+    width: calc(50% - 12px);
+    overflow: hidden;
+    border-radius: 20px;
+}
+.global .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:640px) {
+                        .global {
+                            margin: 60px 0 0 0; /*pc절반으로 줄이기*/
+                        }
+                        .global .txt { /*콘텐츠두개니까 50% - 둘 사이 여백의 절반*/
+                            width: calc(50% - 8px);
+                            padding: 20px 0; /*왼쪽 글자의 높이에서 padding만큼 오른쪽 이미지가 늘어남*/
+                        }
+                        .global .txt h2 {
+                            font-size: 30px;
+                            margin: 0 0 8px 0;
+                        }
+                        .global .txt h2::after {
+                            bottom: -10px;
+                            width: 40px;
+                        }
+                        .global .txt h2 br {
+                            display: none;
+                        }
+                        .global .txt p br {
+                            display: none;
+                        }
+                        .global .photo {/*********/
+                            width: calc(50% - 8px);
+                            border-radius: 10px;
+                        }
+}/*@media*/
+
 
 
 body{
