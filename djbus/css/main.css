@@ -136,6 +136,9 @@ header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
     color: #1d1d1d;
     line-height: 1.2;
 }
+.news .news_tit p strong {
+    color: #255698;
+}
 .news .news_inner {
     margin: 195px 107px 100px 0;
     position: relative;
