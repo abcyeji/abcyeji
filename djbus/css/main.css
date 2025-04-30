@@ -115,9 +115,10 @@ header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
     padding: 0 0 91px 0;
 }
 
-
-.news .wrapper {
+.news {
     background-color: #f4f4f4;
+}
+.news .wrapper {
     height: 529px;
     display: flex;
     justify-content: space-between;
