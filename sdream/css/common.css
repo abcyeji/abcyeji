@@ -1,0 +1,43 @@
+body {
+    font-family: "Noto Sans KR", sans-serif;;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5; /*배수*/
+    color: #555;
+    word-break: keep-all;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /*박스가 가운데*/
+}
+#wrap {
+    min-width: 1308px; /*최소 여백*/
+    /*
+    1260 + 24 + 24 = 1308
+    1260 + 30 + 30 =1320
+    */
+    position: relative; /*header기준의 정렬*/
+}
+@media screen and (max-width:640px){
+                        body {
+                            font-size: 16px;
+                        }
+                        .wrapper {
+                            width: auto; /*넓이는 알아서 좌우여백 20px*/
+                            margin: 0 20px; 
+                        }
+                        #wrap {
+                            min-width: 0; /*최소넓이 없음*/
+                        }
+}    
+
+
+.blind { /*글자를 숨겨야하는 경우*/
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
