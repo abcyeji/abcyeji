@@ -235,19 +235,93 @@ header .tnb .lang {
     background-repeat: no-repeat;
     background-position: center center;
 }
-/*********************마우스 오버했을때*************************/
+/*********************마우스 오버했을때 (641px 이상에서만 작동)*************************/
+@media screen and (min-width:641px) {
+                                    .project .list ul li a:hover .photo::before {
+                                        background-color: rgba(36, 77, 142, 0.9);
+                                    }
+                                    .project .list ul li a:hover .txt p {
+                                        display: block;/*none으로 숨긴건 흔히 block으로 보이게함*/
+                                    }
+                                    .project .list ul li a:hover .txt span {
+                                        display: inline-block;
+                                    } 
+ }
 
-.project .list ul li a:hover .photo::before {
-    background-color: rgba(36, 77, 142, 0.9);
-}
-.project .list ul li a:hover .txt p {
-    display: block;/*none으로 숨긴건 흔히 block으로 보이게함*/
-}
-.project .list ul li a:hover .txt span {
-    display: inline-block;
-} 
 
-@media screen and (max-width:640px) {
-    
+@media screen and (max-width:640px) { /*640px 이하에서만 작동*/
+                            .project {
+                                margin: 80px 0 0 0;
+                            }
+                            .project .wrapper {
+                                display: block; /*flex해제(display에서 다른값을 주면 해제가 됨)*/
+                            }
+                            .project .tit {
+                                position: relative; /*sticky을 해제하기위해서 relative값 줌..*/
+                                top: auto; /*top값을 지정하지 않은 것처럼 취소하는 값..0이랑 다른 값*/
+                            }
+                            .project .tit h2 {
+                                margin: 0 0 6px  0;
+                            }
+                            .project .tit p {
+                                font-size: 25px;
+                            }
+                            .project .list {
+                                width: auto; /*block요소이기때문에 100% 들어감*/
+                                margin: 17px 0 0 0;
+                            }
+                            .project .list ul {
+                                gap: 20px 16px; /*위아래, 좌우*/
+                            }
+                            .project .list ul li {
+                                width: calc(50% - 8px); /*한줄에 보일 li갯수 = 100% / 2 = 50%
+                                            한줄에 있는 여백의 총합 /  한줄에 보일  li 갯수 = 16px / 2 = 8px*/
+                            }
+                            .project .list ul li:nth-child(even) { /*짝수를 위로 이동한거 취소*/
+                                transform: none;
+                            }                            
+                            .project .list ul li a .photo {
+                                border-radius:10px;
+                                height: 80px;
+                            }         
+                            .project .list ul li a .txt {
+                                position: relative;  /*absolute 해제하기위해 relative*/
+                                left: auto;
+                                bottom: auto;
+                                width: auto;
+                                color: #1d1d1d;
+                                padding: 6px 0 0 0;
+                            } 
+                            .project .list ul li a .txt h3 {
+                                font-weight: 500;
+                                font-size: 16px;
+                            }
+                            .project .list ul li a .txt h3 br {
+                                display: none;/*br로 준 줄바꿈 사라지게*/
+                            }
+                            .project .list ul li a .txt p {
+                                display: none;
+                                margin: 10px 0;
+                                color: rgba(255,255,255,0.8);
+                            }
+                            .project .list ul li a .txt span {
+                                display: none;
+                                /*숨김 - ^아예 태그가 존재하지 않는것처럼 코딩 됨*/
+                                color: rgba(255,255,255,0.6);
+                                padding: 0 22px 0 0;
+                                font-size: 15px;
+                                position: relative; /*after의 정렬의 기준*/
+                            }
+                            .project .list ul li a .txt span::after {
+                                content: "";
+                                position: absolute;
+                                right: 0;
+                                top: 2px;
+                                width: 18px;
+                                height: 18px;
+                                background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.4788 7.83343H1.16634C0.93023 7.83343 0.732313 7.75356 0.572591 7.59384C0.412869 7.43412 0.333008 7.2362 0.333008 7.00009C0.333008 6.76398 0.412869 6.56606 0.572591 6.40634C0.732313 6.24662 0.93023 6.16676 1.16634 6.16676H10.4788L6.39551 2.08342C6.22884 1.91676 6.14898 1.72231 6.15592 1.50009C6.16287 1.27787 6.24967 1.08342 6.41634 0.916758C6.58301 0.76398 6.77745 0.684119 6.99967 0.677174C7.2219 0.67023 7.41634 0.750091 7.58301 0.916758L13.083 6.41676C13.1663 6.50009 13.2254 6.59037 13.2601 6.68759C13.2948 6.78481 13.3122 6.88898 13.3122 7.00009C13.3122 7.1112 13.2948 7.21537 13.2601 7.31259C13.2254 7.40981 13.1663 7.50009 13.083 7.58343L7.58301 13.0834C7.43023 13.2362 7.23926 13.3126 7.01009 13.3126C6.78092 13.3126 6.58301 13.2362 6.41634 13.0834C6.24967 12.9168 6.16634 12.7188 6.16634 12.4897C6.16634 12.2605 6.24967 12.0626 6.41634 11.8959L10.4788 7.83343Z' fill='white' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                            }
 }
 
