@@ -31,7 +31,7 @@ header .wrapper {
     align-items: center;/*위아래 가운데*/
 }
 header .gnb .gnb_open,
-header .gnb .gnb_close{
+header .gnb .gnb_close {
     display: none; /*모바일에서만 보일거라서 지금은 없애기*/
 }
 header .gnb .gnb_wrap ul {
