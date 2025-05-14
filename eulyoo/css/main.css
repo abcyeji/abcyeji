@@ -215,11 +215,11 @@ header .tnb .search {
                             padding: 85px 0 24px 0;
                         } 
                         .book .book_wrap { 
-                            width: auto; 
+                            width: auto;
                             left: auto;
                             display: block; /*flex해제*/
                         }
-                        .book .book_wrap .tit {
+                        .book .book_wrap .tit {/*???*/
                             margin: 0 60px 0 20px;
                         }
                         .book .book_wrap .tit h2 {
@@ -230,7 +230,7 @@ header .tnb .search {
                             display: none;/*줄바꿈삭제*/
                         }
                         .book .book_wrap .tit p {
-                            display: none;/*p태그 삭제*/
+                            display: none;/*p태그 숨김*/
                         }
                         .book .book_wrap .list {
                             width: auto; 
@@ -239,7 +239,8 @@ header .tnb .search {
                         }
                         .book .book_wrap .list ul {
                             gap: 12px;
-                            width: 1134px ;/*li의 넓이 * li의 갯수 = 150 * 7 =1050
+                            width: 1134px ;
+                            /*li의 넓이 * li의 갯수 = 150 * 7 =1050
                             사이 여백 * li의 갯수 = 12 * 7 = 84
                             1134*/
                         }
@@ -257,34 +258,21 @@ header .tnb .search {
                         .book .book_wrap .list ul li a h3 {
                             font-size: 18px;
                             margin: 15px 0 3px 0;
-                            /*1줄 제한->2wnf*/
+                            /*1줄 제한->2줄*/
                             white-space: normal;
                             line-height: 1.4;
                             height: 2.8em;
                         }
-                        .book .book_wrap .list ul li a strong {/*?지워야할것지우기??*/
-                            display: block;
-                            /*1줄 제한*/
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-                        .book .book_wrap .more {/*?지워야할것지우기??*/
+                        .book .book_wrap .more {
                             left: auto;
                             right: 20px;
-                            top: 0;
-                            padding: 0 21px 0 0;
+                            top: 11px;
+                            padding: 0 20px 0 10px;
                         }
-                        .book .book_wrap .more::after {/*?지워야할것지우기??*/
-                            content: "";
-                            position: absolute;
+                        .book .book_wrap .more::after {
                             right: 0;
-                            top: 4px;
-                            width: 16px;
-                            height: 16px;
-                            background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_19_50' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='16' height='16'%3E%3Crect width='16' height='16' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_19_50)'%3E%3Cpath d='M7.33333 14V8.66667H2V7.33333H7.33333V2H8.66667V7.33333H14V8.66667H8.66667V14H7.33333Z' fill='%231C1B1F'/%3E%3C/g%3E%3C/svg%3E%0A");
-                            background-repeat: no-repeat;
-                            background-position: center center;
+                            width: 15px;
+                            height: 15px;
                         }
 }
 
@@ -430,9 +418,10 @@ header .tnb .search {
 @media screen and (min-width:641px) { 
                         .interview .list ul li a:hover .photo::before {
                             display: none;
+                            
                         }
-                        .interview .list ul li a .photo img {
-                            filter: grayscale(1);
+                        .interview .list ul li a:hover .photo img {
+                            filter: grayscale(0);
                         }
                         .interview .list ul li a:hover .txt {
                             opacity: 0; /*위에 값도 조정..있다가 사라짐*/
@@ -515,7 +504,7 @@ header .tnb .search {
 }
 .story {
     background-color: rgba(215,189,166,0.2);
-    padding: 121px 0 0 0;
+    padding: 121px 0 62px 0;
 }
 .story .wrapper {
     position: relative; /*more정렬의 기준*/
@@ -535,7 +524,7 @@ header .tnb .search {
     width: calc(25% - 18px);
     /*100% 한줄에 보이는 li의 갯수=25%
     한줄의 여백의 총합/ 한줄에 보이는 li의 갯수 = 24 * 3 (72) /4 = 18 */
-   /*테두리가 있다면 border: 1px solid #ccc;
+    /*테두리가 있다면 border: 1px solid #ccc;
     border-radius: 10px;*/
 }
 .story .list ul li a {
@@ -616,11 +605,11 @@ header .tnb .search {
                             .story .list ul li a .txt h3 span {
                                 position: relative;/*after정렬의 기준*/
                             }
-                            .story .list ul li a .txt h3 span::after {
+                            .story .list ul li a .txt h3 span::after {/*마우스오버시 밑줄*/
                                 content: "";
                                 position: absolute;
                                 left: 0;
-                                bottom: -2px;
+                                bottom: -4px;
                                 width: 0;
                                 height: 1px;
                                 background-color: #4C2B08;
