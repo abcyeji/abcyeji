@@ -241,7 +241,7 @@ header .tnb .search {
                             gap: 12px;
                             width: 1134px ;/*li의 넓이 * li의 갯수 = 150 * 7 =1050
                             사이 여백 * li의 갯수 = 12 * 7 = 84
-                            1645 + 168 = 1134*/
+                            1134*/
                         }
                         .book .book_wrap .list ul li {
                             width: 150px;
