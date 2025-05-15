@@ -435,6 +435,7 @@ header .tnb .search {
 @media screen and (max-width:640px) {
                         .interview {
                             margin: 85px 0 0 0;
+                            padding: 0 0 85px 0;
                         }
                         .interview .wrapper {
                             position: relative;/*more 정렬의 기준*/
@@ -606,8 +607,6 @@ header .tnb .search {
                                 position: relative;/*after정렬의 기준*/
                             }
                             .story .list ul li a .txt h3 span::after {/*마우스오버시 밑줄*/
-                                content: "";
-                                position: absolute;
                                 left: 0;
                                 bottom: -4px;
                                 width: 0;
@@ -618,21 +617,150 @@ header .tnb .search {
                             .story .list ul li a:hover .txt h3 span::after {
                                 width: 100%;
                             }
-
-
 }
-
-
-
-
 
 /******************모바일*****************/
 @media screen and (max-width:640px) {
+                                .story {
+                                    padding: 55px 0 35px 0;
+                                }
+                                .story .tit h2 {
+                                    font-size: 28px;
+                                }
+                                .story .list {
+                                    margin: 14px 0 0 0;
+                                }
+                                .story .list ul {
+                                    display: block; /*flex해제*/
+                                }
+                                .story .list ul li {
+                                    width: auto; /*auto로 변경*/
+                                    border-bottom: 1px solid #ccc;
+                                    padding: 14px 0 ; /*콘텐츠있는 곳..사이즈에 맞게 딱 눌리게*/
+                                }
+                                .story .list ul li:first-child {
+                                    border-top: 1px solid #ccc;
+                                }
+                                .story .list ul li a {
+                                    display: flex;/*photo, txt 좌우로 배치*/
+                                    justify-content: space-between;
+                                    flex-direction: row-reverse; /*좌우반전*/
+                                    align-items: center;
+                                }
+                                .story .list ul li a .photo {
+                                    height: 87px;/*짧은것*/
+                                    /*width: 37.5%; /*1사이즈에 따라 같이늘어나는거*/
+                                    width: 120px; /*2사진고정,txt길이조정*/
+
+                                } 
+                                .story .list ul li.long a .photo {
+                                    height: 87px; /*긴것*/
+                                }
+                                .story .list ul li .txt {
+                                    /*width: 57.5%;/*1사이즈에 따라 같이늘어나는거*/
+                                    width: calc(100% - 136px);/*2사진고정,txt길이조정*/
+                                    padding: 0;
+                                }
+                                .story .list ul li .txt strong {
+                                    /*1줄제한->여러줄허용*/
+                                    white-space: normal;/*여러줄허용*/
+                                    overflow: visible;/*넘치는 요소 안자름*/
+                                }
+                                .story .list ul li .txt h3 {
+                                    font-size: 18px;
+                                    margin: 4px 0 0 0;
+                                      /*1줄제한->여러줄허용*/
+                                    white-space: normal;/*여러줄허용*/
+                                    overflow: visible;/*넘치는 요소 안자름*/
+                                }
+                                .story .list ul li .txt p {
+                                   display: none; /*안나오게*/
+                                }
+                                .story .more {
+                                    right: 6px;
+                                    top: 11px;
+                                    padding: 0 20px 0 10px;
+                                }
+                                .story .more::after {
+                                    right: 0;
+                                    width: 15px;
+                                    height: 15px;
+                                }
 
 }
 
 
-
 footer {
-    margin: 500px 0 0 0;
+    margin: 0;
+    background-color: #79563C;
+    color: #fff;
+    padding: 120px 0 107px 0;
+}
+footer .wrapper {
+    display: flex; /*slogan f_info 좌우로 배치*/
+    justify-content: space-between;
+    position: relative;/*copyright정렬의 기준*/
+}
+footer .slogan p {
+    font-size: 35px;
+}
+footer .f_info h3 {
+    font-size: 24px;
+    margin: 0 0 3px 0;
+}
+footer .f_info address,
+footer .f_info ul.tel {
+    margin-bottom: 37px;
+}
+footer .f_info ul.sns {
+    display: flex;
+    gap: 28px;
+}
+footer .copyright {
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    left: 0;
+    bottom: 0;
+}
+footer .copyright .f_logo {
+    margin:0 0 7px 0;
+}
+footer .copyright .f_logo img {
+    width: 190px;
+}
+
+/******************모바일*****************/
+@media screen and (max-width:640px) {
+                        footer {
+                            padding: 48px 0 34px 0;
+                        }
+                        footer .wrapper {
+                            display: block; /*flex해제*/
+                        }
+                        footer .slogan p {
+                            font-size: 23px;
+                        }
+                        footer .f_info {
+                            margin: 24px 0 0 0;
+                        }
+                        footer .f_info h3 {
+                            font-size: 18px;
+                            margin: 0 0 2px 0;
+                        }
+                        footer .f_info address,
+                        footer .f_info ul.tel {
+                            margin-bottom: 30px;
+                        }
+                        footer .copyright {
+                            position: relative; /*absolute해제*/
+                            left: auto;/*오토로 변경해야함*/
+                            bottom: auto;/*오토로 변경해야함*/
+                            margin: 31px 0 0 0;
+                        }
+                        footer .copyright .f_logo {
+                            margin:0 0 5px 0;
+                        }
+                        footer .copyright .f_logo img {
+                            width: 127px;
+                        }
+
 }
