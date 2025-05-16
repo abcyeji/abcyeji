@@ -1,0 +1,138 @@
+@import url(default.css);
+@import url(res_common.css);
+@import url(font.css);
+
+header {
+    position: fixed;/*상단고정*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #ccc;
+    z-index: 100;
+    transition: 0.5s;
+}
+header .wrapper{
+    display: flex; /*logo gnb tnb 좌우배치*/
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo a {
+    display: block;
+    width: 169px;
+    height: 56px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+     /*contain로고안짤리게*/
+    transition: 0.5s;
+
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close { /*모바일에서만 나옴*/
+    display: none;
+}
+header .gnb .gnb_wrap ul.depth1 {
+    display: flex;/*1차메뉴 li좌우로 배치*/
+}
+header .gnb .gnb_wrap ul.depth1 > li > a {
+    /*1차메뉴 a*/
+    display: block;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 100px; /*헤더높이와 동일*/
+    color: #fff;
+    padding: 0 22px;
+    transition: 0.5s;
+}
+header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+    display: none; /*숨김*/
+}
+header .tnb .search {
+    display: block;
+    width: 65px;
+    height: 65px;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2_92' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2_92)'%3E%3Cpath d='M24.5 26.25L16.625 18.375C16 18.875 15.2812 19.2708 14.4688 19.5625C13.6562 19.8542 12.7917 20 11.875 20C9.60417 20 7.68229 19.2135 6.10938 17.6406C4.53646 16.0677 3.75 14.1458 3.75 11.875C3.75 9.60417 4.53646 7.68229 6.10938 6.10938C7.68229 4.53646 9.60417 3.75 11.875 3.75C14.1458 3.75 16.0677 4.53646 17.6406 6.10938C19.2135 7.68229 20 9.60417 20 11.875C20 12.7917 19.8542 13.6562 19.5625 14.4688C19.2708 15.2812 18.875 16 18.375 16.625L26.25 24.5L24.5 26.25ZM11.875 17.5C13.4375 17.5 14.7656 16.9531 15.8594 15.8594C16.9531 14.7656 17.5 13.4375 17.5 11.875C17.5 10.3125 16.9531 8.98438 15.8594 7.89062C14.7656 6.79688 13.4375 6.25 11.875 6.25C10.3125 6.25 8.98438 6.79688 7.89062 7.89062C6.79688 8.98438 6.25 10.3125 6.25 11.875C6.25 13.4375 6.79688 14.7656 7.89062 15.8594C8.98438 16.9531 10.3125 17.5 11.875 17.5Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+}
+/*******************헤더가 고정되었을 때********************************/
+header.fixed {
+    border-bottom: 0;
+    background-color: #fff;   
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1); 
+}
+header.fixed .logo a {
+    background-image: url(../images/logo.svg);
+    /*
+    background로 선언하고 배경이미지, 반복, 위치, 크기 지정했는데 이때 이미지만 변경하려면
+    반드시 background-image라고 속성을 쓰고 변경해야함
+    backgound라고 하면 모든 반복, 위치, 크기등의 다른 속성이 취소됨
+    */
+}
+header.fixed .gnb .gnb_wrap ul.depth1 > li > a {
+    color: #1d1d1d;
+}
+header.fixed .tnb .search {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2_99' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2_99)'%3E%3Cpath d='M24.5 26.25L16.625 18.375C16 18.875 15.2812 19.2708 14.4688 19.5625C13.6562 19.8542 12.7917 20 11.875 20C9.60417 20 7.68229 19.2135 6.10938 17.6406C4.53646 16.0677 3.75 14.1458 3.75 11.875C3.75 9.60417 4.53646 7.68229 6.10938 6.10938C7.68229 4.53646 9.60417 3.75 11.875 3.75C14.1458 3.75 16.0677 4.53646 17.6406 6.10938C19.2135 7.68229 20 9.60417 20 11.875C20 12.7917 19.8542 13.6562 19.5625 14.4688C19.2708 15.2812 18.875 16 18.375 16.625L26.25 24.5L24.5 26.25ZM11.875 17.5C13.4375 17.5 14.7656 16.9531 15.8594 15.8594C16.9531 14.7656 17.5 13.4375 17.5 11.875C17.5 10.3125 16.9531 8.98438 15.8594 7.89062C14.7656 6.79688 13.4375 6.25 11.875 6.25C10.3125 6.25 8.98438 6.79688 7.89062 7.89062C6.79688 8.98438 6.25 10.3125 6.25 11.875C6.25 13.4375 6.79688 14.7656 7.89062 15.8594C8.98438 16.9531 10.3125 17.5 11.875 17.5Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");    background-position: center center;
+}
+/********************모바일*******************************/
+@media screen and (max-width:640px) {
+                        header {
+                            height: 56px;
+                        }
+                        header .wrapper{
+                           margin-right: 0;
+                           /*오른쪽여백삭제- gnbopen배치하려고*/
+                        }
+                        header .logo a {
+                            width: 91px;
+                            height: 30px;
+                        }
+                        header .gnb .gnb_open { /*모바일에서만 나옴*/
+                            display: block;
+                            width: 56px;
+                            height: 56px;
+                            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2_264' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2_264)'%3E%3Cpath d='M2.5 17.5V15.8333H17.5V17.5H2.5ZM2.5 10.8333V9.16667H17.5V10.8333H2.5ZM2.5 4.16667V2.5H17.5V4.16667H2.5Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                            transition: 0.5s;
+                        }
+                        header .gnb .gnb_wrap {
+                            display: none;
+                        }
+                        header .tnb {
+                            display: none;
+                        }
+                    
+                        /*******************헤더가 고정되었을 때********************************/
+                        header .gnb .gnb_open {
+                            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2_344' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2_344)'%3E%3Cpath d='M2.5 17.5V15.8333H17.5V17.5H2.5ZM2.5 10.8333V9.16667H17.5V10.8333H2.5ZM2.5 4.16667V2.5H17.5V4.16667H2.5Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
+                        }
+}
+
+
+.visual {
+    height: 100vh;/*브라우저 높이*/
+    background: url(../images/visual_bg2.jpg) no-repeat center center / cover;
+    color: #fff;
+    border: 1px solid transparent;/*투명한 1px border- margin이 영역 밖으로 못나가게 하는 방법*/
+}
+.visual h2 {
+    margin: 45vh 0 0 0;
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+@media screen and (max-width:640px) {
+    
+    .visual h2 {
+        margin: 57vh 0 0 0;
+        transform: translateY(-50%); /*나의 높이 절반을 위로 이동*/
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+footer {
+    margin: 3000px 0 0 0;
+}
