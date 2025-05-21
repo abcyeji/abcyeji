@@ -1,0 +1,246 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+
+.visual .swiper-slide {
+    height: 800px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/popup01.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/popup02.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/popup03.jpg);
+}
+.visual h3 {
+    font-size: 60px;
+    font-weight: 800;
+    padding: 328px 0 17px 0;
+}
+.visual .paging {
+    position: absolute;/*swiper기준으로 정렬*/
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    z-index: 10;
+    display: flex;/*span태그 좌우 배치*/
+    justify-content: center;/*가운데*/
+    gap: 5px; /*동그라미 사이사이 간격*/
+
+}
+.visual .paging .swiper-pagination-bullet { /*동그라미 기본 스타일*/
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 0;
+    background: none;
+    opacity: 1;
+}
+.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active { 
+    /*현재 팝업 동그라미*/
+    background-color: #fff;
+
+}
+.visual .btn_prev {
+    position: absolute;/*swiper기준으로 정렬*/
+    left: 20px;
+    top: 400px;
+    z-index: 10;
+    width: 53px;
+    height: 53px;
+    background-image: url("data:image/svg+xml,%3Csvg width='53' height='53' viewBox='0 0 53 53' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_93_144' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='53' height='53'%3E%3Crect width='53' height='53' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_93_144)'%3E%3Cpath d='M7.83949 26.5003L24.0707 42.7316C24.6228 43.2836 24.8897 43.9277 24.8713 44.6638C24.8529 45.4 24.5676 46.0441 24.0155 46.5961C23.4634 47.1482 22.8193 47.4243 22.0832 47.4243C21.3471 47.4243 20.703 47.1482 20.1509 46.5961L3.14678 29.6472C2.70511 29.2055 2.37386 28.7086 2.15303 28.1566C1.93219 27.6045 1.82178 27.0524 1.82178 26.5003C1.82178 25.9482 1.93219 25.3961 2.15303 24.8441C2.37386 24.292 2.70511 23.7951 3.14678 23.3534L20.1509 6.34926C20.703 5.79718 21.3563 5.53034 22.1108 5.54874C22.8654 5.56714 23.5187 5.85239 24.0707 6.40447C24.6228 6.95655 24.8989 7.60065 24.8989 8.33676C24.8989 9.07287 24.6228 9.71697 24.0707 10.2691L7.83949 26.5003Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .btn_next {
+    position: absolute;/*swiper기준으로 정렬*/
+    right: 20px;
+    top: 400px;
+    z-index: 10;
+    width: 53px;
+    height: 53px;
+    background-image: url("data:image/svg+xml,%3Csvg width='53' height='53' viewBox='0 0 53 53' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_93_144' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='53' height='53'%3E%3Crect width='53' height='53' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_93_144)'%3E%3Cpath d='M7.83949 26.5003L24.0707 42.7316C24.6228 43.2836 24.8897 43.9277 24.8713 44.6638C24.8529 45.4 24.5676 46.0441 24.0155 46.5961C23.4634 47.1482 22.8193 47.4243 22.0832 47.4243C21.3471 47.4243 20.703 47.1482 20.1509 46.5961L3.14678 29.6472C2.70511 29.2055 2.37386 28.7086 2.15303 28.1566C1.93219 27.6045 1.82178 27.0524 1.82178 26.5003C1.82178 25.9482 1.93219 25.3961 2.15303 24.8441C2.37386 24.292 2.70511 23.7951 3.14678 23.3534L20.1509 6.34926C20.703 5.79718 21.3563 5.53034 22.1108 5.54874C22.8654 5.56714 23.5187 5.85239 24.0707 6.40447C24.6228 6.95655 24.8989 7.60065 24.8989 8.33676C24.8989 9.07287 24.6228 9.71697 24.0707 10.2691L7.83949 26.5003Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width:1440px) {
+    .visual .btn_prev,
+    .visual .btn_next {
+        display: none; /*숨김*/
+    }
+}
+/*************************모바일********************************/
+@media screen and (max-width:768px) {
+                    .visual .swiper-slide {
+                        height: 700px;
+                    }
+                    .visual h3 {
+                        font-size: 30px;
+                        padding: 200px 0 10px 0;
+                    }
+                    .visual .paging {
+                        bottom: 30px;
+                    }
+}/*@media*/
+
+.biz {
+    margin: 143px 0 0 0;
+}
+.biz h2 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.biz .list {
+    margin: 55px 0 0 0;
+}
+.biz .list ul li a {
+    display: block;
+}
+.biz .list ul li a .photo {
+    overflow: hidden;
+    height: 263px;
+}
+.biz .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.biz .list ul li a h3 {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 19px 0 4px 0;
+    color: #1d1d1d;
+}
+
+/*************************모바일********************************/
+@media screen and (max-width:768px) {
+                    .biz {
+                        margin: 44px 0 0 0;
+                    }
+                    .biz h2 {
+                        font-size: 25px;
+                    }
+                    .biz .list {
+                        margin: 21px 0 0 0;
+                    }
+                    .biz .list ul li a {
+                        display: block;
+                    }
+                    .biz .list ul li a h3 {
+                        font-size: 20px;
+                        margin: 15px 0 3px 0;
+                    }
+}
+
+
+.notice {
+    background-color: #002752;
+    color: #fff;
+    padding: 86px 0 50px 0;
+    margin: 130px 0 0 0;
+}
+.notice .tit h2 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+.notice .list {
+    margin: 47px 0 0 0;
+    width: calc(50% + 630px);
+    /*wrapper사이즈 1260px의 절반 630px 더함*/
+    position: relative;
+    left: calc(50% - 630px);
+}
+.notice .list ul li {
+    width: 404px;
+}
+.notice .list ul li a {
+    display: block;
+    background-color: #fff;
+    color: #555;
+    border-radius: 30px;
+}
+.notice .list ul li a .photo {
+    overflow: hidden;
+    height: 311px;
+    border-radius: 30px 30px 0 0;
+}
+.notice .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.notice .list ul li a .txt {
+    padding: 32px 35px;
+} 
+.notice .list ul li a .txt h3 {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 10px 0;
+}
+
+@media screen and (max-width:1300px) {
+    
+    .notice .list {
+        width: calc(100% + 20px);
+        left: 20px;
+    }
+}
+@media screen and (max-width:768px) {
+    .notice {
+      
+        padding: 51px 0 45px 0;
+        margin: 41px 0 0 0;
+    }
+    .notice .tit h2 {
+        font-size: 24px;
+    }
+    .notice .list {
+        margin: 25px 0 0 0;
+    }
+    .notice .list ul li {
+        width: 250px;
+    }
+    .notice .list ul li a {
+
+        border-radius: 10px;
+    }
+    .notice .list ul li a .photo {
+        height: 205px;
+        border-radius: 10px 10px 0 0;
+    }
+    .notice .list ul li a .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .notice .list ul li a .txt {
+        padding: 25px 20px;
+    } 
+    .notice .list ul li a .txt h3 {
+        font-size: 20px;
+        margin: 0 0 7px 0;
+    }
+}
+
+
+
+footer {
+    margin: 1000px 0 0 0;
+}
