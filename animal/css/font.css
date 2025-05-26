@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "SOYO";
+	font-style: normal;
+    font-weight: 700;
+    src: url('../font/SOYOMapleBoldTTF.woff2') format('woff2');
+}
+@font-face {
+    font-family: "SOYO";
+	font-style: normal;
+    font-weight: 400;
+    src: url('../font/SOYOMapleRegularTTF.woff2') format('woff');
+}
+
