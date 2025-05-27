@@ -136,12 +136,13 @@ $(document).ready(function(){
  /***************find 탭 기능 : 시작**************************/
     let find_content //클릭한 메뉴의 이름(id)
     $('.find .list .tab_list ul li').on('click', function(){
-        // console.log('누름!!!!!!!!!!!')
+        console.log('누름!!!!!!!!!!!')
         
         if($(this).hasClass('active') == false){
-            // console.log('선택안된메뉴...')
+            console.log('선택안된메뉴...')
             find_content = $(this).attr('data-content')
             console.log(find_content)
+           
         }
     })
 
