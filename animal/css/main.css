@@ -2,6 +2,24 @@
 @import url(font.css);
 @import url(common.css);
 
+.skip_nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000; /*맨위*/
+    width: 100%;
+}
+.skip_nav a {
+    display: block;
+    background-color: navy;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    transform: translateX(-120%);
+}
+.skip_nav a:focus {
+    transform: translateX(0);
+}
 header {
     position: fixed; /*body를 기준으로 정렬*/
     left: 0;
@@ -22,48 +40,260 @@ header .logo a {
     height: 35px;
     background: url(../images/logo_w.svg) no-repeat center center / contain;
 }
-header .gnb .gnb_open,
-header .gnb .gnb_close {
-    display: none; /*모바일에서만 보임*/
+/***************header에 fixed 클래스가 추가 되었을때*******************/
+header.fixed {
+    background-color: #fff;
+    color: #1d1d1d;
 }
-header .gnb .gnb_wrap ul.depth1 {
-    display: flex; /*li를 좌우로 배치*/
+header.fixed .logo a {
+    background-image: url(../images/logo.svg);
 }
-header .gnb .gnb_wrap ul.depth1 > li > a {
-    display: block;
-    line-height: 100px; /*header높이만큼 주기*/
-    font-size: 22px;
-    font-weight: 700;
-    padding: 0 26px;
+
+@media screen and (min-width:1025px) {
+    /* pc버전에서만 적용되는 header 스타일 */
+    
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        display: none; /*모바일에서만 보임*/
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        display: flex; /*li를 좌우로 배치*/
+    }
+    header .gnb .gnb_wrap ul.depth1 > li {
+        position: relative; /*2차메뉴 정렬의 기준*/
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        line-height: 100px; /*header높이만큼 주기*/
+        font-size: 22px;
+        font-weight: 700;
+        padding: 0 26px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a > span {
+        /* li하위에 depth2가 있는 a만 */
+        display: block;
+        padding-right: 17px; /*아이콘이 들어갈만큼*/
+        position: relative; /*after 정렬의 기준*/
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a > span::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 45px;
+        width: 15px;
+        height: 9px;
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 7.4L0 1.4L1.4 0L6 4.6L10.6 0L12 1.4L6 7.4Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        display: none; /*2차메뉴*/
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); /* ul 길이 절반을 왼쪽으로 이동*/
+        top: 84px;
+        background-color: #FF4646;
+        color: #fff;
+        padding: 0 20px;
+        border-radius: 40px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li a {
+        display: block;
+        white-space: nowrap; /*줄바꿈금지*/
+        padding: 17px 25px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li a[target="_blank"] > span {
+        /* 속성선택자 <a target="_blank">라는 속성이 있는 a 태그만 선택함*/
+        display: block;
+        padding-right: 20px;
+        position: relative; /*after 정렬의 기준*/
+    } 
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li a[target="_blank"] > span::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 2px;
+        width: 18px;
+        height: 18px;
+        background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.54167 12.875C1.15208 12.875 0.818576 12.7363 0.541146 12.4589C0.263715 12.1814 0.125 11.8479 0.125 11.4583V1.54167C0.125 1.15208 0.263715 0.818576 0.541146 0.541146C0.818576 0.263715 1.15208 0.125 1.54167 0.125H5.79167C5.99236 0.125 6.16059 0.192882 6.29635 0.328646C6.43212 0.46441 6.5 0.632639 6.5 0.833333C6.5 1.03403 6.43212 1.20226 6.29635 1.33802C6.16059 1.47378 5.99236 1.54167 5.79167 1.54167H1.54167V11.4583H11.4583V7.20833C11.4583 7.00764 11.5262 6.83941 11.662 6.70365C11.7977 6.56788 11.966 6.5 12.1667 6.5C12.3674 6.5 12.5356 6.56788 12.6714 6.70365C12.8071 6.83941 12.875 7.00764 12.875 7.20833V11.4583C12.875 11.8479 12.7363 12.1814 12.4589 12.4589C12.1814 12.7363 11.8479 12.875 11.4583 12.875H1.54167ZM11.4583 2.53333L5.36667 8.625C5.23681 8.75486 5.07153 8.81979 4.87083 8.81979C4.67014 8.81979 4.50486 8.75486 4.375 8.625C4.24514 8.49514 4.18021 8.32986 4.18021 8.12917C4.18021 7.92847 4.24514 7.76319 4.375 7.63333L10.4667 1.54167H8.625C8.4243 1.54167 8.25608 1.47378 8.12031 1.33802C7.98455 1.20226 7.91667 1.03403 7.91667 0.833333C7.91667 0.632639 7.98455 0.46441 8.12031 0.328646C8.25608 0.192882 8.4243 0.125 8.625 0.125H12.1667C12.3674 0.125 12.5356 0.192882 12.6714 0.328646C12.8071 0.46441 12.875 0.632639 12.875 0.833333V4.375C12.875 4.57569 12.8071 4.74392 12.6714 4.87969C12.5356 5.01545 12.3674 5.08333 12.1667 5.08333C11.966 5.08333 11.7977 5.01545 11.662 4.87969C11.5262 4.74392 11.4583 4.57569 11.4583 4.375V2.53333Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li a > span {
+        position: relative; /*after 정렬의 기준*/
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li a:hover > span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+    }
+    header .util .search_open {
+        display: block;
+        width: 45px;
+        height: 45px;
+        background-image: url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.47949 1.125C10.545 1.12507 12.2747 1.83529 13.6992 3.25977C15.1235 4.68425 15.833 6.41402 15.833 8.47949C15.833 9.20736 15.7325 9.89417 15.5322 10.542L15.4395 10.8174C15.1747 11.555 14.8184 12.2009 14.3721 12.7588L14.0928 13.1084L21.668 20.6836L20.6836 21.668L13.1084 14.0928L12.7588 14.3721C12.2707 14.7625 11.7151 15.0842 11.0898 15.3359L10.8174 15.4395C10.0895 15.7007 9.31148 15.833 8.47949 15.833C6.41402 15.833 4.68425 15.1235 3.25977 13.6992C1.83529 12.2747 1.12507 10.545 1.125 8.47949C1.125 6.41386 1.83522 4.68431 3.25977 3.25977C4.68431 1.83522 6.41386 1.125 8.47949 1.125ZM8.47949 2.54199C6.94065 2.54199 5.60353 3.05149 4.49316 4.06445L4.27441 4.27441C3.12229 5.42654 2.54199 6.83798 2.54199 8.47949C2.54206 10.0181 3.05166 11.3546 4.06445 12.4648L4.27441 12.6846C5.42648 13.8365 6.83813 14.417 8.47949 14.417C10.1209 14.4169 11.5325 13.8366 12.6846 12.6846C13.8366 11.5325 14.4169 10.1209 14.417 8.47949C14.417 6.94058 13.9066 5.60357 12.8936 4.49316L12.6846 4.27441C11.5325 3.12237 10.1209 2.54207 8.47949 2.54199Z' fill='white' stroke='white'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    /***************header에 fixed 클래스가 추가 되었을때*******************/
+    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a > span::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 7.4L0 1.4L1.4 0L6 4.6L10.6 0L12 1.4L6 7.4Z' fill='%233d3d3d'/%3E%3C/svg%3E%0A");
+    }
+    header.fixed .util .search_open {
+        background-image: url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.47949 1.125C10.545 1.12507 12.2747 1.83529 13.6992 3.25977C15.1235 4.68425 15.833 6.41402 15.833 8.47949C15.833 9.20736 15.7325 9.89417 15.5322 10.542L15.4395 10.8174C15.1747 11.555 14.8184 12.2009 14.3721 12.7588L14.0928 13.1084L21.668 20.6836L20.6836 21.668L13.1084 14.0928L12.7588 14.3721C12.2707 14.7625 11.7151 15.0842 11.0898 15.3359L10.8174 15.4395C10.0895 15.7007 9.31148 15.833 8.47949 15.833C6.41402 15.833 4.68425 15.1235 3.25977 13.6992C1.83529 12.2747 1.12507 10.545 1.125 8.47949C1.125 6.41386 1.83522 4.68431 3.25977 3.25977C4.68431 1.83522 6.41386 1.125 8.47949 1.125ZM8.47949 2.54199C6.94065 2.54199 5.60353 3.05149 4.49316 4.06445L4.27441 4.27441C3.12229 5.42654 2.54199 6.83798 2.54199 8.47949C2.54206 10.0181 3.05166 11.3546 4.06445 12.4648L4.27441 12.6846C5.42648 13.8365 6.83813 14.417 8.47949 14.417C10.1209 14.4169 11.5325 13.8366 12.6846 12.6846C13.8366 11.5325 14.4169 10.1209 14.417 8.47949C14.417 6.94058 13.9066 5.60357 12.8936 4.49316L12.6846 4.27441C11.5325 3.12237 10.1209 2.54207 8.47949 2.54199Z' fill='%23070707' stroke='%23070707'/%3E%3C/svg%3E%0A");
+    }
+
+    /*********** 메뉴에 마우스를 오버했을때****************/
+    header .gnb .gnb_wrap ul.depth1 > li.over > a {
+        color: #FF4646;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over:has(ul.depth2) > a > span::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='13' height='9' viewBox='0 0 13 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.04192 0.600294L12.9675 6.67384L11.5503 8.05646L7.00738 3.40008L2.351 7.943L0.968374 6.52584L7.04192 0.600294Z' fill='%23FF4646'/%3E%3C/svg%3E%0A");    
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
+        display: flex; /*li좌우로 배치*/
+    }
+}/*@media*/
+
+@media screen and (min-width:1025px) and (max-width:1280px) { /*1280~1025까지만 적용*/
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        font-size: 20px;
+        padding: 0 15px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li a {
+        padding: 10px 10px;
+    }
+}/*@media*/
+
+/*#######################모바일############################*/
+@media screen and (max-width:1024px) {
+                        header {
+                            height: 56px;
+                            padding: 0 0 0 20px;
+                        }
+                        header .logo a {
+                            width:120px;
+                            height: 25px;
+                        }
+                        header .gnb .gnb_open {
+                            display: block;
+                            width: 56px;
+                            height: 56px;
+                            background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 21.5V19.1667H21.5V21.5H0.5ZM0.5 12.1667V9.83333H21.5V12.1667H0.5ZM0.5 2.83333V0.5H21.5V2.83333H0.5Z' fill='white'/%3E%3C/svg%3E%0A");
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                        }
+                        header.fixed .gnb .gnb_open {
+                            background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 21.5V19.1667H21.5V21.5H0.5ZM0.5 12.1667V9.83333H21.5V12.1667H0.5ZM0.5 2.83333V0.5H21.5V2.83333H0.5Z' fill='%233D3D3D'/%3E%3C/svg%3E%0A");
+                        }
+                        header .gnb .gnb_wrap {
+                            display: none;
+                            position: fixed; /*body를 기준으로 정렬*/
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: #fff;
+                            color: #1d1d1d;
+                        }
+                        header .gnb .gnb_wrap ul.depth1 {
+                            margin: 56px 20px 0 20px;
+                            height: calc(100% - 56px);
+                            overflow-y: auto; /*메뉴 넘치면 스크롤바 만듦*/
+                        }
+                        header .gnb .gnb_wrap ul.depth1 > li {
+                            border-bottom: 1px solid #EDEDED;
+                        }
+                        
+                        header .gnb .gnb_wrap ul.depth1 > li:first-child {
+                            border-top: 1px solid #EDEDED;
+                        }
+                        header .gnb .gnb_wrap ul.depth1 > li > a {
+                            display: block;
+                            font-size: 22px;
+                            font-weight: 700;
+                            padding: 14px 0;
+                            position: relative; /*after정렬의 기준*/
+                        }
+                        header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a::after {
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            top: 25px;
+                            width: 14px;
+                            height: 8px;
+                            background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.93183 5.87323L12.5814 0.223666C12.7304 0.0746657 12.9058 0.00204117 13.1077 0.00579116C13.3097 0.00966615 13.4852 0.0861031 13.6342 0.235103C13.7832 0.384228 13.8577 0.559728 13.8577 0.761603C13.8577 0.963478 13.7832 1.13898 13.6342 1.2881L7.8924 7.04136C7.75677 7.17698 7.60483 7.27748 7.43658 7.34286C7.26833 7.40823 7.10008 7.44092 6.93183 7.44092C6.76358 7.44092 6.59533 7.40823 6.42708 7.34286C6.25883 7.27748 6.1069 7.17698 5.97127 7.04136L0.217835 1.2881C0.0688346 1.13898 -0.00372767 0.961542 0.000147333 0.755792C0.00402233 0.550042 0.0804595 0.372666 0.229459 0.223666C0.378459 0.0746662 0.55396 0.000166935 0.75596 0.000166927C0.957835 0.000166918 1.13327 0.0746662 1.28227 0.223666L6.93183 5.87323Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                        }
+                        header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                            background-color: #f4f4f4;
+                            color: #555;
+                            padding: 23px 0 23px 23px;
+                            display: none; /*숨김*/
+                        }
+                        header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                            display: block;
+                            padding: 7px 0;
+                        }
+                        header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a[target="_blank"] > span {
+                            display: inline-block;
+                            position: relative; /*after 정렬의 기준*/
+                            padding-right: 20px;
+                        }
+                        header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a[target="_blank"] > span::after {
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            top: 4px;
+                            width: 15px;
+                            height: 15px;
+                            background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.125 12.125C1.78125 12.125 1.48698 12.0026 1.24219 11.7578C0.997396 11.513 0.875 11.2188 0.875 10.875V2.125C0.875 1.78125 0.997396 1.48698 1.24219 1.24219C1.48698 0.997396 1.78125 0.875 2.125 0.875H5.875C6.05208 0.875 6.20052 0.934896 6.32031 1.05469C6.4401 1.17448 6.5 1.32292 6.5 1.5C6.5 1.67708 6.4401 1.82552 6.32031 1.94531C6.20052 2.0651 6.05208 2.125 5.875 2.125H2.125V10.875H10.875V7.125C10.875 6.94792 10.9349 6.79948 11.0547 6.67969C11.1745 6.5599 11.3229 6.5 11.5 6.5C11.6771 6.5 11.8255 6.5599 11.9453 6.67969C12.0651 6.79948 12.125 6.94792 12.125 7.125V10.875C12.125 11.2188 12.0026 11.513 11.7578 11.7578C11.513 12.0026 11.2188 12.125 10.875 12.125H2.125ZM10.875 3L5.5 8.375C5.38542 8.48958 5.23958 8.54688 5.0625 8.54688C4.88542 8.54688 4.73958 8.48958 4.625 8.375C4.51042 8.26042 4.45312 8.11458 4.45312 7.9375C4.45312 7.76042 4.51042 7.61458 4.625 7.5L10 2.125H8.375C8.19792 2.125 8.04948 2.0651 7.92969 1.94531C7.8099 1.82552 7.75 1.67708 7.75 1.5C7.75 1.32292 7.8099 1.17448 7.92969 1.05469C8.04948 0.934896 8.19792 0.875 8.375 0.875H11.5C11.6771 0.875 11.8255 0.934896 11.9453 1.05469C12.0651 1.17448 12.125 1.32292 12.125 1.5V4.625C12.125 4.80208 12.0651 4.95052 11.9453 5.07031C11.8255 5.1901 11.6771 5.25 11.5 5.25C11.3229 5.25 11.1745 5.1901 11.0547 5.07031C10.9349 4.95052 10.875 4.80208 10.875 4.625V3Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                        }
+                        header .gnb .gnb_close {
+                            display: none;
+                            position: fixed;
+                            right: 0;
+                            top: 0;
+                            width: 56px;
+                            height: 56px;
+                            background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.46634 17.1668L0.833008 15.5335L7.36634 9.00016L0.833008 2.46683L2.46634 0.833496L8.99967 7.36683L15.533 0.833496L17.1663 2.46683L10.633 9.00016L17.1663 15.5335L15.533 17.1668L8.99967 10.6335L2.46634 17.1668Z' fill='%231C1B1F'/%3E%3C/svg%3E%0A");
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                        }
+                        header .util {
+                            display: none; /*숨김*/
+                        }
+
+    /**************모바일 메뉴가 열렸을 때********************/
+    header.menu_open .gnb .gnb_wrap {
+        display: block; /*나타남*/
+    }
+    header.menu_open .gnb .gnb_close {
+        display: block; /*나타남*/
+    }
+
+    /*****************하위메뉴가 열렸을 때*****************************/
+    header .gnb .gnb_wrap ul.depth1 > li.open > a {
+        color: #FF4646;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.open:has(ul.depth2) > a::after { 
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.92559 1.56769L1.27602 7.21725C1.12702 7.36625 0.951586 7.43888 0.749711 7.43513C0.547711 7.43125 0.372212 7.35481 0.223212 7.20581C0.0742119 7.05669 -0.000289264 6.88119 -0.000289255 6.67931C-0.000289246 6.47744 0.074212 6.30194 0.223212 6.15281L5.96502 0.399563C6.10065 0.263938 6.25259 0.163438 6.42084 0.0980625C6.58909 0.0326875 6.75734 0 6.92559 0C7.09384 0 7.26209 0.0326875 7.43034 0.0980625C7.59859 0.163438 7.75052 0.263938 7.88615 0.399563L13.6396 6.15281C13.7886 6.30194 13.8611 6.47938 13.8573 6.68513C13.8534 6.89088 13.777 7.06825 13.628 7.21725C13.479 7.36625 13.3035 7.44075 13.1015 7.44075C12.8996 7.44075 12.7241 7.36625 12.5751 7.21725L6.92559 1.56769Z' fill='%23FF4646'/%3E%3C/svg%3E%0A");
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 {
+        display: block; /*나타남*/
+
+    }
 }
-header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a > span {
-    /* li하위에 depth2가 있는 a만 */
-    display: block;
-    padding-right: 17px; /*아이콘이 들어갈만큼*/
-    position: relative; /*after 정렬의 기준*/
-}
-header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a > span::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 45px;
-    width: 15px;
-    height: 9px;
-    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 7.4L0 1.4L1.4 0L6 4.6L10.6 0L12 1.4L6 7.4Z' fill='white'/%3E%3C/svg%3E%0A");
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-    display: none; /*2차메뉴 숨김*/
-}
-header .util .search_open {
-    display: block;
-    width: 45px;
-    height: 45px;
-    background-image: url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.47949 1.125C10.545 1.12507 12.2747 1.83529 13.6992 3.25977C15.1235 4.68425 15.833 6.41402 15.833 8.47949C15.833 9.20736 15.7325 9.89417 15.5322 10.542L15.4395 10.8174C15.1747 11.555 14.8184 12.2009 14.3721 12.7588L14.0928 13.1084L21.668 20.6836L20.6836 21.668L13.1084 14.0928L12.7588 14.3721C12.2707 14.7625 11.7151 15.0842 11.0898 15.3359L10.8174 15.4395C10.0895 15.7007 9.31148 15.833 8.47949 15.833C6.41402 15.833 4.68425 15.1235 3.25977 13.6992C1.83529 12.2747 1.12507 10.545 1.125 8.47949C1.125 6.41386 1.83522 4.68431 3.25977 3.25977C4.68431 1.83522 6.41386 1.125 8.47949 1.125ZM8.47949 2.54199C6.94065 2.54199 5.60353 3.05149 4.49316 4.06445L4.27441 4.27441C3.12229 5.42654 2.54199 6.83798 2.54199 8.47949C2.54206 10.0181 3.05166 11.3546 4.06445 12.4648L4.27441 12.6846C5.42648 13.8365 6.83813 14.417 8.47949 14.417C10.1209 14.4169 11.5325 13.8366 12.6846 12.6846C13.8366 11.5325 14.4169 10.1209 14.417 8.47949C14.417 6.94058 13.9066 5.60357 12.8936 4.49316L12.6846 4.27441C11.5325 3.12237 10.1209 2.54207 8.47949 2.54199Z' fill='white' stroke='white'/%3E%3C/svg%3E%0A");
-    background-position: center center;
-    background-repeat: no-repeat;
-}
+
+
 .visual .swiper-slide {
     height: 900px;
     color: #fff;
@@ -157,11 +387,131 @@ header .util .search_open {
     .visual .btn_wrap button.btn_next {
         display: none;
     }
-    
-    
 }
 
 
+.find {
+    background-color: #0A1422;
+    color: #fff;
+    padding: 162px 0;
+}
+.find .tit h2 {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 700;
+}
+.find .list {
+    margin: 39px 0 0 0;
+}
+.find .list .tab_list ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.find .list .tab_list ul li button {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 13px 27px 16px 27px;
+    border-radius: 50px;
+    /*border: 1px solid rgba(255,139,0,0.2);*/
+}
+.find .list .tab_list ul li.item1.active button {
+    background-color: #FF8B00;
+}
+.find .list .tab_list ul li.item2.active button {
+    background-color: #009FE3;
+}
+.find .list .tab_content {
+    margin: 50px 0 0 0;
+}
+.find .list .tab_content .tab_item {
+    display: none; /*숨김*/
+}
+.find .list .tab_content .tab_item.active {
+    display: block; /*나타남*/
+}
+.find .list .tab_content .tab_item > ul {
+    display: flex;
+    justify-content: space-between;
+}
+.find .list .tab_content .tab_item > ul > li {
+    width: calc(25% - 18px);
+    /*24+24+24 / 1줄에 나타나는 li의 갯수*/
+}
+.find .list .tab_content .tab_item > ul > li > a {
+    display: block;
+}
+.find .list .tab_content .tab_item > ul > li > a .photo {
+    overflow: hidden;
+    height: 352px;
+    border-radius: 20px;
+}
+.find .list .tab_content .tab_item > ul > li > a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.find .list .tab_content .tab_item > ul > li > a .subject {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin: 20px 0 0 0;
+}
+.find .list .tab_content .tab_item > ul > li > a .subject strong {
+    padding: 3px 18px 4px 16px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap; 
+}
+.find .list .tab_content .tab_item > ul > li > a .subject strong.cate_end {
+    background-color: #999999;
+}
+.find .list .tab_content .tab_item > ul > li > a .subject strong.cate_lost {
+    background-color: #FF8B00;
+}
+.find .list .tab_content .tab_item > ul > li > a .subject strong.cate_see {
+    background-color: #009FE3;
+}
+.find .list .tab_content .tab_item > ul > li > a .subject strong.cate_care {
+    background-color: #014289;
+}
+.find .list .tab_content .tab_item > ul > li > a .subject h4 {
+    font-size: 17px;
+    font-weight: 700;
+    /* 1줄 제한*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.find .list .tab_content .tab_item > ul > li a ul.detail {
+    margin: 16px 0 0 0;
+}
+.find .list .tab_content .tab_item > ul > li a ul.detail li {
+    display: flex;
+    gap: 18px;
+    line-height: 1.8;
+}
+.find .list .tab_content .tab_item > ul > li a ul.detail li strong {
+    color: rgba(255,255,255,0.6);
+    white-space: nowrap;
+}
+.find .list .tab_content .tab_item > ul > li a ul.detail li span {
+    /* 1줄 제한*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+
+
 footer {
-    margin: 500px 0 0 0;
+
+    margin: 1000px 0 0 0;
 }
