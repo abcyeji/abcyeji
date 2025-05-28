@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+
     /******************************* header 와 메뉴 : 시작 **********************************/
     // pc인지 모바일인지 구분 - 브라우저 넓이로...
     // 스크롤값 계산
@@ -8,12 +9,12 @@ $(document).ready(function(){
     // 모바일일때 : 메뉴열기를 클릭하면 header에 menu_open 클래스 추가
     //             1차메뉴를 클릭하면 (하위메뉴가 있는 1차 메뉴만)  클릭한 li에 open 클래스 추가
 
+
     let device_status  //모바일인지 pc인지
     let scrolling //스크롤값
     let window_w //브라우저 높이
     let mobile_size = 1024 //모바일로 전환되는 사이즈
     
-
     scroll_chk() //함수실행 (처음에 문서가 로딩되었을때 1번)
     resize_chk() //함수실행
     $(window).resize(function(){ //브라우저가 리사이즈될때마다 1번씩 실행
@@ -24,12 +25,11 @@ $(document).ready(function(){
     })
 
     function scroll_chk(){ //함수선언
-        // console.log('스크롤!!!!!!!!!')
         scrolling = $(window).scrollTop()
         // console.log(scrolling)
         if(scrolling > 0){
             $('header').addClass('fixed')
-            // console.log('a니????????')
+            // console.log('scroll 너니????????')
         }else{
             $('header').removeClass('fixed')
         }
@@ -41,7 +41,7 @@ $(document).ready(function(){
         }else{
             device_status = 'mobile'
         }
-        // console.log(devicer_status)
+        // console.log(device_status)
     }
 
 
@@ -49,10 +49,10 @@ $(document).ready(function(){
     $('header').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
             $('header').addClass('fixed')
-            // console.log('b니????????')
+            // console.log('mouseenter니????????')
         }
     })
-    $('header').on('mouseleave', function(){
+    $('header').on('mouseleave focusout', function(){
         /*브라우저가 스크롤된 상태에서는 header에 fixed 클래스를 삭제하면 안됨
           맨 위에 있을 때만 삭제해야함*/
         if(scrolling <= 0){ 
@@ -96,7 +96,6 @@ $(document).ready(function(){
         }
         
     })
-
     /******************************* header 와 메뉴 : 끝 **********************************/
 
 
@@ -133,20 +132,55 @@ $(document).ready(function(){
     /******************************* visual swiper : 끝 **********************************/
 
 
- /***************find 탭 기능 : 시작**************************/
+     /***************find 탭 기능 : 시작**************************/
+     // 1. 클릭한 li에서 data-content값을 가져와서
+     //    ==>tab_item 중에 해당값이 id인 요소를 찾아서 나타나게 해야함 (다른 요소는 숨김)
+     // 2. 클릭한 li에만 active 클래스 줌
+     // 3.클릭한 li안에 있는 span에 선택됨이라고 글자 써줌( 다른 li에 있는건 삭제)
+     // 4.클릭한 li속성 aria-selected값을 true로 변경 (다른 li는 모두 false)
+
     let find_content //클릭한 메뉴의 이름(id)
     $('.find .list .tab_list ul li').on('click', function(){
-        console.log('누름!!!!!!!!!!!')
+
         
         if($(this).hasClass('active') == false){
-            console.log('선택안된메뉴...')
+            // console.log('선택안된메뉴...')
             find_content = $(this).attr('data-content')
-            console.log(find_content)
-           
+            // console.log(find_content)
+            $('.find .list .tab_content .tab_item').removeClass('active')
+            $('.find .list .tab_content').find('#'+find_content).addClass('active')
+            
+            $('.find .list .tab_list ul li').removeClass('active')
+            $(this).addClass('active')
+
+            $('.find .list .tab_list ul li button span').text('')
+            $(this).find('span').text('선택됨')
+
+            $('.find .list .tab_list ul li').attr('aria-selected', 'false')
+            $(this).attr('aria-selected', 'true')
         }
     })
 
- /***************find 탭 기능 : 끝**************************/
+    /***************find 탭 기능 : 끝**************************/
+
+
+    /********************분양 시작*************************** */
+    const adopt_swiper = new Swiper('.adopt .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            768: {    /* 640px 이상일때 적용 */
+                spaceBetween: 24,
+                centeredSlides: true
+            },
+        },
+        centeredSlides: false, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        navigation: {
+            nextEl: '.adopt .list_ctrl .btn_next',
+            prevEl: '.adopt .list_ctrl .btn_prev',
+        },
+    });
 
 
 })
