@@ -24,6 +24,10 @@
 .skip_nav a:focus {
     top: 0;    
 }
+body {
+    background-color: #fff;
+} /*돌돌 블랜딩 모드 때문에..*/
+
 header {
     position: fixed; /*body를 기준으로 정렬*/
     left: 0;
@@ -48,6 +52,7 @@ header .logo a {
 header.fixed {
     background-color: #fff;
     color: #1d1d1d;
+    border-bottom: 1px solid #ededed;
 }
 header.fixed .logo a {
     background-image: url(../images/logo.svg);
@@ -455,7 +460,7 @@ header.fixed .logo a {
     object-fit: cover;
     transition: 0.5s;
 }
-/*********마우스를 오버효과**********/
+/*********마우스 오버효과**********/
 .find .list .tab_content .tab_item > ul > li > a:hover .photo img {
     transform: scale3d(1.2, 1.2, 1);
 }
@@ -810,6 +815,7 @@ header.fixed .logo a {
     font-weight: 700;
     color: rgba(255,255,255,0.2);
     white-space: nowrap; /*1줄*/
+    text-transform: uppercase; /*대문자로 변경*/
 
     animation-name: rolling;
     animation-duration: 30s;
@@ -881,10 +887,329 @@ header.fixed .logo a {
                 }
 }/*@media*/
 
+.review {
+    margin: 135px 0 0 0;
+}
+.review .wrapper {
+    position: relative; /*more 정렬의 기준*/
+}
+.review .tit h2 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    padding: 0 0 41px 0; /*선까지의 여백*/
+    position: relative ; /*after를 기준으로 정렬*/
+}
+.review .tit h2::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%); /*나의 넓이의 절반을 왼쪽으로 */
+    width: 100vw; /*브라우저 넓이*/
+    height: 3px;
+    background-color: #d9d9d9;
+}
+.review .tit h2 strong {
+    position: relative; /*after 정렬의 기준*/
+}
+.review .tit h2 strong::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -46px;
+    z-index: 10;
+    width: 100%;
+    height: 3px;
+    background-color: #E76020;
+}
+.review .list {
+    margin: 44px 0 0 0;
+    position: relative; /*이전다음버튼 정렬의 기준*/
+}
+.review .list .swiper-slide a {
+    display: block;
+}
+.review .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 316px;
+}
+.review .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /*사진을 자르지 않고 모두 보이게*/
+    transition: 0.5s;
+}
+.review .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2,1.2,1);
+}
+.review .list .swiper-slide a h3 {
+    margin: 23px 0 8px 0;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    /*1줄 제한*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.review .list .swiper-slide a p {
+    /*2줄 제한*/
+    line-height: 1.5;
+    height: 3em; /*행간 x 줄수 = 단위는 em*/
+    overflow: hidden;
+    /*2줄이상 제한에도 끝에...추가*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /*줄수*/
+}
+.review .list .btn_prev,
+.review .list .btn_next {
+    position: absolute;
+    top: 182px;
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='32' viewBox='0 0 18 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.91667 15.9997L17.1667 28.2497C17.5833 28.6664 17.7847 29.1525 17.7708 29.708C17.7569 30.2636 17.5417 30.7497 17.125 31.1664C16.7083 31.583 16.2222 31.7914 15.6667 31.7914C15.1111 31.7914 14.625 31.583 14.2083 31.1664L1.375 18.3747C1.04167 18.0414 0.791667 17.6664 0.625 17.2497C0.458333 16.833 0.375 16.4164 0.375 15.9997C0.375 15.583 0.458333 15.1664 0.625 14.7497C0.791667 14.333 1.04167 13.958 1.375 13.6247L14.2083 0.791362C14.625 0.374696 15.1181 0.173307 15.6875 0.187195C16.2569 0.201084 16.75 0.416362 17.1667 0.833029C17.5833 1.2497 17.7917 1.73581 17.7917 2.29136C17.7917 2.84692 17.5833 3.33303 17.1667 3.7497L4.91667 15.9997Z' fill='%23494949'/%3E%3C/svg%3E%0A");
+}
+.review .list .btn_prev {
+    left: -60px;
+}
+.review .list .btn_next {
+    right: -60px;
+    transform: rotate(180deg);
+}
+.review .more {
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    right: 0;
+    top: 0;
+    display: flex; /*strong과 span 좌우로 배치*/
+    align-items: center;
+    gap: 10px;
+    padding-right: 45px;
+}
+.review .more::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.5 28.375C14.0632 28.375 13.697 28.2273 13.4016 27.9318C13.1061 27.6363 12.9583 27.2701 12.9583 26.8333V16.0417H2.16667C1.72986 16.0417 1.36372 15.8939 1.06823 15.5984C0.772743 15.303 0.625 14.9368 0.625 14.5C0.625 14.0632 0.772743 13.697 1.06823 13.4016C1.36372 13.1061 1.72986 12.9583 2.16667 12.9583H12.9583V2.16667C12.9583 1.72986 13.1061 1.36372 13.4016 1.06823C13.697 0.772743 14.0632 0.625 14.5 0.625C14.9368 0.625 15.303 0.772743 15.5984 1.06823C15.8939 1.36372 16.0417 1.72986 16.0417 2.16667V12.9583H26.8333C27.2701 12.9583 27.6363 13.1061 27.9318 13.4016C28.2273 13.697 28.375 14.0632 28.375 14.5C28.375 14.9368 28.2273 15.303 27.9318 15.5984C27.6363 15.8939 27.2701 16.0417 26.8333 16.0417H16.0417V26.8333C16.0417 27.2701 15.8939 27.6363 15.5984 27.9318C15.303 28.2273 14.9368 28.375 14.5 28.375Z' fill='%23494949'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.review .more strong {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #E76020;
+}
+@media screen and (max-width:1400px) {
+                .review .list .btn_prev,
+                .review .list .btn_next {
+                    display: none; /*숨김*/
+                }
+}/*@media*/
+@media screen and (max-width:1024px) {
+                .review .tit h2 {
+                    font-size: 40px;
+                }
+                .review .more strong {
+                    font-size: 40px;
+                }
+}/*@media*/
 
+@media screen and (max-width:768px) {
+                    .review .list .swiper-slide {
+                        width: 200px;
+                    }
 
+                    .review {
+                        margin: 64px 0 0 0;
+                    }
+                    .review .tit h2 {
+                        font-size: 30px;
+                        padding: 0 0 21px 0; /*선까지의 여백*/
+                    }
+                    .review .tit h2 strong::after{
+                        bottom: -24px;
+                    }
+                    .review .list {
+                        margin: 20px 0 0 0;
+                    }
+                    
+                    .review .list .swiper-slide a .photo {
+                        height: 174px;
+                    }
+                    .review .list .swiper-slide a h3 {
+                        margin: 19px 0 6px 0;
+                    }
+                    
+                    .review .more {
+                        top: 6px;
+                        padding-right: 0;
+                        width: 25px;
+                        height: 25px;
+                    }
+                    .review .more::after {
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-size: contain;
+                    }
+                    .review .more strong,
+                    .review .more span {
+                        display: none;
+                    }
+                   
+}/*@media*/
 
 footer {
-
-    margin: 1000px 0 0 0;
+    margin: 93px 0 0 0;
+    background-color: #060505;
+    padding: 103px 0 86px 0;
+    color: #fff;
+    position: relative; /*top돌돌 정렬의 기준*/
 }
+footer .wrapper {
+    display: flex; /*link_wrap info_wrap 좌우배치*/
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+footer .top {
+    position: absolute;
+    right: 20px;
+    top: -50px;
+    mix-blend-mode: difference; 
+    /*반전- 흰색배경에서는 검은색(배경색과 반대로)
+      배경색이 흰색이라면 진짜 흰색 배경색을 깔아줘야 함 - 그래야 적용이 됨
+      => body에 흰색을 주면 됨*/
+      animation-name: rotate;
+      animation-duration: 5s;
+      animation-iteration-count: infinite; /*무제한*/
+      animation-timing-function: linear; /*가속도 삭제*/
+}
+@keyframes rotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+footer .link_wrap ul.link li {
+    margin: 0 0 10px 0;  /*link_wrap 행간 뗄려고 줌*/
+}
+footer .link_wrap ul.link li a {
+    display: block;
+    text-align: right;
+    padding-right: 19px;
+    position: relative; /*after 정렬의 기준*/
+}
+footer .link_wrap ul.link li a::after {
+    content: "";
+    position: absolute; /*a를 기준으로 정렬*/
+    right: 0;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.33333 12C0.966667 12 0.652778 11.8694 0.391667 11.6083C0.130556 11.3472 0 11.0333 0 10.6667V1.33333C0 0.966667 0.130556 0.652778 0.391667 0.391667C0.652778 0.130556 0.966667 0 1.33333 0H5.33333C5.52222 0 5.68056 0.0638889 5.80833 0.191667C5.93611 0.319444 6 0.477778 6 0.666667C6 0.855556 5.93611 1.01389 5.80833 1.14167C5.68056 1.26944 5.52222 1.33333 5.33333 1.33333H1.33333V10.6667H10.6667V6.66667C10.6667 6.47778 10.7306 6.31944 10.8583 6.19167C10.9861 6.06389 11.1444 6 11.3333 6C11.5222 6 11.6806 6.06389 11.8083 6.19167C11.9361 6.31944 12 6.47778 12 6.66667V10.6667C12 11.0333 11.8694 11.3472 11.6083 11.6083C11.3472 11.8694 11.0333 12 10.6667 12H1.33333ZM10.6667 2.26667L4.93333 8C4.81111 8.12222 4.65556 8.18333 4.46667 8.18333C4.27778 8.18333 4.12222 8.12222 4 8C3.87778 7.87778 3.81667 7.72222 3.81667 7.53333C3.81667 7.34444 3.87778 7.18889 4 7.06667L9.73333 1.33333H8C7.81111 1.33333 7.65278 1.26944 7.525 1.14167C7.39722 1.01389 7.33333 0.855556 7.33333 0.666667C7.33333 0.477778 7.39722 0.319444 7.525 0.191667C7.65278 0.0638889 7.81111 0 8 0H11.3333C11.5222 0 11.6806 0.0638889 11.8083 0.191667C11.9361 0.319444 12 0.477778 12 0.666667V4C12 4.18889 11.9361 4.34722 11.8083 4.475C11.6806 4.60278 11.5222 4.66667 11.3333 4.66667C11.1444 4.66667 10.9861 4.60278 10.8583 4.475C10.7306 4.34722 10.6667 4.18889 10.6667 4V2.26667Z' fill='white' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+footer .link_wrap ul.sns {
+    margin: 33px 0 0 0;
+    display: flex;
+    gap: 5px;
+}
+footer .link_wrap ul.sns li a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+footer .link_wrap ul.sns li.facebook a {
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='25' viewBox='0 0 13 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.1547 14.0612L12.8296 9.5355H8.60986V6.60258C8.60986 5.36766 9.19612 4.16082 11.0844 4.16082H13V0.308725C13 0.308725 11.2617 0 9.59833 0C6.12848 0 3.85842 2.16812 3.85842 6.09037V9.5355H0V14.0612H3.85842V25H8.60986V14.0612H12.1547Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+footer .link_wrap ul.sns li.twitter a {
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='18' viewBox='0 0 21 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.8981 2.15271C20.2335 2.46599 19.4961 2.658 18.7733 2.78433C19.1129 2.72369 19.6174 2.08197 19.8163 1.81921C20.1219 1.42003 20.379 0.970311 20.5197 0.480172C20.5391 0.439749 20.5537 0.394274 20.5197 0.363956C20.4712 0.343744 20.4421 0.353852 20.4081 0.374064C19.6028 0.823779 18.7733 1.14716 17.8903 1.3796C17.8176 1.39981 17.7642 1.3796 17.7157 1.33413C17.6429 1.24823 17.575 1.16738 17.4974 1.10169C17.1238 0.77325 16.726 0.515544 16.2797 0.323531C15.6878 0.0708827 15.0426 -0.0352272 14.4071 0.0102495C13.791 0.0506733 13.1797 0.23258 12.6315 0.530705C12.0833 0.828831 11.5885 1.24823 11.2004 1.74847C10.7977 2.26893 10.4969 2.88034 10.3466 3.53217C10.201 4.15874 10.2107 4.78025 10.3029 5.41693C10.3174 5.52304 10.3029 5.5382 10.2156 5.52305C6.75661 4.98743 3.8895 3.69892 1.56573 0.934945C1.46386 0.813673 1.41048 0.813668 1.32801 0.945045C0.309238 2.53673 0.804074 5.08849 2.07511 6.34162C2.24491 6.50837 2.41956 6.67512 2.60876 6.82671C2.54084 6.84186 1.69186 6.74586 0.939912 6.34162C0.838035 6.27594 0.789514 6.3113 0.779811 6.43257C0.770108 6.60438 0.77981 6.76102 0.808918 6.94798C1.00297 8.55988 2.07511 10.0505 3.54505 10.6316C3.7197 10.7074 3.91376 10.7731 4.09811 10.8085C3.76337 10.8842 3.41891 10.9398 2.46321 10.859C2.34193 10.8337 2.29827 10.8994 2.34193 11.0156C3.06477 13.0621 4.61718 13.6684 5.78149 14.0171C5.93673 14.0474 6.09197 14.0474 6.25207 14.0828C6.24236 14.0979 6.23266 14.0979 6.22296 14.1131C5.83486 14.7245 4.4959 15.1843 3.87494 15.4117C2.73973 15.8261 1.5075 16.008 0.309235 15.8867C0.115184 15.8564 0.076375 15.8614 0.0230109 15.8867C-0.0303533 15.9221 0.0181673 15.9675 0.0763827 16.0181C0.318947 16.1848 0.566363 16.3314 0.81863 16.4779C1.58028 16.8973 2.37589 17.2308 3.20546 17.4733C7.494 18.7062 12.321 17.8018 15.5374 14.4719C18.065 11.8544 18.9528 8.2466 18.9528 4.63877C18.9528 4.49729 19.1128 4.4215 19.2099 4.3457C19.8696 3.8303 20.3984 3.21383 20.8884 2.52663C21 2.36999 21 2.23355 21 2.17797V2.15776C21 2.10218 21 2.11734 20.9127 2.15776L20.8981 2.15271Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+footer .link_wrap ul.sns li.naver a {
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='19' viewBox='0 0 21 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 0V19H13.9532L7.04683 9.43466V19H0V0H7.04683L13.9532 9.94989V0H21Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+footer .link_wrap ul.sns li.daum a {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.68755 0.00325613H0V21H9.68755C15.3822 21 20 16.2982 20 10.5C20 4.70183 15.3822 0 9.68755 0V0.00325613ZM9.88944 14.2752H6.40923V6.72809H9.88944C11.9372 6.72809 13.594 8.41827 13.594 10.5C13.594 12.5817 11.934 14.2719 9.88944 14.2719V14.2752Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+footer .info_wrap .info ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 41px; /*위아래 좌우*/
+    margin: 0 0 14px 0;
+}
+footer .info_wrap .info ul li {
+    position: relative; /*before 정렬의 기준*/
+}
+footer .info_wrap .info ul li::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 7px;
+    height: 12px;
+    width: 1px;
+    background-color: rgba(255,255,255,0.2);
+}
+footer .info_wrap .info ul li:last-child::after {
+    display: none; 
+}
+footer .info_wrap .coptright {
+    margin: 56px 0 0 0;
+    color: rgba(255,255,255,0.8);
+
+}
+
+@media screen and (max-width:1024px) {
+    footer {
+        margin: 46px 0 0 0;
+        padding: 65px 0 49px 0;
+    }
+    footer .wrapper {
+        display: block; 
+    }
+    footer .top {
+        display: none;
+    }
+    footer .link_wrap ul.link  {
+        display: none; 
+    }
+    footer .link_wrap ul.sns {
+        margin: 0;
+        gap: 4px;
+    }
+    footer .link_wrap ul.sns li a {
+        width: 30px;
+        height: 30px;
+    }
+    footer .link_wrap ul.sns li.facebook a {
+        background-size: 8px;    
+    }
+    footer .link_wrap ul.sns li.twitter a {
+        background-size: 13px;    
+    }
+    footer .link_wrap ul.sns li.naver a {
+        background-size: 13px;    
+    }
+    footer .link_wrap ul.sns li.daum a {
+        background-size: 12px;    
+    }
+    footer .info_wrap {
+        margin: 24px 0 0 0;
+    }
+    footer .info_wrap .info ul {
+        margin: 0 0 12px 0;
+    }
+    footer .info_wrap .coptright {
+        margin: px 0 0 0;
+    }
+}/*@media */
