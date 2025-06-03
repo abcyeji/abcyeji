@@ -66,8 +66,10 @@ html, body {
 
 /* css 변수 */
 :root {
-    --header-h: 1000px; /*header높이*/
+    --header-h: 100px; /*header높이*/
+    --header-h-m: -100px; /*header높이의 마이너스값*/
     --tit-font-color: #1D1D1D;
+    --base-color: #555;
     --point-color: #AE040F;
     --bold-weight: 700;
     --tit-font-size: 2.65rem;  /*45 / 17 = 2.65*/
@@ -77,6 +79,7 @@ html, body {
 @media screen and (max-width:1024px) {
     :root {
         --header-h: 56px; /*header높이*/
+        --header-h-m: -56px;
     }
 }
 @media screen and (max-width:768px) {
