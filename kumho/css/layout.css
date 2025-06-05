@@ -310,7 +310,7 @@ header.menu_over .util .search .search_open {
                     header.menu_open .gnb .gnb_close {
                         display: block;
                     }
-                    header.menu_open .gnb .gnb_bg  {  /*????????*/
+                    header.menu_open .gnb .gnb_bg  {  
                         display: block;
                         animation-name: gnb_bg;
                         animation-duration: 0.5s;
