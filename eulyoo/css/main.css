@@ -1,6 +1,7 @@
 @import url(default.css);
 @import url(font.css);
 @import url(common.css);
+@import url(font.css);
 
 .tit_font{
     font-family: "Eulyoo1945";
@@ -512,6 +513,8 @@ header .tnb .search {
 }
 .story .tit h2 {
     font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
     color: #1d1d1d;
 }
 .story .list {
