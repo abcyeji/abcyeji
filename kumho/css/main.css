@@ -526,7 +526,7 @@ section .tit h2 {
     content: "";
     position: absolute; /*more정렬의 기준*/
     right: 1.06em;
-    top: 0.29em;
+    top: 0.37em;
     width: 0.71em; /*12/17*/
     height: 0.71em;
     background-image: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_35_1191' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='11' height='11'%3E%3Crect width='11' height='11' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_35_1191)'%3E%3Cpath d='M5.04175 5.95866H2.29175V5.04199H5.04175V2.29199H5.95841V5.04199H8.70842V5.95866H5.95841V8.70866H5.04175V5.95866Z' fill='%23666666'/%3E%3C/g%3E%3C/svg%3E%0A");
@@ -656,9 +656,10 @@ section .tit h2 {
                     .service .list ul li::before {
                         content: "";
                         position: absolute;
-                        left: 0;
+                        left: 50%;
                         top: 0;
-                        width: 100%;
+                        transform: translateX(-50%);
+                        width: 15em;
                         height: 1px;
                         background-color: rgba(255, 255, 255, 0.2);
                     }
