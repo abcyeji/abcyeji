@@ -258,7 +258,7 @@ section .tit h2 {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 100%; /*집에서 수정한부분???????????*/
+    height: 100%; /*집에서 수정한부분*/
     background: rgba(0,0,0,0.3);
     opacity: 0;
 
