@@ -18,7 +18,7 @@
     position: relative; /*photo정렬의 기준*/
 }
 .ctn_ceo .ceo_tit {
-    padding: 7.05em 0 4.23em 51%;/*120px 0 72 643px*/
+    padding: 7.05em 0 0 51.03%;/*120px 0 72(4.23em) 643px*/
 }
 .ctn_ceo .ceo_tit strong {
     color: var(--point-color);
@@ -30,13 +30,13 @@
     font-weight: var(--bold-weight);
     color: var(--tit-font-color);
     line-height: var(--tit-line-height);
-    margin: 1em 0 2.82em 0;/*17px 0 48px 0*/
+    margin: 0.56em 0 1.6em 0;/*17px 0 48px 0/30*/
 }
 .ctn_ceo .photo {
     position: absolute;
     left: 0;
     top: 7.05em;
-    width: 37%; 
+    width: 37.22%; 
     height: 44.82em;
     border-radius: 20px;
     overflow: hidden;
@@ -48,7 +48,7 @@
     object-fit: cover;
 }
 .ctn_ceo .ceo_detail {
-    margin: 8.24em 0 7.25em 51%;
+    margin: 8.29em 0 8.20em 51.03%;
 }
 .ctn_ceo .ceo_detail .sign {
     display: flex;
