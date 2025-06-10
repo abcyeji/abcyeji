@@ -97,3 +97,83 @@ header {
     background-size: contain;
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 4.54688H0.5V3.54688H3.5V0.546875H4.5V3.54688H7.5V4.54688H4.5V7.54688H3.5V4.54688Z' fill='white'/%3E%3C/svg%3E%0A");
 }
+.news {
+    margin: 166px 0 0 0;
+}
+.news .tit strong {
+    color: var(--point-color);
+    font-weight: var(--bold-weight);
+}
+.news .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    color: var(--tit-font-color);
+    line-height: var(--tit-line-height);
+    margin: 12px 0 45px 0;
+}
+.news .list {
+    position: relative;
+    left: calc(50% - 630px);
+    width: calc(50% + 630px - 24px);
+}
+.news .list .swiper {
+    overflow: visible; /*hidden해제*/
+}
+.news .list .swiper-slide {
+    width: 404px;
+}
+.news .list .swiper-slide a {
+    display: block;
+}
+.news .list .swiper-slide a .data {
+    display: block;
+    font-size: var(--tit-font-size);
+    color: var(--tit-font-color);
+    line-height: var(--tit-line-height);
+    border-top: 1px solid var(--base-color);
+    padding: 9px 0 14px 0;
+    position: relative;
+}
+.news .list .swiper-slide a .data::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -3px;
+    width: 0;
+    height: 5px;
+    background-color: var(--point-color);
+}
+.news .list .swiper-slide a:hover .data::before {
+    width: 100%;
+}
+.news .list .swiper-slide a h3 {
+    font-size: 24px;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-font-color);
+    /*2줄 제한*/
+    height: 2.4em; /*행간 * 줄수 =em*/
+    overflow: hidden;
+    /*길어서 짤리면 뒤에 ... 추가*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /*줄수*/
+    word-break: normal; /*단어별줄바꿈 해제*/
+}
+.news .list .swiper-slide a p {
+    height: 4.5em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /*줄수*/
+    margin: 18px 0 18px 0;
+}
+.news .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 161px;
+}
+.news .list .swiper-slide a .photo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}

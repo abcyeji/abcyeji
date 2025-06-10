@@ -460,5 +460,8 @@ footer .copyright {
         width: 100%;
         max-width: 300px;
     }
+    footer .f_info span + span {
+    margin-left: 0; /*집에서 수정한부분..*/
+    }
     
 }
