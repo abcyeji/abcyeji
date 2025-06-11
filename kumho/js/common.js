@@ -32,6 +32,17 @@ $(window).resize(function(){ //브라우저가 리사이즈 될때마다 1번 �
 })
 
 $(document).ready(function(){ // 문서가 로딩되고 단 1번 실행
+    
+    
+    /*#####################TOP버튼을 클릭하면 상단으로 스크롤#########################*/
+    $('footer .top').on('click', function(){
+        // console.log('top버튼 눌렀다!!!!!!!!!!!')
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500)
+    })
+
+
     // console.log('로딩됐다~~~~')
     resize_chk() //함수의 실행
     scroll_chk()
