@@ -550,9 +550,6 @@
                         top: 8px;
                     }
                     
-                    .ctn_history .his_year_group .year_cont > *:last-child {
-                        position: relative; 
-                    }
                     .ctn_history .his_year_group .year_cont > *:last-child::before {
                         left: -28px;
                         bottom: -27px;
@@ -575,5 +572,187 @@
                         margin: 0;
                         font-size: 17px;
                         padding: 13px 23px 14px 23px;
+                    }
+}
+
+
+/**************홍보센터 - 금호뉴스 - 상담신청*********************/
+.ctn_notice {
+    margin: 28px 0 160px 0;
+}
+.ctn_notice h2 {
+    font-size: 35px;
+    font-weight: var(--bold-weight);
+    color: var(--tit-font-color);
+    line-height: var(--tit-line-height);
+    margin-bottom: 20px;
+}
+.ctn_notice .agree_box {
+    border: 1px solid #ccc;
+    padding: 20px 14px 15px 14px;
+    height: 275px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    word-break: normal;
+}
+.ctn_notice .agree_chk {
+    margin: 40px 0 99px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.ctn_notice .agree_chk .item input[type="radio"] {
+    display: none;
+}
+.ctn_notice .agree_chk .item label {
+    position: relative; /*before정렬의 기준*/
+    color: var(--tit-font-color);
+    font-size: 20px;
+    padding-left: 35px;
+    cursor: pointer; /*마우스 포인터 손가락*/
+}
+.ctn_notice .agree_chk .item label::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #1d1d1d;
+    border-radius: 50%;
+}
+    /*라디오가 체크되었을 때 label 디자인 */
+.ctn_notice .agree_chk .item input[type="radio"]:checked + label::before {
+    border: var(--point-color);
+    background-color: var(--point-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='11' viewBox='0 0 14 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.98522 10.0517L0.21875 5.2852L1.41037 4.09358L4.98522 7.66843L12.6576 -0.00390625L13.8492 1.18771L4.98522 10.0517Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.ctn_notice .regist {
+    border-top: 3px solid #1d1d1d;
+}
+.ctn_notice .regist .item {
+    border-bottom: 1px solid #DBDBDB;
+    display: flex;
+    gap: 36px;
+}
+.ctn_notice .regist .item label {
+    width: 235px;
+    /* max-width: 235px;
+    width: 25%; */
+    font-size: 20px;
+    font-weight: var(--bold-weight);
+    color: var(--tit-font-color);
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 28px 0 0 0;
+}
+.ctn_notice .regist .item select,
+.ctn_notice .regist .item input,
+.ctn_notice .regist .item textarea {
+    margin: 16px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 50px;
+    background-color: #f4f4f4;
+    padding: 10px 17px;
+}
+.ctn_notice .regist .item .w100 {
+    width: calc(100% - 269px - 42px);
+    /* min-width: calc(100% - 269px - 42px); */
+    /* width: calc(75% - 4.5em); ???*/
+}
+.ctn_notice .regist .item .w70 {
+    max-width: 477px;
+    width: calc(75% - 269px);
+}
+.ctn_notice .regist .item textarea {
+    resize: none;
+}
+.ctn_notice .regist .item input::placeholder {
+    color: #555;
+}
+.ctn_notice .btn_wrap {
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.ctn_notice .btn_wrap .cancle,
+.ctn_notice .btn_wrap .ok {
+    width: 126px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #fff;
+
+}
+.ctn_notice .btn_wrap .cancle {
+    background-color: #555;
+}
+.ctn_notice .btn_wrap .ok {
+    background-color: var(--point-color);
+}
+
+@media screen and (max-width:768px) {
+                    .ctn_notice {
+                        margin: 28px 0 72px 0;
+                    }
+                    .ctn_notice h2 {
+                        font-size: 25px;
+                        margin-bottom: 15px;
+                    }
+                    .ctn_notice .agree_box {
+                        height: 206px;
+                    }
+                    .ctn_notice .agree_chk {
+                        margin: 20px 0 55px 0;
+                        gap: 13px;
+                    }
+                    .ctn_notice .agree_chk .item label {
+                        font-size: 18px;
+                    }
+                    
+                    .ctn_notice .regist .item {
+                        border-bottom: 0;
+                        display: block;
+                    }
+                    .ctn_notice .regist .item label {
+                        width: auto;
+                        max-width: 100%;
+                        display: block;
+                        /* max-width: 235px;
+                        width: 25%; */
+                        font-size: 17px;
+                        text-align: left;
+                        background-color: transparent;
+                        padding: 24px 0 14px 0;
+                    }
+                    .ctn_notice .regist .item select,
+                    .ctn_notice .regist .item input,
+                    .ctn_notice .regist .item textarea {
+                        margin: 0;
+                        min-height: 43px;
+                    }
+                    .ctn_notice .regist .item .w100 {
+                        width: 100%;
+                        /* min-width: calc(100% - 269px - 42px); */
+                        /* width: calc(75% - 4.5em); ???*/
+                    }
+                    .ctn_notice .regist .item .w70 {
+                        max-width: 100%;
+                        width: 100%;
+                    }
+                    .ctn_notice .btn_wrap {
+                        margin: 20px 0 0 0;
+                    }
+                    .ctn_notice .btn_wrap .cancle,
+                    .ctn_notice .btn_wrap .ok {
+                        width: 100px;
+                        height: 36px;
+                        line-height: 36px;
+                        font-size: 17px;
                     }
 }
