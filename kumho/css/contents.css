@@ -152,24 +152,29 @@
     justify-content: space-between;
     padding: 80px 0 74px 0;
 }
-.ctn_map .map_inner h2 {
+.ctn_map .map_inner address {
     font-size: 30px;
     font-weight: var(--bold-weight);
     color: var(--tit-font-color);
 }
-.ctn_map .map_util {
-    display: flex;
+.ctn_map .map_inner .btn_wrap {
+    /* display: flex;
     justify-content: space-between;
+    gap: 10px; */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 아이콘과 글자 사이 여백 조절 */
+    padding: 8px 12px;
+    border-radius: 16px;
 }
-.ctn_map .map_util a {
+.ctn_map .map_inner .btn_wrap a {
     display: block;
     border: 1px solid #797979;  
     position: relative;
-    /**/
     padding: 10px 29px 14px 70px;
-    border-radius: 30px;
-    display: inline-block;
-    margin: 0 10px 0 0;  
+    border-radius: 30px;    
+    white-space: nowrap;
+
 }
 .ctn_map .map_util a span {
     font-size: 20px;
@@ -181,7 +186,7 @@
     background-repeat: no-repeat;
 } */
 /***/
-.ctn_map .map_util a.kakao::before {
+.ctn_map .btn_wrap a.kakao::before {
     content: "";
     position: absolute;
     width: 45px;
@@ -196,7 +201,7 @@
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='33' viewBox='0 0 24 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_219_738)'%3E%3Cpath d='M12.0017 0.00111823C18.6331 -0.00333239 23.9901 5.2048 24 11.6489C24.0045 14.5705 22.7756 17.0664 20.9234 19.1948C17.5454 23.0763 14.59 27.1634 12.9764 32.069C12.8306 32.5119 12.6137 33.0149 11.9901 32.9996C11.3118 32.9829 11.1295 32.4192 10.9685 31.9421C9.45422 27.4535 6.92435 23.5755 3.72745 20.0539C1.82714 17.9605 0.303194 15.5483 0.0474815 12.715C-0.575947 5.81009 5.01223 -0.093344 12.0017 0.00111823ZM7.92312 11.7593C7.9392 13.8912 9.86051 15.7561 12.0209 15.7369C14.1998 15.7176 16.0925 13.8465 16.084 11.7207C16.0756 9.59721 14.1541 7.73466 11.9814 7.74447C9.81283 7.7541 7.90722 9.63953 7.92312 11.7592V11.7593Z' fill='%23007DFD'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_219_738'%3E%3Crect width='24' height='33' fill='white' transform='matrix(-1 0 0 1 24 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
 
 }
-.ctn_map .map_util a.naver::before {
+.ctn_map .btn_wrap a.naver::before {
     content: "";
     position: absolute;
     width: 45px;
@@ -213,26 +218,35 @@
 
 .ctn_map .call {
     display: flex;
-    gap: 181px;
+    justify-content: space-between;
     border-top: 2px solid #797979;
     padding: 29px 0 ;
+    margin: 88px 0 0 0;
 }
 .ctn_map .call h2{
     font-size: 30px;
     font-weight: var(--bold-weight);
     color: var(--tit-font-color);
 }
-.ctn_map .call strong {
-    font-size: 30px;
+.ctn_map .call .inner {
+    width: 920px;
+}
+.ctn_map .call .inner .item {
+    display: flex;
+    justify-content: space-between;
+}
+.ctn_map .call .inner .item h3 {
+    font-size: 25px;
     font-weight: var(--bold-weight);
     color: var(--tit-font-color);
-    margin-right: 61px;
+
+}
+
+.ctn_map .call .inner .item p {
+    width: calc(100% - 136px);
 }
 .ctn_map .call span {
     display: inline-block;
-}
-.ctn_map .notice {
-    margin-left: 285px;
 }
 .ctn_map .notice a {
     display: inline-block;
