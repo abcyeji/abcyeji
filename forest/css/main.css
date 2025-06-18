@@ -3,9 +3,11 @@
 @import url(common.css);
 @import url(layout.css); 
 
+
 .visual .swiper {
     height: 100%;
     width: 100%;
+    height: 100dvh; /*화면의 높이에 꽉 맞게 */
 }
 .visual .swiper .swiper-slide .photo{
     overflow: hidden;
@@ -27,7 +29,7 @@
     text-align: center;
 }
 .visual .swiper .swiper-slide .visual_txt h3 {
-    font-size: 60px; /*var(--display-size)*/
+    font-size: var(--display-size);
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
     margin: 25px 0 10px 0;
@@ -38,61 +40,220 @@
     padding: 14px 48px;
     border-radius: 50px;
 }
-.visual .paging {
-    position: absolute;/*swiper를 기준으로 정렬*/
-    left: 50%;
-    bottom: 76px;
-    z-index: 10;
-    transform: translateX(-50%); /*좌우가운데*/
-    width: calc(100% - 40px);
-    max-width: 1260px;
-    color: #fff;
-    display: flex;
-}
- 
+@media screen and (min-width:769px) {
+        /******pc버전에서만 적용********/
+        .visual .paging {
+            position: absolute;/*swiper를 기준으로 정렬*/
+            left: 50%;
+            bottom: 7%;
+            z-index: 10;
+            transform: translateX(-50%); /*좌우가운데*/
+            width: calc(100% - 40px);
+            max-width: 1260px;
+            color: #fff;
+            display: flex;
+        }
+        
 
 
-.visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
-.visual .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0;
-}
-.visual .paging .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: transparent;
-}
-.visual .paging .swiper-pagination-bullet {
-    width: 25%;
-    height: auto;
-    display: block;
-    border-radius: 0;
-    background: transparent;
-    opacity: 1;
-    margin: 0;
-    text-align: center;
-    border-bottom: 5px solid rgba(255,255,255,0.2);
-    padding:  0 0 6px 0;
-    position: relative; /*before정렬의 기준*/
-}
-.visual .paging .swiper-pagination-bullet::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 5px;
-    background-color: #fff;
-}
-.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
-   animation-name: visual_paging;
-   animation-duration: 5s;
-   animation-iteration-count: 1; /*1번만 실행*/
-   animation-timing-function: linear; /*가속도 삭제*/
-   animation-fill-mode: forwards; /*마지막 100% 유지*/
-}
+        .visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+        .visual .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 0;
+        }
+        .visual .paging .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: transparent;
+        }
+        .visual .paging .swiper-pagination-bullet {
+            width: 25%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+            background: transparent;
+            opacity: 1;
+            margin: 0;
+            text-align: center;
+            border-bottom: 5px solid rgba(255,255,255,0.2);
+            padding:  0 0 6px 0;
+            position: relative; /*before정렬의 기준*/
+        }
+        .visual .paging .swiper-pagination-bullet::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 5px;
+            background-color: #fff;
+        }
+        .visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+        animation-name: visual_paging;
+        animation-duration: 5s;
+        animation-iteration-count: 1; /*1번만 실행*/
+        animation-timing-function: linear; /*가속도 삭제*/
+        animation-fill-mode: forwards; /*마지막 100% 유지*/
+        }
+}/*@media*/
+
 @keyframes visual_paging {
     0% { width: 0;}
     100% { width: 100%;}
 }
+
+@media screen and (max-width:768px) {
+                .visual .swiper {
+                    height: 600px;/*800*/
+                }
+                .visual .swiper .swiper-slide .visual_txt h3 {
+                    margin: 10px 0 5px 0;
+                }
+                .visual .swiper .swiper-slide .visual_txt h3 br {
+                    display: none;
+                }
+                .visual .swiper .swiper-slide .visual_txt a {
+                    padding: 10px 38px;
+                }
+                .visual .paging {
+                    position: absolute;/*swiper를 기준으로 정렬*/
+                    left: 50%;
+                    bottom: 30px;
+                    z-index: 10;
+                    transform: translateX(-50%); /*좌우가운데*/
+                    display: flex;
+                    width: auto;
+                    gap: 3px;
+                }
+                .visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+                .visual .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+                    margin: 0;
+                }
+                .visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active {
+                    opacity: 1;
+                    background: #fff;
+                    width: 35px;
+                }
+                .visual .paging .swiper-pagination-bullet {
+                    width: 10px;
+                    height: 7px;
+                    display: block;
+                    border-radius: 4px;
+                    background: rgba(255,255,255,0.5);
+                    opacity: 1;
+                    font-size: 0; /*글자없애기*/
+                    line-height: 0; /*글자없애기*/
+                    margin: 0;
+                }
+}/*@media*/
+
+
+
+.tree .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tree .tit h2 {
+    font-size: var(--display-size);
+    font-weight: var(--bold-weight);
+    color: var(--point-color);
+    line-height: var(--tit-line-height);
+    margin-bottom: 10px;
+}
+.tree .tit h2 strong {
+    position: relative; /*after정렬의 기준*/
+}
+.tree .tit h2 strong::after {
+    content: "+"; /*content안에 기호정도는 괜찮,,*/
+    position: absolute;
+    right: -25px;
+    top: -20px; /**/
+    font-size: 40px;
+}
+.tree .tit {
+    width: 40%;
+}
+.tree .tree_ani {
+    position: relative;/*꽃, 나뭇잎 정렬의 기준*/
+    max-width: 684px;
+    width: calc(100% - 321px);
+    width: 58%;
+    margin: 10% 0 0 0;
+}
+.tree .tree_ani .img_tree  {
+    width: 80%;
+    position: relative; /*z-index는 무조건 postion값이 있어야함*/
+}
+.tree .tree_ani .img_flower1{
+    position: absolute;
+    width: 11.40%;
+    right: 17%;
+    bottom: 10px;
+    animation: tree_flower 6s linear infinite;
+}
+.tree .tree_ani .img_flower2 {
+    position: absolute;
+    width: 14.47%;
+    right: 32px;
+    bottom: 6px;
+    animation: tree_flower 5s linear infinite;
+
+}
+.tree .tree_ani .img_leaf {
+    position: absolute;
+    left: -10%;
+    bottom: 26%;
+    width: 14.76%;
+    animation: tree_leaf 5s linear infinite;
+    
+}
+@keyframes tree_flower {
+    /*왔다갔다하는 반복되는 애니메이션은 0%, 100% 같아야함*/
+    0% { transform: scale(100%); }
+    50% { transform: scale(90%); }
+    100% { transform: scale(100%); }
+}
+
+@keyframes tree_leaf {
+    /*왔다갔다하는 반복되는 애니메이션은 0%, 100% 같아야함*/
+    0% { transform: scale(100%) translate(0,0); opacity: 1;}
+    50% { transform: scale(80%) translate(-50%, -20%); opacity: 0.8;}
+    100% { transform: scale(100%) translate(0,0); opacity: 1;}
+
+}
+
+@media screen and (max-width:768px) {
+                    .tree {
+                        margin: 130px 0 54px 0;
+                        text-align: center;
+                    }
+                    .tree .wrapper {
+                        display: block;
+                    }
+                    .tree .tit h2 {
+                        font-size: 2.5rem;
+                    }
+                    .tree .tit h2 strong::after {
+                        right: -15px;
+                        top: 0; /**/
+                        font-size: 20px;
+                    }
+                    .tree .tit p br {
+                        display: none;
+                    }
+                    .tree .tit {
+                        width: auto;
+                    }
+                    .tree .tree_ani {
+                        max-width: 500px; 
+                        width: 80%;
+                        margin: 40px auto 0 auto;
+                    }
+                    
+}
+
+
+
+
 
 
 #fp-nav.fp-left {
@@ -165,6 +326,11 @@
     width: auto;
     padding: 3px 5px;
     border-radius: 5px;
+}
+@media screen and (max-width:1024px) {
+    #fp-nav {
+        display: none !important; 
+    }
 }
 
 /***************배경이 흰색일때*********************/

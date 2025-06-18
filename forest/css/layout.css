@@ -6,7 +6,7 @@ header {
     z-index: 100;
     padding: 0 20px;
     height: var(--header-h);
-    border: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
     display: flex; /*logo gnb util 좌우로 배치*/
     justify-content: space-between;
     align-items: center;
@@ -62,7 +62,7 @@ header .logo a {
 
                 /****************배경이 흰색이 되었을 때**********************/
                 body.bg_white header {
-                    border: 1px solid #ccc;
+                    border-bottom: 1px solid #ededed;
                 }
                 body.bg_white header .logo a {
                     background-image: url(../images/common/logo.png);
