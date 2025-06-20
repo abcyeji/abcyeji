@@ -1,0 +1,181 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+.visual {
+    height: 800px;
+    background: url(../images/inter_img01.jpg) no-repeat center center /cover;
+}
+.slogan {
+    margin: 153px 0 128px 0;
+}
+.slogan .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.slogan p {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ccc;
+    position: relative; /*span 정렬의 기준*/
+    white-space: nowrap; /*줄바꿈 금지*/
+
+}
+.slogan p span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #10A53A;
+    width: 0;
+    overflow: hidden;
+}
+@media screen and (max-width:768px) {
+                .slogan p {
+                    font-size: 30px;
+                }
+}
+
+
+.banner {
+    display: flex;
+    justify-content: center;
+}
+.banner .photo {
+    overflow: hidden;
+    height: 354px;
+    width: 50%;
+    transition: 0.2s;
+}
+.banner .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.life {
+    padding: 137px 0 255px 0;
+    transition: 0.5s;
+}
+.life h2 {
+    color: #1d1d1d;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 28px;
+    transition: 0.5s;
+}
+.life.dark {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+.life.dark h2 {
+    color: #fff;
+}
+
+.fixed_bg {
+    margin: 100px 0;
+    height: 500px;
+    background-image: url(../images/inter_img04.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+.fixed_bg h2 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 100px 0 0 0;
+}
+
+
+
+.medi {
+    margin: 50px 20px 100px 20px;
+}
+.medi .bg {
+    height: 659px;
+    background: url(../images/inter_img03.jpg) no-repeat center center /cover;
+    clip-path: path('M1 580.5L46 214.5L1326 1.5V285L1162 714L1005 327.5L794 698L536 440L393 658L264 440L1 580.5Z');
+
+}
+.medi .photo {
+    overflow: hidden;
+    height: 659px;
+    border-radius: 40px;
+    position: relative; /*h2정렬의 기준*/
+}
+.medi .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.medi .photo h2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    padding: 10px 20px 10px 20px;
+    border-radius: 0 40px 0 0;
+}
+.medi .photo h2::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    background: url(../images/inter_corner.png) no-repeat left bottom / contain;
+}
+.medi .photo h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -40px;
+    width: 40px;
+    height: 40px;
+    background: url(../images/inter_corner.png) no-repeat left bottom / contain;
+}
+@media screen and (max-width:768px) {
+                .medi .photo {
+                    height: 300px;
+                    border-radius: 20px;
+                }
+                .medi .photo h2 {
+                    font-size: 30px;
+                    padding: 5px 10px 5px 10px;
+                    border-radius: 0 20px 0 0;
+                }
+                .medi .photo h2::after {
+                    right: -20px;
+                    width: 20px;
+                    height: 20px;
+                }
+                .medi .photo h2::before {
+                    top: -20px;
+                    width: 20px;
+                    height: 20px;
+                }
+}
+
+.icon {
+    margin: 50px 0 500px 0;
+    text-align: center;
+}
+.icon button {
+    width: 150px;
+    height: 150px;
+    background-color: #555;
+    mask-image: url("data:image/svg+xml,%3Csvg width='94' height='94' viewBox='0 0 94 94' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_6_24' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='94' height='94'%3E%3Crect width='93.9624' height='93.9624' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_6_24)'%3E%3Cpath d='M3.9151 33.1805C3.9151 27.0469 5.97053 21.9409 10.0814 17.8627C14.1922 13.7845 19.3145 11.7454 25.4482 11.7454C28.8412 11.7454 32.0712 12.4631 35.138 13.8987C38.2049 15.3342 40.8475 17.357 43.0661 19.9671C45.2847 17.357 47.9274 15.3342 50.9942 13.8987C54.061 12.4631 57.291 11.7454 60.6841 11.7454C65.3169 11.7454 69.2973 12.9036 72.6251 15.22C75.9529 17.5364 78.4651 20.5217 80.1617 24.1758C80.6184 25.1546 80.6511 26.1497 80.2596 27.1611C79.868 28.1725 79.1829 28.9065 78.2041 29.3633C77.2254 29.8201 76.2303 29.8527 75.2189 29.4612C74.2075 29.0697 73.4734 28.3845 73.0166 27.4058C71.8421 24.7957 70.1129 22.8381 67.8291 21.5331C65.5453 20.2281 63.1636 19.5756 60.6841 19.5756C57.6825 19.5756 54.9419 20.4238 52.4623 22.1204C49.9828 23.8169 47.8295 25.905 46.0024 28.3845C45.6762 28.9065 45.252 29.2817 44.73 29.5101C44.208 29.7385 43.6534 29.8527 43.0661 29.8527C42.4788 29.8527 41.9242 29.7222 41.4022 29.4612C40.8802 29.2002 40.456 28.8413 40.1298 28.3845C38.3027 25.905 36.1494 23.8169 33.6699 22.1204C31.1903 20.4238 28.4497 19.5756 25.4482 19.5756C21.7288 19.5756 18.5152 20.8643 15.8072 23.4417C13.0993 26.0192 11.7453 29.2654 11.7453 33.1805C11.7453 35.3338 12.2021 37.5198 13.1156 39.7383C14.0291 41.9569 15.6604 44.518 18.0095 47.4217C20.3585 50.3254 23.5559 53.7185 27.6015 57.601C31.6471 61.4834 36.8019 66.1653 43.0661 71.6464L51.7772 64.0119C52.5602 63.2942 53.4737 62.9679 54.5178 63.0332C55.5618 63.0984 56.4427 63.4899 57.1605 64.2077C57.9435 64.9907 58.3187 65.9532 58.2861 67.0951C58.2534 68.237 57.813 69.1668 56.9647 69.8846L48.2536 77.6169C47.5358 78.2694 46.7202 78.7588 45.8067 79.0851C44.8931 79.4113 43.9796 79.5745 43.0661 79.5745C42.1526 79.5745 41.2391 79.4113 40.3255 79.0851C39.412 78.7588 38.5964 78.2368 37.8786 77.519C34.9423 74.909 31.5329 71.94 27.6504 68.6122C23.7679 65.2844 20.0649 61.7118 16.5413 57.8946C13.0177 54.0774 10.0324 50.0807 7.58551 45.9046C5.13857 41.7285 3.9151 37.4871 3.9151 33.1805ZM70.4718 54.8115H62.6416C61.5323 54.8115 60.6025 54.4363 59.8521 53.6859C59.1017 52.9355 58.7265 52.0056 58.7265 50.8964C58.7265 49.7871 59.1017 48.8572 59.8521 48.1069C60.6025 47.3565 61.5323 46.9813 62.6416 46.9813H70.4718V39.1511C70.4718 38.0418 70.847 37.1119 71.5974 36.3616C72.3478 35.6112 73.2776 35.236 74.3869 35.236C75.4962 35.236 76.426 35.6112 77.1764 36.3616C77.9268 37.1119 78.302 38.0418 78.302 39.1511V46.9813H86.1322C87.2415 46.9813 88.1713 47.3565 88.9217 48.1069C89.6721 48.8572 90.0473 49.7871 90.0473 50.8964C90.0473 52.0056 89.6721 52.9355 88.9217 53.6859C88.1713 54.4363 87.2415 54.8115 86.1322 54.8115H78.302V62.6417C78.302 63.7509 77.9268 64.6808 77.1764 65.4312C76.426 66.1816 75.4962 66.5568 74.3869 66.5568C73.2776 66.5568 72.3478 66.1816 71.5974 65.4312C70.847 64.6808 70.4718 63.7509 70.4718 62.6417V54.8115Z' fill='%231C1B1F'/%3E%3C/g%3E%3C/svg%3E%0A");
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+}
+.icon button:hover {
+    background-color: #10A53A;
+}
