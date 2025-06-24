@@ -3,7 +3,57 @@
 @import url(default.css);
 
 
-.visual h1 {
-    font-size: 45px;
-    font-weight: 700;
+.visual .swiper-slide {
+    height: 1000px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/visual01.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/visual02.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/visual03.jpg);
+}
+.visual .swiper-slide h3{
+    font-size: 3.53rem; /*60/17=3.53*/
+    font-weight: var(--tit-line-height);
+    text-align: center;
+    margin: 417px 0 0 0;
+}
+.visual .paging {
+    position: absolute;/*swiper기준으로 정렬*/
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    z-index: 10;
+    display: flex;/*span태그 좌우 배치*/
+    justify-content: center;/*가운데*/
+    gap: 5px; /*동그라미 사이사이 간격*/
+
+}
+.visual .paging .swiper-pagination-bullet { /*동그라미 기본 스타일*/
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 0;
+    background: none;
+    opacity: 1;
+}
+.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active { 
+    /*현재 팝업 동그라미*/
+    background-color: #fff;
+
+}
+.visual .btn_prev {
+    display: none;
+}
+.visual .btn_next {
+    display: none;
 }

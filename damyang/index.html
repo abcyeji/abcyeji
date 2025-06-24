@@ -3,17 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- jquery 라이브러리 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!--swiper 라이브러리-->
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <title>담양 리조트</title>
 </head>
 <body>
+    <header></header>
     <div id="wrap">
-        <section class="visual">
-            <div class="wrapper">
-                <h1>담양온천 & 관광호텔 자연이 중심이 된 ‘담양리조트’<br>Don’t wait for guests visit the Damyang Resort</h1>
-                <p>자연과 인간의 만남을 주제로 설계된 담양리조트는 광주에서 약 20분, 담양 IC에서 약 10분대의 거리에 위치하고 있으며, 약 165,000㎡의 넓은 대지에 여러가지 야외행사를 할 수 있는 야외광장과 72,600㎡의 수목원과 소류지, 이벤트 광장, 그리고 약 300여대 동시주차가 가능한 주차장을 확보하고 있어서 온천리조트로서의 진면목을 갖추고 있습니다.</p>
-            </div>
-        </section>
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide popup1">
+                            <h3>Breathe in the Calm, Stay in the Green</h3>
+                        </li>
+                        <li class="swiper-slide popup2">
+                            <h3>Where Nature Meets Tranquility</h3>
+                        </li>
+                        <li class="swiper-slide popup3">
+                            <h3>Breathe Deep, Stay Slow, Feel Damyang</h3>
+                        </li>
+                    </ul>
+                    <div class="paging"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <button class="btn_prev"><span class="blind">이전팝업보기</span></button>
+                    <button class="btn_next"><span class="blind">다음팝업보기</span></button>
+                </div>
+                <div class="reservation">
+                    <div class="reser_chk_in">
+                        <a href="#">Check-in
+                        <span>날짜선택</span></a>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 </body>
 </html>
