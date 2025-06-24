@@ -1,0 +1,9 @@
+@import url(common.css);
+@import url(font.css);
+@import url(default.css);
+
+
+.visual h1 {
+    font-size: 45px;
+    font-weight: 700;
+}
