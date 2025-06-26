@@ -1,6 +1,7 @@
 @import url(common.css);
 @import url(font.css);
 @import url(default.css);
+@import url(layout.css);
 
 .visual {
     position: relative;
@@ -131,46 +132,41 @@
     margin: 0 0 0 40px
 }
 
-.event {
+
+.event_pro {
     margin: 159px 0 128px 0;
 }
-.event .wrapper {
+.event_pro .wrapper {
     position: relative;
 }
-.event .tit h2 {
+.event_pro .tit h2 {
+    margin: 0 0 13px 0;
     font-size: var(--tit-font-size);
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
     color: var(--tit-font-color);
-    margin: 0 0 13px 0;
 }
-.event .list {
+.event_pro .list {
     margin: 20px 0 0 0;
 }
-.event .list > ul {
-    display: flex;
-    justify-content: space-between;
-}
-.event .list > ul > li {
-    width: calc(33.33% - 16px); 
-}
-.event .list > ul > li> a {
+.event_pro .list ul li a {
     display: block;
 }
-.event .list > ul > li > a .photo {
-    height: 307px;
+.event_pro .list ul li a .photo {
     overflow: hidden;
+    height: 307px;
 }
-.event .list > ul > li > a .photo img {
+.event_pro .list ul li a .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.5s;
 }
-.event .list > ul > li > a:hover .photo img {
+.event_pro .list ul li a:hover .photo img {
     transform: scale3d(1.2, 1.2, 1); /*마우스오버시 확대*/
 }
-.event .list > ul > li > a h3 {
+
+.event_pro .list ul li a h3 {
     font-size: var(--sub-font-size);
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
@@ -178,153 +174,131 @@
     margin: 38px 0 13px 0;
     white-space: nowrap;
 }
-.event .list > ul > li > a p {
-    margin: 0 0 26px 0;
+.event_pro .list ul li a p {
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 26px 0;
     /* 1줄 제한*/
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.event .list > ul > li > a ul.sub_tit {
-    border-top: 1px solid #ccc;
-    padding: 20px 0 0 0;
+.event_pro .list ul li a .sub_tit {
+    margin: 21px 0 0 0;
 }
-.event .list > ul > li > a ul.sub_tit li {
-    display: flex;
-    gap: 24px;
-    line-height: 1.8;
+.event_pro .list ul li a > ul > li {
+    margin: 0 0 10px 0;
 }
-.event .list > ul > li > a ul.sub_tit li strong {
+.event_pro .list ul li a > ul > li > strong {
     font-weight: var(--bold-weight);
     color: var(--tit-font-color);
+    margin: 0 24px 0 0;
 }
-.event .more {
+.event_pro .more {
     position: absolute;
     right: 0;
     top: 53px;
     padding: 11px 20px 8px 18px;
 }
-.event .more::after {
+.event_pro .more::after {
     content: "";
     position: absolute;
     right: 0;
-    top: 17px;
-    width: 15px;
-    height: 15px;
+    top: 15px;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.875 12.125V7.125H0.875V5.875H5.875V0.875H7.125V5.875H12.125V7.125H7.125V12.125H5.875Z' fill='%23555555'/%3E%3C/svg%3E%0A");
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.875 12.125V7.125H0.875V5.875H5.875V0.875H7.125V5.875H12.125V7.125H7.125V12.125H5.875Z' fill='%23555555'/%3E%3C/svg%3E%0A");
 }
-.event .more:hover {
-    color: var(--point-color);
-    /* border-bottom: 1px solid var(--point-color); */
+
+@media screen and (max-width:768px) {
+                    .event_pro {
+                        margin: 67px 0 67px 0;
+                    }
+                    .event_pro .tit h2 {
+                        margin: 0 0 24px 0;
+                    }
+                    .event_pro .tit p {
+                        display: none;
+                    }
+                    .event_pro .list {
+                        margin: 24px 0 0 0;
+                    }
+                    .event_pro .list ul li a .photo {
+                        height: 190px;
+                    }
+                    .event_pro .list ul li a h3 {
+                        margin: 24px 0 10px 0;
+                    }
+                    .event_pro .list ul li a p {
+                        padding: 0 0 20px 0;
+                    }
+                    .event_pro .list ul li a .sub_tit {
+                        margin: 18px 0 0 0;
+                    }
+                    .event_pro .list ul li a > ul > li > strong {
+                        margin: 0 20px 0 0;
+                    }
+                    .event_pro .more {
+                        display: none;
+                    }                    
+}
+
+.rest .tit h2 {
+    margin: 0 0 13px 0;
+    font-size: var(--tit-font-size);
     font-weight: var(--bold-weight);
-    width: 113px;
+    line-height: var(--tit-line-height);
+    color: var(--tit-font-color);
 }
-.event .more:hover::after {
-    background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.875 12.125V7.125H0.875V5.875H5.875V0.875H7.125V5.875H12.125V7.125H7.125V12.125H5.875Z' fill='%23896447'/%3E%3C/svg%3E%0A");
+.rest .tit p {
+    margin: 0 0 24px 0;
 }
-
-
-@media screen and (max-width:1024px) {
-    
-                            .event {
-                                margin: 159px 0 128px 0;
-                            }
-                            .event .wrapper {
-                                position: relative;
-                            }
-                            .event .tit h2 {
-                                font-size: var(--tit-font-size);
-                                font-weight: var(--bold-weight);
-                                line-height: var(--tit-line-height);
-                                color: var(--tit-font-color);
-                                margin: 0 0 13px 0;
-                            }
-                            .event .list {
-                                margin: 20px 0 0 0;
-                            }
-                            .event .list > ul {
-                                display: flex;
-                                justify-content: space-between;
-                            }
-                            .event .list > ul > li {
-                                width: calc(33.33% - 16px); 
-                            }
-                            .event .list > ul > li> a {
-                                display: block;
-                            }
-                            .event .list > ul > li > a .photo {
-                                height: 307px;
-                                overflow: hidden;
-                            }
-                            .event .list > ul > li > a .photo img {
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                                transition: 0.5s;
-                            }
-                            .event .list > ul > li > a:hover .photo img {
-                                transform: scale3d(1.2, 1.2, 1); /*마우스오버시 확대*/
-                            }
-                            .event .list > ul > li > a h3 {
-                                font-size: var(--sub-font-size);
-                                font-weight: var(--bold-weight);
-                                line-height: var(--tit-line-height);
-                                color: var(--tit-font-color);
-                                margin: 38px 0 13px 0;
-                                white-space: nowrap;
-                            }
-                            .event .list > ul > li > a p {
-                                margin: 0 0 26px 0;
-                                /* 1줄 제한*/
-                                white-space: nowrap;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                            }
-                            .event .list > ul > li > a ul.sub_tit {
-                                border-top: 1px solid #ccc;
-                                padding: 20px 0 0 0;
-                            }
-                            .event .list > ul > li > a ul.sub_tit li {
-                                display: flex;
-                                gap: 24px;
-                                line-height: 1.8;
-                            }
-                            .event .list > ul > li > a ul.sub_tit li strong {
-                                font-weight: var(--bold-weight);
-                                color: var(--tit-font-color);
-                            }
-                            .event .more {
-                                position: absolute;
-                                right: 0;
-                                top: 53px;
-                                padding: 11px 20px 8px 18px;
-                            }
-                            .event .more::after {
-                                content: "";
-                                position: absolute;
-                                right: 0;
-                                top: 17px;
-                                width: 15px;
-                                height: 15px;
-                                background-position: center center;
-                                background-repeat: no-repeat;
-                                background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.875 12.125V7.125H0.875V5.875H5.875V0.875H7.125V5.875H12.125V7.125H7.125V12.125H5.875Z' fill='%23555555'/%3E%3C/svg%3E%0A");
-                            }
-                            .event .more:hover {
-                                color: var(--point-color);
-                                /* border-bottom: 1px solid var(--point-color); */
-                                font-weight: var(--bold-weight);
-                                width: 113px;
-                            }
-                            .event .more:hover::after {
-                                background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.875 12.125V7.125H0.875V5.875H5.875V0.875H7.125V5.875H12.125V7.125H7.125V12.125H5.875Z' fill='%23896447'/%3E%3C/svg%3E%0A");
-                            }
-
+.rest .room ul li .photo {
+    height: 650px;
+}
+.rest .room ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.rest .room ul li .photo .inner {
+    position: absolute;
+    right: 10%;
+    top: 117px;
+    width: 430px;
+    height: 430px;
+    background-color: rgba(255,255,255,0.8);
+    text-align: center;
+}
+.rest .room ul li .photo .inner h3 {
+    margin: 44px 0 21px 0;
+}
+.rest .room ul li .photo .inner strong {
+    font-size: var(--sub-font-size);
+    font-weight: var(--bold-weight);
+    color: var(--point-color);
+    display: block;
+}
+.rest .room ul li .photo .inner span {
+    display: block;
+    font-size: var(--sub-font-size);
+    color: var(--point-color);
+    padding: 3px 0 19px 0;
+}
+.rest .room ul li .photo .inner p.room_tit {
+    font-weight: var(--bold-weight);
+    color: var(--tit-font-color);
+    margin: 0 0 21px 0;
+}
+.rest .room ul li .photo .inner p {
+    margin: 0 0 26px 0;
 }
 
 
+
+
+/****************************/
 
 
 footer {

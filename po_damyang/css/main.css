@@ -1,0 +1,160 @@
+@import url(common.css);
+@import url(font.css);
+@import url(default.css);
+
+.visual {
+    position: relative;
+}
+.visual .swiper-slide {
+    height: 1000px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/visual01.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/visual02.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/visual03.jpg);
+}
+
+
+
+
+
+/***************************************************************************/
+
+.event {
+    margin: 159px 0 128px 0;
+}
+.event .wrapper {
+    position: relative;
+}
+.event .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-font-color);
+    margin: 0 0 13px 0;
+}
+.event .list {
+    margin: 20px 0 0 0;
+}
+.event .list > ul {
+    display: flex;
+    justify-content: space-between;
+}
+.event .list > ul > li {
+    width: calc(33.33% - 16px); 
+}
+.event .list > ul > li> a {
+    display: block;
+}
+.event .list > ul > li > a .photo {
+    height: 307px;
+    overflow: hidden;
+}
+.event .list > ul > li > a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.event .list > ul > li > a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1); /*마우스오버시 확대*/
+}
+.event .list > ul > li > a h3 {
+    font-size: var(--sub-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-font-color);
+    margin: 38px 0 13px 0;
+    white-space: nowrap;
+}
+.event .list > ul > li > a p {
+    margin: 0 0 26px 0;
+    /* 1줄 제한*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.event .list > ul > li > a ul.sub_tit {
+    border-top: 1px solid #ccc;
+    padding: 20px 0 0 0;
+}
+.event .list > ul > li > a ul.sub_tit li {
+    display: flex;
+    gap: 24px;
+    line-height: 1.8;
+}
+.event .list > ul > li > a ul.sub_tit li strong {
+    font-weight: var(--bold-weight);
+    color: var(--tit-font-color);
+}
+.event .more {
+    position: absolute;
+    right: 0;
+    top: 53px;
+    padding: 11px 20px 8px 18px;
+}
+.event .more::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 17px;
+    width: 15px;
+    height: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.875 12.125V7.125H0.875V5.875H5.875V0.875H7.125V5.875H12.125V7.125H7.125V12.125H5.875Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+}
+.event .more:hover {
+    color: var(--point-color);
+    /* border-bottom: 1px solid var(--point-color); */
+    font-weight: var(--bold-weight);
+    width: 113px;
+}
+.event .more:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.875 12.125V7.125H0.875V5.875H5.875V0.875H7.125V5.875H12.125V7.125H7.125V12.125H5.875Z' fill='%23896447'/%3E%3C/svg%3E%0A");
+}
+
+
+@media screen and (max-width:768px) {
+    
+                            .event {
+                                margin: 67px 0 ;
+                            }
+                            .event .tit h2 {
+                                margin: 0 0 12px 0;
+                            }
+                            .event .tit p {
+                                display: none;
+                            }
+                            .event .list {
+                                margin: 10px 0 0 0;
+                            }
+                            .event .list > ul > li {
+                                width: calc(100% - 12px); 
+                            }
+                            .event .list > ul > li > a .photo {
+                                height: 190px;/**/
+                                overflow: hidden;
+                            }
+                            .event .list > ul > li > a h3 {
+                                margin: 24px 0 10px 0;
+                                white-space: nowrap;
+                            }
+                            .event .list > ul > li > a p {
+                                margin: 0 0 24px 0;
+                            }
+                            .event .list > ul > li > a ul.sub_tit {
+                                padding: 18px 0 0 0;
+                            }
+                            .event .more {
+                                display: none;
+                            }
+}

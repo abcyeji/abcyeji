@@ -6,18 +6,73 @@
     
     <!-- jquery 라이브러리 -->
     <script src="js/jquery-3.7.1.min.js"></script>
-
     <!--swiper 라이브러리-->
+
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
-    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
+
     <title>담양 리조트</title>
 </head>
 <body>
-    <header></header>
     <div id="wrap">
+        <header class="">
+            <h1 class="logo"><a href="index.html"><span class="blind">담양리조트</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span>메뉴열기</span></button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <li class="">
+                            <a href="#"><span>ROOM</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>Western-style</span></a></li>
+                                <li><a href="#"><span>Korean-style</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>OFFERS</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>event</span></a></li>
+                                <li><a href="#"><span>promotion</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>DINING</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>GROVE TABLE</span></a></li>
+                                <li><a href="#"><span>ARTPIA CAFE</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>FACILITIES</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>MEETING</span></a></li>
+                                <li><a href="#"><span>BANQUET</span></a></li>
+                                <li><a href="#"><span>WEDDING</span></a></li>
+                                <li><a href="#"><span>SERVICE</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>ABOUT</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>ABOUT ILLUA</span></a></li>
+                                <li><a href="#"><span>NOTICE</span></a></li>
+                                <li><a href="#"><span>CONTACT</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+            </nav>
+            <div class="util">
+                <div class="lang">
+                    <button class="lang_open"><span class="blind">언어선택</span></button>
+                </div>
+            </div>
+        </header>
         <main class="container">
             <section class="visual">
                 <h2 class="blind">팝업</h2>
@@ -60,72 +115,165 @@
                     </div>
                 </div>
             </section>
-            <section class="event">
+            <section class="event_pro">
                 <div class="wrapper">
                     <div class="tit">
                         <h2>Event & Promotion</h2>
                         <p>호텔인터시티에서 진행되는 다양한 이벤트를 소개합니다.</p>
                     </div>
                     <div class="list">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <div class="photo"><img src="images/event01.jpg" alt="풀장 간식사진"></div>
-                                    <h3>300만 돌파기념 이벤트</h3>
-                                    <p>담양리조트 신규 가입하고 행운의 주인공이 되어보세요!</p>
-                                    <ul class="sub_tit">
-                                        <li>
-                                            <strong>예약기간</strong>
-                                            <span>2025.01.01~ 2025.02.28</span>
-                                        </li>
-                                        <li>
-                                            <strong>투숙기간</strong>
-                                            <span>2025.02.28~ 2025.12.31</span>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="photo"><img src="images/event02.jpg" alt="골프장 사진"></div>
-                                    <h3>숙박고객 파크골프장 무료이용</h3>
-                                    <p>하룻밤의 휴식, 무료 파크골프로 완성하세요.</p>
-                                    <ul class="sub_tit">
-                                        <li>
-                                            <strong>예약기간</strong>
-                                            <span>2025.01.01~ 2025.12.31</span>
-                                        </li>
-                                        <li>
-                                            <strong>투숙기간</strong>
-                                            <span>2025.01.01~ 2025.12.31</span>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="photo"><img src="images/event03.jpg" alt="음식사진"></div>
-                                    <h3>특별한 날을 위한 시즌 이벤트</h3>
-                                    <p>담양리조트가 추천하는 국내에 숨겨진여행지를 방문해보세요.</p>
-                                    <ul class="sub_tit">
-                                        <li>
-                                            <strong>예약기간</strong>
-                                            <span>2025.01.01~ 2025.12.31</span>
-                                        </li>
-                                        <li>
-                                            <strong>투숙기간</strong>
-                                            <span> 2025.01.01~ 2025.12.31</span>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/event01.jpg" alt=""></div>
+                                        <h3>300만 돌파기념 이벤트</h3>
+                                        <p>담양리조트 신규 가입하고 행운의 주인공이 되어보세요!</p>
+                                        <ul class="sub_tit">
+                                            <li>
+                                                <strong>예약기간</strong>
+                                                <span>2025.01.01~ 2025.02.28</span>
+                                            </li>
+                                            <li>
+                                                <strong>투숙기간</strong>
+                                                <span>2025.02.28~ 2025.12.31</span>
+                                            </li>
+                                        </ul>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/event02.jpg" alt=""></div>
+                                        <h3>숙박고객 파크골프장 무료이용</h3>
+                                        <p>하룻밤의 휴식, 무료 파크골프로 완성하세요.</p>
+                                        <ul class="sub_tit">
+                                            <li>
+                                                <strong>예약기간</strong>
+                                                <span>2025.01.01~ 2025.12.31</span>
+                                            </li>
+                                            <li>
+                                                <strong>투숙기간</strong>
+                                                <span>2025.01.01~ 2025.12.31</span>
+                                            </li>
+                                        </ul>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/event03.jpg" alt=""></div>
+                                        <h3>특별한 날을 위한 시즌 이벤트</h3>
+                                        <p>담양리조트가 추천하는 국내에 숨겨진여행지를 방문해보세요.</p>
+                                        <ul class="sub_tit">
+                                            <li>
+                                                <strong>예약기간</strong>
+                                                <span>2025.01.01~ 2025.12.31</span>
+                                            </li>
+                                            <li>
+                                                <strong>투숙기간</strong>
+                                                <span> 2025.01.01~ 2025.12.31</span>
+                                            </li>
+                                        </ul>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <a href="#" class="more">view more</a>
                 </div>
-                
+            </section>
+            <section class="rest">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>The best rest</h2>
+                        <p>담양리조트만이 드릴 수 있는 편안함과 재충전 공간을 경험해보세요.</p>
+                    </div>
+                </div> 
+                <div class="room">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/room01.jpg" alt="">
+                                    <div class="wrapper">
+                                        <div class="inner">
+                                            <h3>Hotel</h3>
+                                            <strong>디럭스 양실</strong>
+                                            <span>Western-style Room</span>
+                                            <p class="room_tit">더블</p>
+                                            <p>현대적 감각의 하이디럭스 룸.<br>카키와 그레이 컬러가 조화로운 고급스러운 인테리어의<br>객실에서는 최상의 휴식을 즐기실 수 있습니다.</p>
+                                            <a href="#" class="more">view more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> 
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/room02.jpg" alt="">
+                                    <div class="wrapper">
+                                        <div class="inner">
+                                            <h3>Hotel</h3>
+                                            <strong>스텐다드 양실</strong>
+                                            <span>Western-style Room</span>
+                                            <p class="room_tit">더블</p>
+                                            <p>현대적 감각의 하이디럭스 룸.<br>블루와 우드의 조합이 조화롭고 고급스러운 인테리어의<br>객실에서는 최상의 휴식을 즐기실 수 있습니다.</p>
+                                            <a href="#" class="more">view more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> 
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/room03.jpg" alt="">
+                                    <div class="wrapper">
+                                        <div class="inner">
+                                            <h3>Hotel</h3>
+                                            <strong>디럭스 한실</strong>
+                                            <span>Korean-style Room</span>
+                                            <p class="room_tit">더블</p>
+                                            <p>고풍스럽고 넉넉한 한국 전통 룸.<br>모던풍의 편안한 분위기의 디럭스 룸에서는 내 집 같이<br>편안하고 여유로운 휴식을 느낄 수 있습니다.</p>
+                                            <a href="#" class="more">view more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> 
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/room04.jpg" alt="">
+                                    <div class="wrapper">
+                                        <div class="inner">
+                                            <h3>Hotel</h3>
+                                            <strong>스텐다드 한실</strong>
+                                            <span>Korean-style Room</span>
+                                            <p class="room_tit">더블</p>
+                                            <p>고풍스럽고 넉넉한 한국 전통 온돌 룸.<br>한국 고유의 분위기를 즐길 수 있으며,특히 온돌형 더블<br>은 한국의 전통적인 분위기와 웨스턴 스타일의 편안함을<br>함께 누릴 수 있는 타입의 객실입니다.</p>
+                                            <a href="#" class="more">view more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> 
+                        </ul>
+                        <div class="swiper-pagination"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                        <button class="swiper-button-prev"></button>
+                        <button class="swiper-button-next"></button>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
 
             </section>
+
+
+
+
+
+
+
+
         </main>
     </div>
 </body>
