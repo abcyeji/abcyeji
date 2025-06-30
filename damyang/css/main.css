@@ -3,9 +3,6 @@
 @import url(default.css);
 @import url(layout.css);
 
-.visual {
-    position: relative;
-}
 
 .visual .swiper-slide {
     height: 1000px;
@@ -45,7 +42,6 @@
     width: 10px;
     height: 10px;
     border: 1px solid rgba(255,255,255,0.2);
-    /* border-radius: 50%; */
     margin: 0;
     background: none;
     opacity: 1;
@@ -60,7 +56,6 @@
     display: none;
 }
 .visual .reservation {
-    
     position: absolute;
     left: 50%;
     bottom: 118px;
@@ -140,7 +135,7 @@
                 .visual .swiper-slide {
                     height: 800px;
                 }
-                .visual .swiper-slide h3{/*여기까진완료*/
+                .visual .swiper-slide h3{
                     font-size: var(--tit-font-size);
                     margin: 324px 0 0 0;
                 }
@@ -151,18 +146,14 @@
                     text-align: center;
                     gap: 5px;
                 }
-                .visual .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet { /*동그라미 기본 스타일*/
-                    background-color: rgba(255,255,255,0.5);
-                    border-radius: 0;
-                }
-                .visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active { 
-                    background-color: var(--point-color);
+                .visual .paging {
+                    display: none;
                 }
                 .visual .reservation {
                     display: none;
                 }
-                
                 .visual .m_reservation {
+                    position: relative;
                     display: block;
                     color: #fff;
                     align-items: center;
@@ -170,15 +161,13 @@
                 .visual .m_reservation a {
                     position: absolute;
                     content: "";
-                    left: 0;
+                    left: 50%;
                     bottom: 304px;
                     z-index: 5;
                     border: 1px solid #fff;
                     padding: 14px 27px;
-                }
-
-
-                
+                    transform: translateX(-50%);
+                }    
 }
 
 
@@ -212,9 +201,8 @@
     transition: 0.5s;
 }
 .event_pro .list ul li a:hover .photo img {
-    transform: scale3d(1.2, 1.2, 1); /*마우스오버시 확대*/
+    transform: scale3d(1.2, 1.2, 1); /*확대*/
 }
-
 .event_pro .list ul li a h3 {
     font-size: var(--sub-font-size);
     font-weight: var(--bold-weight);
@@ -293,6 +281,7 @@
                     }                    
 }
 
+
 .rest .tit h2 {
     margin: 0 0 13px 0;
     font-size: var(--tit-font-size);
@@ -302,6 +291,9 @@
 }
 .rest .tit p {
     margin: 0 0 24px 0;
+}
+.rest .list {
+    position: relative; /*버튼정렬기준*/
 }
 .rest .list ul {
     height: 650px;
@@ -339,72 +331,46 @@
     font-size: var(--sub-font-size);
     display: block;
 }
-
-
-/* .rest .room ul li .photo {
-    height: 650px;
-}
-.rest .room ul li .photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.rest .room ul li .photo .inner {
-    position: absolute;
-    right: 10%;
-    top: 117px;
-    width: 430px;
-    height: 430px;
-    background-color: rgba(255,255,255,0.8);
-    text-align: center;
-}
-.rest .room ul li .photo .inner h3 {
-    margin: 44px 0 21px 0;
-}
-.rest .room ul li .photo .inner strong {
-    font-size: var(--sub-font-size);
-    font-weight: var(--bold-weight);
-    color: var(--point-color);
+.rest .list ul li .inner span {
     display: block;
 }
-.rest .room ul li .photo .inner span {
-    display: block;
-    font-size: var(--sub-font-size);
+.rest .list ul li .inner > span {
     color: var(--point-color);
-    padding: 3px 0 19px 0;
+    margin: 18px 0 19px 0;
 }
-.rest .room ul li .photo .inner p.room_tit {
-    font-weight: var(--bold-weight);
-    color: var(--tit-font-color);
-    margin: 0 0 21px 0;
+.rest .list ul li .inner a {
+    display: block;
+    margin: 26px 0 0 0;
 }
-.rest .room ul li .photo .inner p {
-    margin: 0 0 26px 0;
-}
-.rest .room_nav {
-    position: absolute;
-    left: 50%;
+.rest .list .ctrl_wrap {
+    content: "";
+    position: absolute;/*list를 기준으로 정렬*/
+    right: 1px;
     bottom: 103px;
-    width: 430px;
-
 }
-.rest .room_nav button {
+.rest .list .ctrl_wrap .wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+.rest .list .ctrl_wrap button{
     position: relative;
     float: left;
     width: 54px;
     height: 54px;
-    background: #fff;
-    left: 432px;
+    background-color: #fff;
+    left: 0;
     color: #969696;
+    bottom: 0;
 }
-.rest .room_nav .swiper-button-next  {
+.rest .list .ctrl_wrap button.swiper-button-next {
     position: relative;
 }
-.rest .room_nav .swiper-button-prev:after,
-.rest .room_nav .swiper-button-next:after {
+.rest .list .ctrl_wrap button.swiper-button-prev::after,
+.rest .list .ctrl_wrap button.swiper-button-next::after {
     font-size: inherit;
+
 }
-.rest .room_nav .swiper-button-next::before {
+.rest .list .ctrl_wrap button.swiper-button-next::before {
     content: "";
     position: absolute;
     left: 0;
@@ -413,6 +379,49 @@
     height: 23px;
     background: #dbdbdb;
 }
+
+@media screen and (max-width:768px) {
+            .rest .tit h2 {
+                margin: 0 0 24px 0;
+            }
+            .rest .tit p {
+                display: none;
+            }
+            .rest .list ul {
+                height: 368px;
+            }
+            .rest .list ul li .inner {
+                width: 320px;
+                height: 320px;
+                margin: 26px 0 0 0;
+            }
+            .rest .list ul li .inner h3 {
+                margin: 32px 0  6px 0;
+            }
+            .rest .list ul li .inner span {
+                display: block;
+            }
+            .rest .list ul li .inner > span {
+                margin: 12px 0 7px 0;
+            }
+            .rest .list ul li .inner a {
+                margin: 12px 0 0 0;
+            }
+            .rest .list .ctrl_wrap {
+                right: 0;
+                bottom: 22px;
+            }
+            .rest .list .ctrl_wrap button{
+                width: 40px;
+                height: 40px;
+            }
+            .rest .list .ctrl_wrap button.swiper-button-next::before {
+                top: 12px;
+                height: 15px;
+            }
+}
+
+
 
 .resort_add {
     margin: 162px 0 120px 0;
@@ -471,11 +480,11 @@
     background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.875 12.125V7.125H0.875V5.875H5.875V0.875H7.125V5.875H12.125V7.125H7.125V12.125H5.875Z' fill='white'/%3E%3C/svg%3E%0A");    background-position: center center;
     background-repeat: no-repeat;
 }
-/* .resort_add .resort_nav {
+.resort_add .resort_nav button {
     position: absolute;
-} */
+}
 
-/*.resort_add .resort_nav .swiper-button-prev,
+.resort_add .resort_nav .swiper-button-prev,
 .resort_add .resort_nav .swiper-button-next {
     position: absolute;
     transform: translateY(50%);
@@ -486,9 +495,9 @@
 .resort_add .paging {
     display: none;
 }
- */
 
-@media screen and (max-width:1400px) {
+
+ @media screen and (max-width:1400px) {
     .resort_add .resort_nav .swiper-button-prev,
     .resort_add .resort_nav .swiper-button-next {
         display: none;
@@ -542,9 +551,9 @@
                         justify-content: center;
                     
                     }
-                    .resort_add .list .resort_add .swiper-horizontal  >.swiper-pagination-bullets, 
-                    .swiper-pagination-bullets.swiper-pagination-horizontal, 
-                    .swiper-pagination-custom, .swiper-pagination-fraction {
+                    .resort_add .list .resort_add .resort_add .list .swiper-horizontal  > .resort_add .list .swiper-pagination-bullets, 
+                    .resort_add .list .swiper-pagination-bullets.swiper-pagination-horizontal, 
+                    .resort_add .list .swiper-pagination-custom, .resort_add .list .swiper-pagination-fraction {
                         bottom: 0;
                         left: 0;
                         width: 100%;
@@ -581,7 +590,6 @@ footer .sns {
     right: 0;
     top: 0;
     padding: 47px 0 0 0;
-   
 }
 footer .sns ul li a {
     position: relative;
@@ -650,7 +658,7 @@ footer .f_inner span {
 footer .f_inner .copyright {
     margin: 45px 0 0 0;
     color: rgba(255,255,255,0.6);
-}
+} 
 
 @media screen and (max-width:1024px) {/*?????????????*/
     footer {
