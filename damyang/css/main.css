@@ -407,6 +407,13 @@
             .rest .list ul li .inner h3 {
                 margin: 32px 0  6px 0;
             }
+            .rest .list ul li .inner p {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+            }
+            
             .rest .list ul li .inner span {
                 display: block;
             }
