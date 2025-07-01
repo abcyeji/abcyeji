@@ -59,9 +59,7 @@
     display: none;
 }
 .visual .reservation {
-    width: 100%;
     position: absolute;
-    left: 0;
     bottom: 118px;
     z-index: 10;
     color: var(--tit-font-color);    
@@ -73,9 +71,7 @@
 }
 .visual .reservation ul {
     width: 1000px;
-    height: 80px;
     display: flex;
-    margin: 0 130px;
 }
 .visual .reservation ul li {
     width: 16.67%;
@@ -164,20 +160,18 @@
                     display: none;
                 }
                 .visual .m_reservation {
-                    position: relative;
-                    display: block;
-                    color: #fff;
-                    align-items: center;
-                }
-                .visual .m_reservation a {
                     position: absolute;
-                    content: "";
                     left: 50%;
                     bottom: 304px;
-                    z-index: 5;
-                    border: 1px solid #fff;
-                    padding: 14px 27px;
                     transform: translateX(-50%);
+                    display: block;
+                    z-index: 10;
+                }
+                .visual .m_reservation a {
+                    display: block;
+                    border: 1px solid #fff;
+                    padding: 14px 37px;
+                    color: #fff;
                 }    
 }
 
@@ -221,6 +215,8 @@
     color: var(--tit-font-color);
     margin: 38px 0 13px 0;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .event_pro .list ul li a p {
     border-bottom: 1px solid #ccc;
@@ -233,10 +229,11 @@
 .event_pro .list ul li a .sub_tit {
     margin: 21px 0 0 0;
 }
-.event_pro .list ul li a > ul > li {
+.event_pro .list ul  li a > ul > li {
     margin: 0 0 10px 0;
+    display: flex;
 }
-.event_pro .list ul li a > ul > li > strong {
+.event_pro .list ul  li a > ul > li > strong {
     font-weight: var(--bold-weight);
     color: var(--tit-font-color);
     margin: 0 24px 0 0;
@@ -354,42 +351,43 @@
     margin: 26px 0 0 0;
 }
 .rest .list .ctrl_wrap {
-    content: "";
-    position: relative;/*relative로바꾸니까..?*/
-    right: 1px;
-    bottom: 135px;
+    position: absolute;
+    right: 0;
+    bottom: 103px;
+    width: 100%;
 }
 .rest .list .ctrl_wrap .wrapper {
     display: flex;
     justify-content: flex-end;
+    
 }
 .rest .list .ctrl_wrap button{
-    position: relative;
-    float: left;
     width: 54px;
     height: 54px;
     background-color: #fff;
-    left: 0;
-    color: #969696;
-    bottom: 0;
+    z-index: 50;
 }
-.rest .list .ctrl_wrap button.swiper-button-next {
+.rest .list .ctrl_wrap button.btn_prev {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 20L0 10L10 0L11.775 1.775L3.55 10L11.775 18.225L10 20Z' fill='%23969696'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
     position: relative;
 }
-.rest .list .ctrl_wrap button.swiper-button-prev::after,
-.rest .list .ctrl_wrap button.swiper-button-next::after {
-    font-size: inherit;
-
+.rest .list .ctrl_wrap button.btn_next {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 -8.74228e-07L12 10L2 20L0.225 18.225L8.45 10L0.225001 1.775L2 -8.74228e-07Z' fill='%23969696'/%3E%3C/svg%3E%0A");    background-position: center center;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
-.rest .list .ctrl_wrap button.swiper-button-next::before {
-    content: "";
+.rest .list .ctrl_wrap .btn_prev::after {
     position: absolute;
-    left: 0;
+    content: "";
+    right: 0;
     top: 16px;
     width: 1px;
     height: 23px;
-    background: #dbdbdb;
-}
+    background-color: #ccc;
+} 
+
 
 @media screen and (max-width:768px) {
             .rest .tit h2 {
@@ -420,7 +418,7 @@
             }
             .rest .list .ctrl_wrap {
                 right: 0;
-                bottom: 40px;
+                bottom: 22px;
             }
             .rest .list .ctrl_wrap button{
                 width: 40px;
@@ -430,6 +428,10 @@
                 top: 12px;
                 height: 15px;
             }
+            .rest .list .ctrl_wrap .btn_prev::after {
+                top: 9px;
+                
+            } 
 }
 
 
@@ -533,8 +535,10 @@
                     }
                     .resort_add .list .inner {
                         position: relative;
-                        width: 100%;
-                        height: 100%;
+                        left: auto;
+                        top: auto;
+                        width: auto;
+                        height: auto;
                         background: #fff;
                         color: #555;
                     }
@@ -677,11 +681,6 @@ footer .f_inner .copyright {
                 }
                 footer .wrapper {
                     display: block;
-                }
-                footer .f_logo img{
-                    width: 160px;
-                    height: 44px;
-                    margin: 67px 0 0 0;
                 }
                 footer .sns {
                     width: 70%;

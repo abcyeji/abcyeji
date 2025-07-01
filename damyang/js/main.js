@@ -77,8 +77,8 @@ $(document).ready(function(){
 	
 
 	navigation: {  /* 이전, 다음 버튼 */
-		nextEl: '.rest .swiper-button-next',  /* 다음 버튼의 클래스명 */
-		prevEl: '.rest .swiper-button-prev',  
+		nextEl: '.rest .btn_next',  /* 다음 버튼의 클래스명 */
+		prevEl: '.rest .btn_prev',  
 	},
 
 });
