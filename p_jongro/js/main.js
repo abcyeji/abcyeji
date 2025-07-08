@@ -20,11 +20,5 @@ $(document).ready(function(){
                 // },
             },
             
-
-            navigation: {  /* 이전, 다음 버튼 */
-                nextEl: '.visual .btn_next',  /* 다음 버튼의 클래스명 */
-                prevEl: '.visual .btn_prev',  
-            },
-
         });
 })
