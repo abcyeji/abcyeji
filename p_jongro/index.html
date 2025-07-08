@@ -19,24 +19,28 @@
         <header></header>
         <main class="container">
             <section class="visual">
+                <h2 class="blind">팝업</h2>
                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
                         <li class="swiper-slide popup1">
-                            <h2>서울의 뿌리,<br>
-                                종로가 들려주는 서울의 이야기</h2>
+                            <div class="wrapper">
+                                <h3>서울의 뿌리,<br>종로가 들려주는 서울의 이야기</h3>
+                            </div>
                         </li>
                         <li class="swiper-slide popup2">
-                            <h2>시간이 머무는 길,<br>
-                                종로에서 시작되는 문화의 여정</h2>
+                            <div class="wrapper">
+                                <h3>시간이 머무는 길,<br>종로에서 시작되는 문화의 여정</h3>
+                            </div>
                         </li>
                         <li class="swiper-slide popup3">
-                            <h2>전통이 살아 숨 쉬는 거리,<br> 
-                                역사와 문화가 흐르는 종로</h2>
+                            <div class="wrapper">
+                                <h3>전통이 살아 숨 쉬는 거리,<br>역사와 문화가 흐르는 종로</h3>
+                            </div>
                         </li>
                     </ul>
                     <div class="paging"></div> <!--  컨트롤 요소는 swiper 안에 배치 -->
-                    <button class="btn_prev"></button>
-                    <button class="btn_next"></button>
+                    <button class="btn_prev"><span class="blind">이전팝업보기</span></button>
+                    <button class="btn_next"><span class="blind">다음팝업보기</span></button>
                 </div>
             </section>
             <section class="tourist">
