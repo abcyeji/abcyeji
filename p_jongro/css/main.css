@@ -1,0 +1,46 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+.visual .swiper-slide {
+    height: 1000px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/visual01.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/visual02.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/visual03.jpg);
+}
+.visual .swiper-slide h2 {
+    font-size: var(--visual-font-size);
+    font-family: 'ChungjuKimSaengTTF';
+    text-align: center;
+    margin: 428px 0 0 0;
+}
+.tourist {
+    padding: 174px 0 109px 0;
+    background-color: #FFF8F1;
+}
+.tourist .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.tourist .tit h2{
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-font-color);
+    margin: 15px 0 26px 0;
+}
+
+
+
+
+
