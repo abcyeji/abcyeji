@@ -27,8 +27,6 @@
     text-align: center;
     margin: 428px 0 0 0;
 }
-
-
 .visual .paging {
     position: absolute;/*swiper기준으로 정렬*/
     left: 0;
@@ -38,7 +36,6 @@
     display: flex;/*span태그 좌우 배치*/
     justify-content: center;/*가운데*/
     gap: 5px; /*동그라미 사이사이 간격*/
-
 }
 .visual .paging .swiper-pagination-bullet { /*동그라미 기본 스타일*/
     display: block;
@@ -53,9 +50,38 @@
 .visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active { 
     /*현재 팝업 동그라미*/
     background-color: #fff;
-
 }
 
+@media screen and (max-width:768px) {
+                .visual .swiper-slide {
+                    height: 800px;
+                }
+                .visual .swiper-slide h3 {
+                    margin: 326px 0 0 0;
+                }
+                .visual .paging {
+                    bottom: 20px;
+                }
+}
+
+/* .icon {
+    height: 170px;
+    background-color: var(--point-color);
+}
+.icon .list ul {
+    display: flex;
+    justify-content: space-between;
+    color: #fff
+}
+.icon .list ul li {
+    border-radius: 50%;
+    background-color: #FEF8E3;
+    width: 70px;
+    height: 70px;
+}
+.icon .list ul li a {
+    display: block;
+} */
 
 
 .tourist {
@@ -73,8 +99,256 @@
     color: var(--tit-font-color);
     margin: 15px 0 26px 0;
 }
+.tourist .inner {
+    width: 484px;
+}
+.tourist .inner .tap_list ul {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.tourist .inner .tap_list ul button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+}
+.tourist .inner .tap_list ul li.item1.active button {
+    background-color: #3553A4;
+    color: #fff;
+}
+/*애니메이션*/
+.tourist .inner .ani .image1 {
+    width: 78.30%;
+    position: relative;
+}
+.tourist .inner .ani .image1_1{
+    position: absolute;
+    width: 11.19%;
+    left: 25%;
+    /* top: 42%; */
+    animation: image1_1 5s linear infinite;
+}
+.tourist .inner .ani .image1_2{
+    position: absolute;
+    width: 7%;
+    left: 30%;
+    /* top: 41%; */
+    animation: image1_1 6s linear infinite;
+}
+@keyframes image1_1 {
+    0% { transform: translate(0,0);}
+    50% { transform: translate(20px,0);}
+    100% { transform: translate(0,0);}
+}
+.tourist .tab_content {
+    width: 725px;
+}
+.tourist .tab_content .tab_item { /**/
+    display: none;
+}
+.tourist .tab_content .tab_item.active { /**/
+    display: block;
+}
+.tourist .tab_content .tab_item.active .photo {
+    height: 410px;
+    overflow: hidden;
+    border: 20px solid transparent;
+    background-image:linear-gradient(to bottom right ,#3553A4 ,#31CBB1);
+    background-origin:border-box; 
+    border-radius: 20px;  
+    position: relative;
+}
+.tourist .tab_content .tab_item.active .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.tourist .tab_content .tab_item.active .photo::after {
+    position: absolute;
+    content: "";
+    left: -10px;
+    top: -10px;
+    background-image:linear-gradient(to bottom right ,#3553A4 ,#31CBB1);
+    background-origin: border-box; /*그라데이션시작점??*/
+    background-clip: content-box, border-box; /*어디까지할건지?*/
+    width: 260px;
+    height: 94px;
+    border-bottom-right-radius: 20px
+}
+.tourist .tab_content .tab_item.active .sub_tit {
+    margin: 34px 0 0 0;
+}
+.tourist .tab_content .tab_item.active .sub_tit ul {
+    margin: 0 0 0 131px;
+}
+.tourist .tab_content .tab_item.active .sub_tit ul li {
+    display: flex;
+    gap: 59px;
+    line-height: 1.8;
+    position: relative;
+}
+.tourist .tab_content .tab_item.active .sub_tit ul li::before {
+    position: absolute;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 34px;
+    height: 34px;
+    left: -34px;
+    top: -3px;
+}
+.tourist .tab_content .tab_item.active .sub_tit ul li.icon1::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.3563C7.2375 10.3562 8.17188 9.39375 8.80313 8.46875C9.43437 7.54375 9.75 6.675 9.75 5.8625C9.75 4.7375 9.4 3.8125 8.7 3.0875C8 2.3625 7.1 2 6 2C4.9 2 4 2.3625 3.3 3.0875C2.6 3.8125 2.25 4.7375 2.25 5.8625C2.25 6.675 2.56562 7.54375 3.19688 8.46875C3.82812 9.39375 4.7625 10.3562 6 11.3563ZM6 12.8937C5.85 12.8937 5.7 12.8688 5.55 12.8188C5.4 12.7688 5.2625 12.6938 5.1375 12.5938C3.6625 11.4187 2.5625 10.2719 1.8375 9.15313C1.1125 8.03438 0.75 6.9375 0.75 5.8625C0.75 4.3 1.2375 3.01562 2.2125 2.00938C3.1875 1.00313 4.45 0.5 6 0.5C7.55 0.5 8.8125 1.00313 9.7875 2.00938C10.7625 3.01562 11.25 4.3 11.25 5.8625C11.25 6.9375 10.8875 8.03438 10.1625 9.15313C9.4375 10.2719 8.3375 11.4187 6.8625 12.5938C6.7375 12.6938 6.6 12.7688 6.45 12.8188C6.3 12.8688 6.15 12.8937 6 12.8937ZM6 7.25C6.4125 7.25 6.76563 7.10313 7.05938 6.80938C7.35313 6.51563 7.5 6.1625 7.5 5.75C7.5 5.3375 7.35313 4.98438 7.05938 4.69063C6.76563 4.39688 6.4125 4.25 6 4.25C5.5875 4.25 5.23438 4.39688 4.94063 4.69063C4.64688 4.98438 4.5 5.3375 4.5 5.75C4.5 6.1625 4.64688 6.51563 4.94063 6.80938C5.23438 7.10313 5.5875 7.25 6 7.25ZM1.5 15.5C1.2875 15.5 1.10938 15.4281 0.965625 15.2844C0.821875 15.1406 0.75 14.9625 0.75 14.75C0.75 14.5375 0.821875 14.3594 0.965625 14.2156C1.10938 14.0719 1.2875 14 1.5 14H10.5C10.7125 14 10.8906 14.0719 11.0344 14.2156C11.1781 14.3594 11.25 14.5375 11.25 14.75C11.25 14.9625 11.1781 15.1406 11.0344 15.2844C10.8906 15.4281 10.7125 15.5 10.5 15.5H1.5Z' fill='%233551A4'/%3E%3C/svg%3E%0A");
+}
+.tourist .tab_content .tab_item.active .sub_tit ul li.icon2::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.9625 13.75C11.4 13.75 9.85625 13.4094 8.33125 12.7281C6.80625 12.0469 5.41875 11.0813 4.16875 9.83125C2.91875 8.58125 1.95312 7.19375 1.27188 5.66875C0.590625 4.14375 0.25 2.6 0.25 1.0375C0.25 0.8125 0.325 0.625 0.475 0.475C0.625 0.325 0.8125 0.25 1.0375 0.25H4.075C4.25 0.25 4.40625 0.309375 4.54375 0.428125C4.68125 0.546875 4.7625 0.6875 4.7875 0.85L5.275 3.475C5.3 3.675 5.29375 3.84375 5.25625 3.98125C5.21875 4.11875 5.15 4.2375 5.05 4.3375L3.23125 6.175C3.48125 6.6375 3.77812 7.08437 4.12187 7.51562C4.46562 7.94688 4.84375 8.3625 5.25625 8.7625C5.64375 9.15 6.05 9.50938 6.475 9.84063C6.9 10.1719 7.35 10.475 7.825 10.75L9.5875 8.9875C9.7 8.875 9.84688 8.79062 10.0281 8.73438C10.2094 8.67813 10.3875 8.6625 10.5625 8.6875L13.15 9.2125C13.325 9.2625 13.4688 9.35312 13.5812 9.48438C13.6937 9.61563 13.75 9.7625 13.75 9.925V12.9625C13.75 13.1875 13.675 13.375 13.525 13.525C13.375 13.675 13.1875 13.75 12.9625 13.75ZM2.51875 4.75L3.75625 3.5125L3.4375 1.75H1.76875C1.83125 2.2625 1.91875 2.76875 2.03125 3.26875C2.14375 3.76875 2.30625 4.2625 2.51875 4.75ZM9.23125 11.4625C9.71875 11.675 10.2156 11.8438 10.7219 11.9688C11.2281 12.0938 11.7375 12.175 12.25 12.2125V10.5625L10.4875 10.2063L9.23125 11.4625Z' fill='%233551A4'/%3E%3C/svg%3E%0A");
+}
+.tourist .tab_content .tab_item.active .sub_tit ul li.icon3::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.75 11.5C13.75 12.125 13.5312 12.6562 13.0938 13.0938C12.6562 13.5313 12.125 13.75 11.5 13.75H4.75C4.5375 13.75 4.35938 13.6781 4.21562 13.5344C4.07187 13.3906 4 13.2125 4 13C4 12.7875 4.07187 12.6094 4.21562 12.4656C4.35938 12.3219 4.5375 12.25 4.75 12.25H11.5C11.7125 12.25 11.8906 12.1781 12.0344 12.0344C12.1781 11.8906 12.25 11.7125 12.25 11.5C12.25 11.2875 12.1781 11.1094 12.0344 10.9656C11.8906 10.8219 11.7125 10.75 11.5 10.75H2.5C1.875 10.75 1.34375 10.5312 0.90625 10.0938C0.46875 9.65625 0.25 9.125 0.25 8.5C0.25 7.875 0.46875 7.34375 0.90625 6.90625C1.34375 6.46875 1.875 6.25 2.5 6.25L11.5 6.25C11.7125 6.25 11.8906 6.17812 12.0344 6.03437C12.1781 5.89062 12.25 5.7125 12.25 5.5C12.25 5.2875 12.1781 5.10938 12.0344 4.96562C11.8906 4.82187 11.7125 4.75 11.5 4.75H2.5C1.875 4.75 1.34375 4.53125 0.90625 4.09375C0.46875 3.65625 0.25 3.125 0.25 2.5C0.25 1.875 0.46875 1.34375 0.90625 0.90625C1.34375 0.46875 1.875 0.25 2.5 0.25H9.25C9.4625 0.25 9.64062 0.321876 9.78438 0.465626C9.92813 0.609375 10 0.7875 10 1C10 1.2125 9.92813 1.39062 9.78438 1.53437C9.64062 1.67812 9.4625 1.75 9.25 1.75H2.5C2.2875 1.75 2.10938 1.82187 1.96563 1.96562C1.82188 2.10938 1.75 2.2875 1.75 2.5C1.75 2.7125 1.82188 2.89062 1.96563 3.03437C2.10938 3.17812 2.2875 3.25 2.5 3.25H11.5C12.125 3.25 12.6562 3.46875 13.0938 3.90625C13.5312 4.34375 13.75 4.875 13.75 5.5C13.75 6.125 13.5312 6.65625 13.0938 7.09375C12.6562 7.53125 12.125 7.75 11.5 7.75L2.5 7.75C2.2875 7.75 2.10938 7.82188 1.96563 7.96562C1.82188 8.10938 1.75 8.2875 1.75 8.5C1.75 8.7125 1.82188 8.89062 1.96563 9.03438C2.10938 9.17812 2.2875 9.25 2.5 9.25H11.5C12.125 9.25 12.6562 9.46875 13.0938 9.90625C13.5312 10.3438 13.75 10.875 13.75 11.5Z' fill='%233551A4'/%3E%3C/svg%3E%0A");
+}
+.tourist .tab_content .tab_item.active .sub_tit ul li strong {
+    color: #3551A4;
+    font-weight: var(--bold-weight);
+}
+
+@media screen and (max-width:768px) {
+                .tourist {
+                    padding: 76px 0 58px 0;
+                }
+                .tourist .wrapper {
+                    display: block;
+                }
+                .tourist .tit h2{
+                    margin: 10px 0 23px 0;
+                }
+                .tourist .inner {
+                    width: auto;
+                }
+                .tourist .inner .tap_list ul {
+                    gap: 5px;
+                    margin-bottom: 60px;
+                }
+                .tourist .inner .tap_list ul button {
+                    padding: 10px 15px;
+                    border-radius: 30px;
+                }
+                /*애니메이션*/
+                .tourist .inner .ani {
+                    display: none;
+                }
+                .tourist .tab_content {
+                    width: auto;
+                }
+                .tourist .tab_content .tab_item.active .photo {
+                    height: 268px;
+                    border: 10px solid transparent;
+                    border-radius: 10px;  
+                }
+                .tourist .tab_content .tab_item.active .photo::after {
+                    left: -10px;
+                    top: -10px;
+                    width: 218px;
+                    height: 66px;
+                    border-bottom-right-radius: 10px
+                }
+                .tourist .tab_content .tab_item.active .sub_tit {
+                    display: none;
+                }
+                
+}
+
+.story {
+    margin: 181px 0 0 0;
+    position: relative;/*ani*/
+ }
+.story .ani img.ani_tree1  {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.story .ani img.ani_tree2  {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.story .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.story .tit {
+    position: sticky;
+    top: 0;
+}
+.story .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-font-color);
+    margin: 15px 0 26px 0;
+ }
+ .story .list {
+    width: 65.39%;
+    margin: 178px 0 0 0;
+ }
+ .story .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 24px;
+ }
+ .story .list ul li {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: calc(50% - 12px);
+    height: 500px;
+ }
+ .story .list ul li:nth-child(even) {
+    transform: translateY(-166px);
+ }
+ 
+ .story .list > ul > li > a {
+    display: block;
+ }
+ .story .list ul li .photo {
+    height: 309px;
+    overflow: hidden;
+
+ }
+ .story .list ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+ }
+ .story .list ul li .txt {
+    text-align: center;
+    margin: 19px 0 16px 0;
+    position: relative;
+ }
+ .story .list ul li .txt h3 {
+    font-size: var(--sub-font-size);
+    font-weight: var(--bold-weight);
+    color: var(--tit-font-color);
+    line-height: var(--tit-line-height);
+    margin: 0 0 16px 0;
+ }
+ .story .list ul li .txt p {
+    margin: 0 0 17px 0;
+ }
+ 
+ .story .list ul li:hover {
+    background-color: var(--point-color);
+    color: #fff;
+ }
+ .story .list ul li:hover .txt h3 {
+    color: #fff;
+ }
+
+ 
 
 
 
-
-
+footer {
+    margin: 500px 0 0 0;
+}
