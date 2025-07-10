@@ -177,11 +177,11 @@
 }
 .tourist .tab_content .tab_item.active .photo h3 {
     position: absolute;
-    left: -16px;
+    left: -15px;
     top: -6px;
     z-index: 10;
     color: #fff;
-    margin: 29px 19px 29px 67px;
+    margin: 24px 19px 21px 67px;;
     font-size: 1.76rem;
     font-weight: var(--bold-weight);
 }
@@ -360,6 +360,7 @@
     position: sticky;
     top: 0;
 }
+ 
 .story .tit h2 {
     font-size: var(--tit-font-size);
     font-weight: var(--bold-weight);
@@ -416,7 +417,7 @@
  .story .list ul li .txt p {
     margin: 0 0 17px 0;
  }
- 
+  
  .story .list ul li:hover {
     background-color: var(--point-color);
     color: #fff;
