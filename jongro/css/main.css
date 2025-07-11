@@ -70,3 +70,27 @@
     width: 36px;
     height: 36px;
  }
+
+
+ 
+.notice .popupzone .swiper-slide {
+   border: 1px solid #ccc;
+   border-radius: 20px;
+   width: 535px;
+   height: 367px;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.notice .popupzone .swiper-slide.pop1 {
+   background-image: url(../images/popup01.jpg);
+}
+.notice .popupzone .swiper-slide.pop2 {
+   background-image: url(../images/popup02.jpg);
+}
+.notice .popupzone .swiper-slide.pop3 {
+   background-image: url(../images/popup03.jpg);
+}
+.notice .popupzone .swiper-slide.pop4 {
+   background-image: url(../images/popup04.jpg);
+}
