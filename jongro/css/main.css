@@ -94,3 +94,71 @@
 .notice .popupzone .swiper-slide.pop4 {
    background-image: url(../images/popup04.jpg);
 }
+
+
+
+
+@media screen and (max-width:768px) {
+                        .notice {
+                            padding: 59px 0 40px 0;
+                        }
+                        .notice .wrapper {
+                            display: block;
+                        }
+                        .notice .news {
+                            width: auto;
+                        }
+                        .notice .news .tit h3 {
+                            padding: 10px 0 39px 0;
+                        }
+                        .notice .news .list ul li a {
+                            padding: 28px 0 26px 0;
+                        }
+                        .notice .news .list ul li a span {
+                            font-size: 0.88rem;
+                            width: 104px;
+                        }
+                        .notice .news .more {
+                            width: 27px;
+                            height: 27px;
+                            right: 0;
+                            top: 46px;
+                        }
+                        .notice .news .more::after {
+                            background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.4165 5.58366H0.916504V4.41699H4.4165V0.916992H5.58317V4.41699H9.08317V5.58366H5.58317V9.08366H4.4165V5.58366Z' fill='%23555555'/%3E%3C/svg%3E%0A");                            background-position: center center;
+                            background-repeat: no-repeat;
+                            right: 0;
+                            top: 0;
+                        }
+                        .notice .popupzone{
+                            width: auto;
+                        }
+                        .notice .popupzone h2 {
+                            font-size: var(--tit-font-size);
+                            font-weight: var(--bold-weight);
+                            line-height: var(--tit-line-height);
+                            color: var(--tit-font-color);
+                            margin: 37px 0 15px 0;
+                        }
+                        .notice .popupzone .swiper {
+                            width: auto;
+                        }
+                        .notice .popupzone .swiper ul li {
+                            border-radius: 10px;
+                        }
+                        .notice .popupzone .swiper-slide img {
+                            border-radius: 10px;
+                        }
+                        .notice .popupzone .ctrl_nav {
+                            width: 107px;
+                            border-top-left-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                        }
+                        .notice .popupzone .ctrl_nav .ctrl_wrap {
+                            gap: 5px;
+                            margin: 7px 0 0 7px;
+                        }
+                        .notice .popupzone .ctrl_nav .ctrl_wrap .count {
+                            font-size: 0.87rem;
+                        }
+}
