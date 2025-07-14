@@ -513,10 +513,78 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
 .tourist .tab_content .tab_item.active .sub_tit ul li strong {
     color: #3551A4;
     font-weight: var(--bold-weight);
-    width: 125px;
+    width: 90px;
     display: block;
 }
-
+@media screen and (max-width:1024px) {
+                    .tourist {
+                        padding: 100px 0 78px 0;
+                    }
+                    .tourist .wrapper {
+                        display: block;
+                    }
+                    .tourist .tit h2{
+                        margin: 10px 0 23px 0;
+                    }
+                    .tourist .inner {
+                        width: auto;
+                    }
+                    .tourist .inner .tap_list ul {
+                        gap: 5px;
+                        margin-bottom: 40px;
+                    }
+                    .tourist .inner .tap_list ul button {
+                        padding: 10px 15px;
+                        border-radius: 30px;
+                    }
+                    /*애니메이션*/
+                    .tourist .inner .ani {
+                        display: none;
+                    }
+                    .tourist .tab_content {
+                        width: auto;
+                    }
+                    .tourist .tab_content .tab_item.active .photo {
+                        height: 268px;
+                        border: 10px solid transparent;
+                        border-radius: 10px;  
+                    }
+                    .tourist .tab_content .tab_item.active .photo::after {
+                        left: -10px;
+                        top: -10px;
+                        width: 218px;
+                        height: 66px;
+                        border-bottom-right-radius: 40px
+                    }
+                    .tourist .tab_content .tab_item.active .photo h3 {
+                        left: -11px;
+                        top: -6px;
+                        margin: 18px 22px 18px 51px;
+                        font-size: 1.56rem;
+                    }
+                    .tourist .tab_content .tab_item.active .photo .ctrl_wrap {
+                        width: 99px;
+                        height: 38px;
+                        right: 0;
+                        bottom: -3px;
+                        border-top-left-radius: 30px;
+                    }
+                    .tourist .tab_content .tab_item.active .photo .ctrl_wrap button.btn_prev {
+                        left: 17px;
+                        bottom: -8px;
+                    }
+                    .tourist .tab_content .tab_item.active .photo .ctrl_wrap button.btn_next {
+                        left: 45px;
+                        bottom: -7px;
+                    }
+                    .tourist .tab_content .tab_item.active .sub_tit {
+                        margin: 34px 0 0 0;
+                    }
+                    .tourist .tab_content .tab_item.active .sub_tit ul {
+                        margin: 0 0 0 131px;
+                    }
+                    
+}
 @media screen and (max-width:768px) {
                 .tourist {
                     padding: 76px 0 58px 0;
@@ -532,7 +600,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
                 }
                 .tourist .inner .tap_list ul {
                     gap: 5px;
-                    margin-bottom: 60px;
+                    margin-bottom: 30px;
                 }
                 .tourist .inner .tap_list ul button {
                     padding: 10px 15px;
@@ -685,8 +753,6 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
     color: #fff;
 }
 .story .list ul li .txt span.circle {
-    line-height: 0;
-    font-size: 0;
     width: 36px;
     height: 36px;
     border: 1px solid #ccc;
