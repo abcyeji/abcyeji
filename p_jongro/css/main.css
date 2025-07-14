@@ -23,135 +23,139 @@ header .logo a {
     height: 39px;
     background: url(../images/logo_w.svg) no-repeat center center / contain;
 }
-header  button.gnb_open {
-                        display: block;
-                        width: 100px;
-                        height: 100px;
-                        background-image: url("data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.625 2.45833V0.0416679H22.375V2.45833H0.625ZM0.625 16.9583V14.5417H22.375V16.9583H0.625ZM0.625 9.70833V7.29167H22.375V9.70833H0.625Z' fill='white'/%3E%3C/svg%3E%0A");
-                        background-repeat: no-repeat;
-                        background-position: center center;
-                    }
+header  button.pcgnb_open {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.625 2.45833V0.0416679H22.375V2.45833H0.625ZM0.625 16.9583V14.5417H22.375V16.9583H0.625ZM0.625 9.70833V7.29167H22.375V9.70833H0.625Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none;
+}
 
-@media screen and (min-width:1025px) {
+@media screen and (min-width:1025px) {/*pc*/
+
+                    header .gnb .gnb_open
                     header .gnb .gnb_close {
                         display: none;
                     }
+
                     header .gnb .gnb_wrap ul.depth1 {
                         display: flex;
                     }
                     header .gnb .gnb_wrap ul.depth1 > li {
-                        position: relative;
+                        position: relative; /*2차정렬기준*/
                     }
-                    header .gnb .gnb_wrap ul.depth1 > li > a { 
+                    header .gnb .gnb_wrap ul.depth1 > li > a {/*1차*/
                         display: block;
-                        font-size: 1.17rem;
+                        font-size: 20px; 
                         line-height: var(--header-h);
-                        padding: 0  25px;
+                        padding: 0 30px;
                     }
-                    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-                        position: absolute; 
-                        top: 86px;
-                        left: 50%; 
-                        transform: translateX(-50%); 
+                    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {/*2차*/
+                        position: absolute;
+                        top: 100px;
+                        left: 50%;
+                        transform: translate(-50%);
                         background-color: rgba(29,29,29,0.5);
                         backdrop-filter: blur(3px);
-                        color: #fff;
-                        border-radius: 9px;
-                        padding: 28px 24px;
+                        border-radius: 10px;
+                        padding: 13px 20px 18px 22px;
                         text-align: center;
-                        display: none; 
+                        display: none; /*마우스 오버시에만 나올거*/
                     }
                     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
                         display: block;
                         padding: 5px 0;
-                        white-space: nowrap; /*줄바꿈 금지 메누를 한줄에 표시*/
+                        white-space: nowrap; /*메뉴에 글자가 줄바꿈되니까 안되게    */
                     }
                     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
-                        text-decoration: underline;
-                    }
-
-
-                    /***********메뉴에 마우스를 오버했을때**************/
-                    header.menu_over {
                         font-weight: var(--bold-weight);
                     }
-                    header.menu_over .logo a {
-                        background-image: url(../images/logo.svg)
-                    }
+
+                    /*메뉴에 마우스 오버시*/
                     header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a {
-                        color: #fff;
+                        font-weight: var(--bold-weight);
                     }
+                    header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a > span {
+                        border-bottom: 2px solid #fff;
+                        padding: 0 0 37px 0;                    }
                     header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
                         display: block;
-
                     }
+                    
+}
 
-}/*media*/
-/*************************모바일******************************************/
 @media screen and (max-width:1024px) {
-   
-                    header {
-                        height: 56px;
-                    }
-                    header .warpper {
+                    header .wrapper {
+                        display: flex; /*logo gnb tnb 좌우*/
+                        justify-content: space-between;
+                        align-items: center;
                         margin-right: 0;
-                        /*gnb_open을 오른쪽 끝에 배치하기 위해서*/
                     }
                     header .logo a {
                         width: 101px;
                         height: 28px;
                     }
-                    header  button.gnb_open {
+                    
+                    header  button.pcgnb_open {
+                        display: none;
+                    }
+                    header .gnb button.gnb_open {
                         display: block;
                         width: 56px;
-                        height: 56px;
+                        height: var(--header-h);
                         background-image: url("data:image/svg+xml,%3Csvg width='23' height='17' viewBox='0 0 23 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.625 2.45833V0.0416679H22.375V2.45833H0.625ZM0.625 16.9583V14.5417H22.375V16.9583H0.625ZM0.625 9.70833V7.29167H22.375V9.70833H0.625Z' fill='white'/%3E%3C/svg%3E%0A");
                         background-repeat: no-repeat;
                         background-position: center center;
                     }
                     header .gnb .gnb_wrap {
                         display: none;
-                        position: fixed;
-                        /*body를 기준으로 정렬 - header가 고정이 아니더라도 
-                        메뉴는 모바일에서 일단 열리면 고정이 되어야 함*/
+                        position: fixed; 
                         left: 0;
                         top: 0;
                         width: 100%;
-                        
+                        height: 100%;
                         background-color: #fff;
                         color: #555;
-                    }
+                    }                 
                     header .gnb .gnb_wrap ul.depth1 {
                         height: calc(100% - 56px);
-                        margin: 56px 0 0 0;/*스크롤에 해당하지 않는 상단영역*/
-                        overflow-y: auto; /*위아래 스크롤바는 내부 콘텐츠가 더 길때만 생김*/
-                        overflow-x: hidden; /*좌우스크롤바 숨김*/
+                        margin: 56px 0 0 0;
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                    }
+                    header .gnb .gnb_wrap ul.depth1 > li {
+                        border-bottom: 1px solid #ededed;
                     }
                     header .gnb .gnb_wrap ul.depth1 > li:first-child {
                         border-top: 1px solid #ededed;
                     }
-                    header .gnb .gnb_wrap ul.depth1 > li > a { /*1차메뉴*/
+                    header .gnb .gnb_wrap ul.depth1 > li > a {
                         display: block;
-                        padding: 16px 42px 16px 20px;
-                        font-size: 20px;
+                        padding: 16px 42px 17px 20px;
+                        font-size: 1.25rem;
                         line-height: 1.2;
-                        color: #1d1d1d;
-                        position: relative; /*after 정렬의 기준*/
+                        color: var(--tit-font-color);
+                        position: relative;
                     }
                     header .gnb .gnb_wrap ul.depth1 > li > a::after {
                         content: "";
                         position: absolute;
                         right: 20px;
-                        top: 23px;
+                        top: 19px;
                         width: 14px;
                         height: 8px;
-                        background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.99995 6.43231L12.6495 0.782749C12.7985 0.633749 12.974 0.561124 13.1758 0.564874C13.3778 0.568749 13.5533 0.645186 13.7023 0.794186C13.8513 0.943311 13.9258 1.11881 13.9258 1.32069C13.9258 1.52256 13.8513 1.69806 13.7023 1.84719L7.96051 7.60044C7.82489 7.73606 7.67295 7.83656 7.5047 7.90194C7.33645 7.96731 7.1682 8 6.99995 8C6.8317 8 6.66345 7.96731 6.4952 7.90194C6.32695 7.83656 6.17501 7.73606 6.03939 7.60044L0.28595 1.84719C0.13695 1.69806 0.0643876 1.52062 0.0682626 1.31487C0.0721376 1.10912 0.148575 0.931749 0.297575 0.782749C0.446575 0.633749 0.622075 0.55925 0.824075 0.55925C1.02595 0.55925 1.20139 0.633749 1.35039 0.782749L6.99995 6.43231Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+                        background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.00019 6.43231L12.6498 0.782748C12.7988 0.633748 12.9742 0.561123 13.1761 0.564873C13.3781 0.568748 13.5536 0.645185 13.7026 0.794185C13.8516 0.94331 13.9261 1.11881 13.9261 1.32068C13.9261 1.52256 13.8516 1.69806 13.7026 1.84718L7.96076 7.60044C7.82513 7.73606 7.67319 7.83656 7.50494 7.90194C7.33669 7.96731 7.16844 8 7.00019 8C6.83194 8 6.66369 7.96731 6.49544 7.90194C6.32719 7.83656 6.17526 7.73606 6.03963 7.60044L0.286194 1.84719C0.137194 1.69806 0.0646317 1.52062 0.0685067 1.31487C0.0723817 1.10912 0.148819 0.931748 0.297819 0.782748C0.446819 0.633748 0.622319 0.559249 0.824319 0.559249C1.02619 0.559249 1.20163 0.633748 1.35063 0.782748L7.00019 6.43231Z' fill='%23555555'/%3E%3C/svg%3E%0A");
                         background-position: center center;
-                        background-size: contain;
+                        background-repeat: no-repeat;
                     }
-                    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 { /*2차메뉴*/
+                    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 { /*2차*/
                         background-color: #f4f4f4;
-                        padding: 18px 0 18px 45px;
+                        padding: 14px 0 14px 34px;
                         display: none;
                     }
                     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
@@ -164,13 +168,10 @@ header  button.gnb_open {
                         right: 0;
                         top: 0;
                         width: 56px;
-                        height: 56px;
-                        background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 17.75L0.25 16L7.25 9L0.25 2L2 0.25L9 7.25L16 0.25L17.75 2L10.75 9L17.75 16L16 17.75L9 10.75L2 17.75Z' fill='%231C1B1F'/%3E%3C/svg%3E%0A");
+                        height: var(--header-h);
+                        background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 17.75L0.25 16L7.25 9L0.25 2L2 0.25L9 7.25L16 0.25L17.75 2L10.75 9L17.75 16L16 17.75L9 10.75L2 17.75Z' fill='%231C1B1F'/%3E%3C/svg%3E%0A");                        
                         background-repeat: no-repeat;
                         background-position: center center;
-                    }
-                    header .tnb {
-                        display: none;
                     }
 
                     /****************모바일 메뉴 열림********************/
@@ -181,8 +182,8 @@ header  button.gnb_open {
                         display: block;
                     }
                     header.menu_open .gnb .gnb_wrap ul.depth1 > li.open > a {
-                        color: #004289;
-                        font-weight: 800;
+                        color: var(--point-color);
+                        font-weight: var(--bold-weight);
                     }
                     header.menu_open .gnb .gnb_wrap ul.depth1 > li.open > a::after {
                         background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.99395 1.56769L1.34438 7.21725C1.19538 7.36625 1.01995 7.43888 0.81807 7.43513C0.61607 7.43125 0.440572 7.35481 0.291572 7.20581C0.142572 7.05669 0.0680701 6.88119 0.0680701 6.67931C0.0680701 6.47744 0.142572 6.30194 0.291572 6.15281L6.03338 0.399563C6.16901 0.263938 6.32095 0.163438 6.4892 0.0980625C6.65745 0.0326875 6.8257 0 6.99395 0C7.1622 0 7.33045 0.0326875 7.4987 0.0980625C7.66695 0.163438 7.81888 0.263938 7.95451 0.399563L13.7079 6.15281C13.8569 6.30194 13.9295 6.47938 13.9256 6.68513C13.9218 6.89088 13.8453 7.06825 13.6963 7.21725C13.5473 7.36625 13.3718 7.44075 13.1698 7.44075C12.9679 7.44075 12.7925 7.36625 12.6435 7.21725L6.99395 1.56769Z' fill='%23004289'/%3E%3C/svg%3E%0A");
@@ -190,9 +191,8 @@ header  button.gnb_open {
                     header.menu_open .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 {
                         display: block;
                     }
-                    
-}/*media*/
 
+}
 
 .visual {
     position: relative;
@@ -337,6 +337,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
 .tourist .wrapper {
     display: flex;
     justify-content: space-between;
+    gap: 50px;
 }
 .tourist .tit h2{
     font-size: var(--tit-font-size);
@@ -346,7 +347,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
     margin: 15px 0 26px 0;
 }
 .tourist .inner {
-    width: 484px;
+    width: 40%;
 }
 .tourist .inner .tap_list ul {
     display: flex;
@@ -387,7 +388,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
     100% { transform: translate(0,0);}
 }
 .tourist .tab_content {
-    width: 725px;
+    width: 60%;
 }
 .tourist .tab_content .tab_item { /**/
     display: none;
@@ -615,7 +616,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
 }
 .story .tit {
     position: sticky;
-    top: 0;
+    top: 30px;
 }
  
 .story .tit h2 {
@@ -626,7 +627,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
     margin: 15px 0 26px 0;
 }
 .story .list {
-    width: 65.39%;
+    width: calc(100% - 428px);
     margin: 178px 0 0 0;
 }
 .story .list ul {
@@ -638,7 +639,6 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
     border: 1px solid #ccc;
     border-radius: 20px;
     width: calc(50% - 12px);
-    height: 500px;
 }
 .story .list ul li:nth-child(even) {
     transform: translateY(-166px);
@@ -650,14 +650,14 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
 .story .list ul li .photo {
     height: 309px;
     overflow: hidden;
-
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 .story .list ul li .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    
 }
 .story .list ul li .txt {
     text-align: center;
@@ -692,25 +692,94 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
     border: 1px solid #ccc;
     border-radius: 50%;
     display: inline-block;
-    position: relative;
-    bottom: 12px;
-}
-.story .list ul li .txt span.circle::after {
-    content: "+";
-    position: absolute;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 13.75V7.75H0.25V6.25H6.25V0.25H7.75V6.25H13.75V7.75H7.75V13.75H6.25Z' fill='%23555555'/%3E%3C/svg%3E%0A");
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 13.75V7.75H0.25V6.25H6.25V0.25H7.75V6.25H13.75V7.75H7.75V13.75H6.25Z' fill='%23555555'/%3E%3C/svg%3E%0A");
-    width: 15px;
-    height: 15px;
-    right: 10px;
-    top: 9px;
 }
+
 .story .list ul li:hover .txt span.circle {
     border: 1px solid #fff;
-}
-.story .list ul li:hover .txt span.circle::after {
     background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 13.75V7.75H0.25V6.25H6.25V0.25H7.75V6.25H13.75V7.75H7.75V13.75H6.25Z' fill='white'/%3E%3C/svg%3E%0A");
+
+}
+@media screen and (max-width:1200px) {
+    .story {
+        margin: 181px 0 106px 0;
+        position: relative;/*ani*/
+     }
+     .story .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .story .tit {
+        position: relative;
+        top: 0;
+    }
+    .story .list ul li:nth-child(even) {
+        transform: translateY(0);
+    }
+    .story .ani img.ani_tree1 {
+        display: none;
+    }
+    .story .list {
+        width: 100%;
+        margin: 30px 0 0 0;
+    }
+}
+@media screen and (max-width:768px) {
+                            .story {
+                                margin: 76px 0 48px 0;
+                            }
+                            .story .ani  {
+                                display: none;
+                            }
+                            .story .wrapper {
+                                display: block;
+                            }
+                            .story .tit {
+                                position: relative;
+                                top: 0;
+                            }
+                            
+                            .story .tit h2 {
+                                margin: 10px 0 0 0;
+                            }
+                            .story .list {
+                                width: auto;
+                                margin: 33px 0 0 0;
+                            }
+                            .story .list ul {
+                                gap: 48px;
+                                flex-direction: column;
+                            }
+                            .story .list ul li {
+                                border-radius: 10px;
+                                width: 100%;
+                                height: 128px;
+                            }
+                            .story .list ul li:nth-child(even) {
+                                transform: none;
+                            }
+                            .story .list ul li .photo {
+                                height: 128px;
+                                border-radius: 10px;
+                            }
+                            .story .list ul li .txt {
+                                text-align: left;
+                                margin: 10px 0 13px 0;
+                                display: block;
+                            }
+                            .story .list ul li .txt h3 {
+                                margin: 10px 0 19px 0;
+                            }
+                            
+                            .story .list ul li .txt p {
+                                display: none;
+                            }
+                            .story .list ul li .txt span.circle {
+                                display: none;
+                            }
+                            
 }
 
 
@@ -724,10 +793,9 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
 .notice .wrapper {
     display: flex;
     justify-content: space-between;
-    gap: 80px;
 }
 .notice .news {
-    width: calc(100% - 536px);
+    width: calc(100% - 620px);
     position: relative;
 }
 .notice .news .tit h3 {
@@ -755,7 +823,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
     color: var(--tit-font-color);
 }
 .notice .news .list ul li a p {
-    width: calc(100% - 136px);
+    width: calc(100% - 196px);
     /*1줄제한, ..으로 만들기*/
     white-space: nowrap;
     overflow: hidden;
@@ -789,7 +857,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
 
 
 .notice .popupzone{
-    width: calc(100% - 641px);
+    width: 535px;
 }
 .notice .popupzone h2 {
     font-size: var(--tit-font-size);

@@ -16,14 +16,18 @@
 </head>
 <body>
     <div id="wrap">
-        <header>
+        <!--메뉴에 마우스 오버- header에 menu_over
+        오버한 1차메뉴 li에 over클래스 추가-->
+
+        <!--모바일에서 메뉴열기클릭-menu_open-->
+        <header  >
             <div class="wrapper">
                 <h1 class="logo"><a href="#"><span class="blind">로고</span></a></h1>
                 <nav class="gnb">
-                    <!-- <button class="gnb_open"><span class="blind">메뉴열기</span></button> -->
+                    <button class="gnb_open"><span class="blind">메뉴열기</span></button>
                     <div class="gnb_wrap">
                         <ul class="depth1"><!--1차메뉴-->
-                            <li>
+                            <li >
                                 <a href="#"><span>종로명소</span></a>
                                 <ul class="depth2"><!--2차메뉴-->
                                     <li><a href="#"><span>북촌</span></a></li>
@@ -35,7 +39,7 @@
                                     <li><a href="#"><span>청와대</span></a></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li >
                                 <a href="#"><span>종로테마여행</span></a>
                                 <ul class="depth2"><!--2차메뉴-->
                                     <li><a href="#"><span>골목길해설사</span></a></li>
@@ -76,7 +80,7 @@
                     </div>
                     <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
                 </nav>
-                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <button class="pcgnb_open"><span class="blind">메뉴열기</span></button>
             </div>
         </header>
         <main class="container">
@@ -104,6 +108,7 @@
                 </div>
             </section>
             <section class="icon">
+                <h2 class="blind">팝업</h2>
                 <div class="wrapper">
                     <div class="list">
                         <ul>
@@ -126,13 +131,13 @@
                         </div>
                         <div class="tap_list">
                             <ul role="tablist">
-                                <li role="tab" aria-selected="true" class="item1 active" data-content="tab_item1"><button>북촌한옥마을</button><span class="blind">선택됨</span></li>
-                                <li role="tab" aria-selected="false" class="item2" data-content="tab_item2"><button>인사동</button><span class="blind"></span></li>
-                                <li role="tab" aria-selected="false" class="item3" data-content="tab_item3"><button>청계천</button><span class="blind"></span></li>
-                                <li role="tab" aria-selected="false" class="item4" data-content="tab_item4"><button>대학로</button><span class="blind"></span></li>
-                                <li role="tab" aria-selected="false" class="item5" data-content="tab_item5"><button>박물관</button><span class="blind"></span></li>
-                                <li role="tab" aria-selected="false" class="item6" data-content="tab_item6"><button>고궁 / 도성</button><span class="blind"></span></li>
-                                <li role="tab" aria-selected="false" class="item7" data-content="tab_item7"><button>청와대</button><span class="blind"></span></li>
+                                <li role="tab" class="item1 active" data-content="tab_item1"><button>북촌한옥마을</button><span class="blind"></span></li>
+                                <li role="tab" class="item2" data-content="tab_item2"><button>인사동</button><span class="blind"></span></li>
+                                <li role="tab" class="item3" data-content="tab_item3"><button>청계천</button><span class="blind"></span></li>
+                                <li role="tab" class="item4" data-content="tab_item4"><button>대학로</button><span class="blind"></span></li>
+                                <li role="tab" class="item5" data-content="tab_item5"><button>박물관</button><span class="blind"></span></li>
+                                <li role="tab" class="item6" data-content="tab_item6"><button>고궁 / 도성</button><span class="blind"></span></li>
+                                <li role="tab" class="item7" data-content="tab_item7"><button>청와대</button><span class="blind"></span></li>
                             </ul> 
                         </div>
                         <div class="ani">

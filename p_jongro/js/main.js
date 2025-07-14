@@ -2,6 +2,49 @@ $(document).ready(function(){
 
 
 
+/**********header시작*********** */
+        //header .gnb .gnb_wrap ul.depth1 > li 
+        // $('header .gnb .gnb_wrap ul.depth1 > li').addClass('over') 클래스추가삭제확인
+        // $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+
+        $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+            $('header').addClass('menu_over')
+
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over') //마우스오버삭제
+            $(this).addClass('over')
+        })
+
+        $('header .gnb').on('mouseleave', function(){
+            $('header').removeClass('menu_over')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+        })
+
+        /****모바일* */
+        $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+            e.preventDefault()
+            // console.log('눌렀니?')
+            // $(this).parents('li').addClass('open')//li선택할려고
+            
+            let depth1_open =  $(this).parents('li').hasClass('open') //나자신
+            // console.log(depth1_open) //클릭된애 ture 아닌거 false
+            if(depth1_open == true){ //열려있는상태
+                $(this).parents('li').removeClass('open')
+            }else{ //닫혀있는상태
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open') //클릭된거 삭제
+                $(this).parents('li').addClass('open')
+            }
+        })
+
+        /**모바일-메뉴열고닫기* */
+        $('header .gnb .gnb_open').on('click', function(){
+            $('header').addClass('menu_open')
+        })
+        $('header .gnb .gnb_close').on('click', function(){
+            $('header').removeClass('menu_open')
+        })
+
+       
+
 
 
 /**************visual 시작************** */
