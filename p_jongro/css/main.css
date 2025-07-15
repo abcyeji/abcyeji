@@ -408,6 +408,28 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
     50% { transform: translate(20px,0);}
     100% { transform: translate(0,0);}
 }
+/*애니메이션 1600px이상일때 조정값*/
+@media screen and (min-width:1600px) {
+    .tourist .inner .ani .image1_1 {
+    position: absolute;
+    width: 11.19%;
+    left: 34%;
+    top: 31%;
+    animation: image1_1 5s linear infinite;
+}
+.tourist .inner .ani .image1_2 {
+    position: absolute;
+    width: 7%;
+    left: 35%;
+    top: 30%;
+    animation: image1_1 6s linear infinite;
+}
+@keyframes image1_1 {
+    0% { transform: translate(0,0);}
+    50% { transform: translate(20px,0);}
+    100% { transform: translate(0,0);}
+}
+}
 .tourist .tab_content {
     width: 60%;
 }
@@ -691,7 +713,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox=
 @keyframes tree {
     /*왔다갔다하는 반복되는 애니메이션은 0%, 100% 같아야함*/
     0% { transform: scale(100%) translateY(0,0);}
-    50% { transform: scale(90%) translateY(0,5%);}
+    50% { transform: scale(90%) translateY(5%);}
     100% { transform: scale(100%) translateY(0,0);}
 
 }
