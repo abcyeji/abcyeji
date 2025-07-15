@@ -1,16 +1,18 @@
 $(document).ready(function(){
 
-
-
 /**********header시작*********** */
         //header .gnb .gnb_wrap ul.depth1 > li 
         // $('header .gnb .gnb_wrap ul.depth1 > li').addClass('over') 클래스추가삭제확인
         // $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
 
-        $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+        $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
             $('header').addClass('menu_over')
 
-            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over') //마우스오버삭제
+        $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:last-child').on('focusout', function(){/*?????**/
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')  //탭으로이동시 마지막 하위메뉴에서 메뉴사라지게
+    })
+
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over') //마우스오버삭제
             $(this).addClass('over')
         })
 
@@ -43,8 +45,10 @@ $(document).ready(function(){
             $('header').removeClass('menu_open')
         })
 
-       
-
+    
+        $(function(){
+            $("html, body").animate({ scrollTop: 0 }, "fast"); 
+        });
 
 
 /**************visual 시작************** */
