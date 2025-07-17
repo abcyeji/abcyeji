@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!--swiper연결-->
-    
+    <script src="../js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
 <!--jquery연결-->
-    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
     <!-- <script src="js/main.js"></script> -->
 
     <link rel="stylesheet" href="../css/sub.css">
-    <script src="../js/contents.js"></script>
+    <script src="../js/sub.js"></script>
     <script src="../js/common.js"></script>
     <title>북촌 > 종로명소 > 종로문화관광</title>
 </head>
@@ -135,7 +136,239 @@
                         <div class="photo"><img src="../images/bokchon.jpg" alt="북촌한옥사진"></div>
                     </div>
                 </div>
+            </div>
+            <div class="intro2">
+                <div class="wrapper">
+                    <h2>소개</h2>
+                    <p>한양 의 중심에서 현대 서울에서의 위상까지, 북촌은 옛모습과 현대적인 진화의 모습을 거리와 주거지역에서 모두 볼수 있는 큰 마을입니다. 북촌은 조선시대의 수도 한양의 중심에 자리 잡은 곳으로 한양의 도성은 동서남북이 낙타, 인왕, 북악과 목멱의 네 개의 산으로 둘러싸여 이 능선을 따라 성곽이 둘러싸여 있습니다. 도성의 중심으로 부터 서쪽에는 경복궁, 동쪽으로는 창덕궁이 자리하고 있는 사이에 있습니다. 근대기를 거치며 청계천과 종로의 윗동네에 있던 북촌은 인사동 등이 상업화되면서 현재의 지역으로 한정되어 불리게 되었으며 지금은 동쪽으로 부터 원서동과 계동, 재동과 안국동으로 이어져 팔판동과 삼청동이 북촌에 해당됩니다.</p>
+                    <strong>이용안내</strong>
+                    <span >시간: (월~토) 10:00 ~ 17:00, (일) 골목길 쉬는 날</span>
+                    <span class="none">※북촌은 주민이 실제로 거주하는 지역으로 마을방문시간 지정구역이 있습니다.</span>
+                    <strong>교통안내</strong>
+                    <span>버스:초록(지선) : 7025 파랑(간선) : 109, 151, 162, 171, 172, 272, 601 </span>
+                    <span>지하철: 안국역 하차 ,3호선: 안국역 3번 출구에서 중앙고등학교 방향으로 도보 5분</span>
+                </div>
+            </div>
+            <div class="gallery">
+                <div class="wrapper">
+                    <h2>갤러리</h2>
+                    <div class="inner">
+                        <div class="bigphoto">
+                            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                    <li class="swiper-slide photo1 active"></li>
+                                    <li class="swiper-slide photo2"></li>
+                                    <li class="swiper-slide photo3"></li>
+                                    <li class="swiper-slide photo4"></li>
+                                </ul>
+                                <div class="ctrl_nav">
+                                    <div class="ctrl_wrap">
+                                        <div class="count"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                                        <button class="btn_stop"><span class="blind">일시정지버튼</span></button>
+                                        <button class="btn_play"><span class="blind">재생버튼</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabphoto">
+                            <ul role="tab_photo">
+                                <li role="tab" class="photo1 active" data-content="tab_photo1"><button><img src="../images/gallery01.jpg" alt=""></button></li>
+                                <li role="tab" class="photo2 " data-content="tab_photo2"><button><img src="../images/gallery02.jpg" alt=""></button></li>
+                                <li role="tab" class="photo3 " data-content="tab_photo3"><button><img src="../images/gallery03.jpg" alt=""></button></li>
+                                <li role="tab" class="photo4 " data-content="tab_photo4"><button><img src="../images/gallery04.jpg" alt=""></button></li>
+                            </ul>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+            <div class="map_info">
+                <div class="wrapper">
+                    <h2>주변정보</h2>
+                    <div class="inner">
+                        <div class="area">
+                            <div class="tab_list">
+                                <ul role="tablist">
+                                    <li role="tab" class="item1 active" data-content="tab_item1"><button>주변관광지</button></li>
+                                    <li role="tab" class="item1 active" data-content="tab_item1"><button>주변맛집</button></li>
+                                    <li role="tab" class="item1 active" data-content="tab_item1"><button>주변숙소</button></li>
+                                </ul>
+                            </div>
+                            <div class="tab_content">
+                                <div class="tab_item item1 " id="tab_item1">
+                                    <div class="list">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>삼청동 카페거리</strong>
+                                                    <span>서울 종로구 익선동</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>삼청공원</strong>
+                                                    <span>서울특별시 종로구 북촌로 134-3 (삼청동)</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>창덕궁</strong>
+                                                    <span>서울특별시 종로구 율곡로 99 (와룡동)</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>북촌문화센터</strong>
+                                                    <span>서울특별시 종로구 계동길 37</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>국립민속박물관</strong>
+                                                    <span>서울시 종로구 삼청로 37</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>부엉이박물관</strong>
+                                                    <span>서울시 종로구 북촌로 143-10 부엉이박물관</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>세계장신구박물관</strong>
+                                                    <span>서울특별시 종로구 화동 75-3</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab_item item2 " id="tab_item2">
+                                    <div class="list">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>삼청동 카페거리</strong>
+                                                    <span>서울 종로구 익선동</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>삼청공원</strong>
+                                                    <span>서울특별시 종로구 북촌로 134-3 (삼청동)</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>창덕궁</strong>
+                                                    <span>서울특별시 종로구 율곡로 99 (와룡동)</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>북촌문화센터</strong>
+                                                    <span>서울특별시 종로구 계동길 37</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>국립민속박물관</strong>
+                                                    <span>서울시 종로구 삼청로 37</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>부엉이박물관</strong>
+                                                    <span>서울시 종로구 북촌로 143-10 부엉이박물관</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>세계장신구박물관</strong>
+                                                    <span>서울특별시 종로구 화동 75-3</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab_item item3 " id="tab_item3">
+                                    <div class="list">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>삼청동 카페거리</strong>
+                                                    <span>서울 종로구 익선동</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>삼청공원</strong>
+                                                    <span>서울특별시 종로구 북촌로 134-3 (삼청동)</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>창덕궁</strong>
+                                                    <span>서울특별시 종로구 율곡로 99 (와룡동)</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>북촌문화센터</strong>
+                                                    <span>서울특별시 종로구 계동길 37</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>국립민속박물관</strong>
+                                                    <span>서울시 종로구 삼청로 37</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>부엉이박물관</strong>
+                                                    <span>서울시 종로구 북촌로 143-10 부엉이박물관</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <strong>세계장신구박물관</strong>
+                                                    <span>서울특별시 종로구 화동 75-3</span>
+                                                    <button>길찾기</button>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12646.084636985546!2d126.97106096904108!3d37.589891805598576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2ce9abb5437%3A0x8b17708d66a8059a!2z7ISc7Jq47Yq567OE7IucIOyiheuhnOq1rCDsgrzssq3rj5k!5e0!3m2!1sko!2skr!4v1752740225856!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>                
+                    </div>
+
+                </div>
             </div>
 
         </main>
