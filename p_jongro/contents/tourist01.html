@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/swiper-bundle.min.css">
 <!--jquery연결-->
     <script src="../js/jquery-3.7.1.min.js"></script>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="../js/main.js"></script>
 
     <link rel="stylesheet" href="../css/sub.css">
     <script src="../js/sub.js"></script>
@@ -156,30 +156,35 @@
                         <div class="bigphoto">
                             <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                                 <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
-                                    <li class="swiper-slide photo1 active"></li>
-                                    <li class="swiper-slide photo2"></li>
-                                    <li class="swiper-slide photo3"></li>
-                                    <li class="swiper-slide photo4"></li>
+                                    <li class="swiper-slide">
+                                        <img src="../images/gallery01.jpg" alt="">
+                                    </li> 
+                                    <li class="swiper-slide">
+                                        <img src="../images/gallery02.jpg" alt="">
+                                    </li> 
+                                    <li class="swiper-slide">
+                                        <img src="../images/gallery03.jpg" alt="">
+                                    </li> 
+                                    <li class="swiper-slide">
+                                        <img src="../images/gallery04.jpg" alt="">
+                                    </li> 
                                 </ul>
-                                <div class="ctrl_nav">
-                                    <div class="ctrl_wrap">
-                                        <div class="count"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
-                                        <button class="btn_stop"><span class="blind">일시정지버튼</span></button>
-                                        <button class="btn_play"><span class="blind">재생버튼</span></button>
-                                    </div>
+                                <div class="ctrl_btn">
+                                    <div class="count"></div>
+                                    <button class="btn_stop"></button>
+                                    <button class="btn_play"></button>
                                 </div>
-                            </div>
+                            </div>  
                         </div>
-                        <div class="tabphoto">
-                            <ul role="tab_photo">
-                                <li role="tab" class="photo1 active" data-content="tab_photo1"><button><img src="../images/gallery01.jpg" alt=""></button></li>
-                                <li role="tab" class="photo2 " data-content="tab_photo2"><button><img src="../images/gallery02.jpg" alt=""></button></li>
-                                <li role="tab" class="photo3 " data-content="tab_photo3"><button><img src="../images/gallery03.jpg" alt=""></button></li>
-                                <li role="tab" class="photo4 " data-content="tab_photo4"><button><img src="../images/gallery04.jpg" alt=""></button></li>
+                        <div class="paging">
+                            <ul>
+                                <li><img src="../images/gallery01.jpg" alt=""></li> 
+                                <li><img src="../images/gallery02.jpg" alt=""></li> 
+                                <li><img src="../images/gallery03.jpg" alt=""></li> 
+                                <li><img src="../images/gallery04.jpg" alt=""></li> 
                             </ul>
-                        </div>
+                        </div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
                     </div>
-
                 </div>
             </div>
             <div class="map_info">
@@ -190,61 +195,68 @@
                             <div class="tab_list">
                                 <ul role="tablist">
                                     <li role="tab" class="item1 active" data-content="tab_item1"><button>주변관광지</button></li>
-                                    <li role="tab" class="item1 active" data-content="tab_item1"><button>주변맛집</button></li>
-                                    <li role="tab" class="item1 active" data-content="tab_item1"><button>주변숙소</button></li>
+                                    <li role="tab" class="item2 " data-content="tab_item2"><button>주변맛집</button></li>
+                                    <li role="tab" class="item3 " data-content="tab_item3"><button>주변숙소</button></li>
                                 </ul>
                             </div>
                             <div class="tab_content">
-                                <div class="tab_item item1 " id="tab_item1">
+                                <div class="tab_item item1 active" id="tab_item1">
                                     <div class="list">
                                         <ul>
                                             <li>
                                                 <a href="#">
+                                                    <i>1</i>
                                                     <strong>삼청동 카페거리</strong>
                                                     <span>서울 종로구 익선동</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>2</i>
                                                     <strong>삼청공원</strong>
-                                                    <span>서울특별시 종로구 북촌로 134-3 (삼청동)</span>
-                                                    <button>길찾기</button>
+                                                    <span>서울특별시 종로구 북촌로 134-3</span>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>3</i>
                                                     <strong>창덕궁</strong>
-                                                    <span>서울특별시 종로구 율곡로 99 (와룡동)</span>
-                                                    <button>길찾기</button>
+                                                    <span>서울특별시 종로구 율곡로 99</span>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>4</i>
                                                     <strong>북촌문화센터</strong>
                                                     <span>서울특별시 종로구 계동길 37</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>5</i>
                                                     <strong>국립민속박물관</strong>
                                                     <span>서울시 종로구 삼청로 37</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>6</i>
                                                     <strong>부엉이박물관</strong>
-                                                    <span>서울시 종로구 북촌로 143-10 부엉이박물관</span>
-                                                    <button>길찾기</button>
+                                                    <span>서울시 종로구 북촌로 143-10</span>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>7</i>
                                                     <strong>세계장신구박물관</strong>
                                                     <span>서울특별시 종로구 화동 75-3</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                         </ul>
@@ -255,51 +267,58 @@
                                         <ul>
                                             <li>
                                                 <a href="#">
+                                                    <i>1</i>
                                                     <strong>삼청동 카페거리</strong>
                                                     <span>서울 종로구 익선동</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>2</i>
                                                     <strong>삼청공원</strong>
-                                                    <span>서울특별시 종로구 북촌로 134-3 (삼청동)</span>
-                                                    <button>길찾기</button>
+                                                    <span>서울특별시 종로구 북촌로 134-3</span>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>3</i>
                                                     <strong>창덕궁</strong>
-                                                    <span>서울특별시 종로구 율곡로 99 (와룡동)</span>
-                                                    <button>길찾기</button>
+                                                    <span>서울특별시 종로구 율곡로 99</span>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>4</i>
                                                     <strong>북촌문화센터</strong>
                                                     <span>서울특별시 종로구 계동길 37</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>5</i>
                                                     <strong>국립민속박물관</strong>
                                                     <span>서울시 종로구 삼청로 37</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>6</i>
                                                     <strong>부엉이박물관</strong>
-                                                    <span>서울시 종로구 북촌로 143-10 부엉이박물관</span>
-                                                    <button>길찾기</button>
+                                                    <span>서울시 종로구 북촌로 143-10</span>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>7</i>
                                                     <strong>세계장신구박물관</strong>
                                                     <span>서울특별시 종로구 화동 75-3</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                         </ul>
@@ -310,57 +329,63 @@
                                         <ul>
                                             <li>
                                                 <a href="#">
+                                                    <i>1</i>
                                                     <strong>삼청동 카페거리</strong>
                                                     <span>서울 종로구 익선동</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>2</i>
                                                     <strong>삼청공원</strong>
-                                                    <span>서울특별시 종로구 북촌로 134-3 (삼청동)</span>
-                                                    <button>길찾기</button>
+                                                    <span>서울특별시 종로구 북촌로 134-3</span>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>3</i>
                                                     <strong>창덕궁</strong>
-                                                    <span>서울특별시 종로구 율곡로 99 (와룡동)</span>
-                                                    <button>길찾기</button>
+                                                    <span>서울특별시 종로구 율곡로 99</span>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>4</i>
                                                     <strong>북촌문화센터</strong>
                                                     <span>서울특별시 종로구 계동길 37</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>5</i>
                                                     <strong>국립민속박물관</strong>
                                                     <span>서울시 종로구 삼청로 37</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>6</i>
                                                     <strong>부엉이박물관</strong>
-                                                    <span>서울시 종로구 북촌로 143-10 부엉이박물관</span>
-                                                    <button>길찾기</button>
+                                                    <span>서울시 종로구 북촌로 143-10</span>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
+                                                    <i>7</i>
                                                     <strong>세계장신구박물관</strong>
                                                     <span>서울특별시 종로구 화동 75-3</span>
-                                                    <button>길찾기</button>
+                                                    <button><span>길찾기</span></button>
                                                 </a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="map">
