@@ -9,6 +9,7 @@
     background: url(../images/sub_visual.jpg);
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 480px;
     color: #fff;
     text-align: center;
@@ -22,30 +23,41 @@
     font-size: 3.53rem;
     padding: 186px 0 0 0;
 }
-.sub_visual .lnb {
+@media screen and (max-width:1024px) {
+                .sub_visual {
+                    height: 360px;
+                }
+                
+                .sub_visual h2 {
+                    font-size: var(--tit-font-size);
+                    padding: 164px 0 0 0;
+                }
+}
+
+
+.lnb {
     background-color: var(--point-color);
     height: 70px;
+    color: #fff;
 }
-.sub_visual .lnb ul {
+.lnb ul {
     display: flex;
-    gap: 50px;
+    justify-content: center;
     overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
     overflow-x: auto; /* 좌우 스크롤바 생성 */
-    margin: 134px 0 0 0;
-
 }
-.sub_visual .lnb ul li a {
+.lnb ul li a {
     display: block;
-    width: 115px;
+    line-height: 4;
     height: 70px;
     font-size: 1.18rem;
-    padding: 20px 0;
+    padding: 0 20px ;
 }
-.sub_visual .lnb ul li.active a {
+.lnb ul li.active a {
     position: relative;
     font-weight: var(--bold-weight);
 }
-.sub_visual .lnb ul li.active a::after {
+.lnb ul li.active a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -54,6 +66,21 @@
     bottom: 0;
     background-color: #fff;
 }
+@media screen and (max-width:1024px) {
+                .lnb {
+                    height: 60px;
+                }
+                .sub_visual .lnb ul {
+                    justify-content: flex-start;
+
+                }
+                .sub_visual .lnb ul li a {
+                    line-height: 3;
+                    height: 60px;
+                    font-size: 1rem ;
+                }
+}
+
 .bokchon .breadcrumb ol {
     display: flex;
     justify-content: flex-end;
@@ -86,7 +113,7 @@
     top: 2px;
 }
 .bokchon {
-    margin: 84px;
+    margin-bottom: 84px;
 }
 .bokchon .intro {
     display: flex;
@@ -112,6 +139,7 @@
 .bokchon .intro .inner .tit ul {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 .bokchon .intro .inner > .tit > ul > li {
     border: 1px solid #ccc;
@@ -187,7 +215,7 @@
 }
 @media screen and (max-width:1024px) {
                         .bokchon {
-                            margin: 65px;
+                            margin-bottom: 65px;
                         }
                         .bokchon .breadcrumb ol {
                             justify-content: center;
@@ -491,18 +519,30 @@
     overflow-y: auto;
     margin: 20px;
 }
+.map_info .inner .area .tab_content .tab_item {
+    display: none; /*숨김*/
+}
+.map_info .inner .area .tab_content .tab_item.active {
+    display: block; /*나타남*/
+}
 .map_info .inner .area .tab_content .list ul li {
     border-bottom: 1px dashed #ccc;
-    position: relative;
-    margin-left: 63px;
-    padding-bottom: 20px;
-
-    
 }
 .map_info .inner .area .tab_content .list ul li a {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    margin: 10px;
 }
-.map_info .inner .area .tab_content .list ul li a i {
+.map_info .inner .area .tab_content .list ul li a .submap_info {
+    position: relative;
+    padding: 0 0 0 54px;
+    align-items: center;
+    width: calc(100% - 153px);
+}
+
+.map_info .inner .area .tab_content .list ul li a .submap_info i {
     position: absolute;
     background-image: url("data:image/svg+xml,%3Csvg width='44' height='62' viewBox='0 0 44 62' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 0C9.85 0 0 9.8918 0 22.0923C0 37.4348 13.8563 54.517 19.5754 60.9142C20.8711 62.3623 23.1289 62.3623 24.4246 60.9142C30.1437 54.517 44 37.4348 44 22.0923C44 9.8918 34.15 0 22 0ZM22 36.2217C14.2387 36.2217 7.94544 29.9028 7.94544 22.1075C7.94544 14.3122 14.2387 7.9933 22 7.9933C29.7613 7.9933 36.0546 14.3133 36.0546 22.1075C36.0546 29.9017 29.7623 36.2217 22 36.2217Z' fill='%233BA479'/%3E%3C/svg%3E%0A");
     background-position: center center;
@@ -510,12 +550,13 @@
     width: 44px;
     height: 62px;
     text-align: center;
-    padding: 11px 0 0 0;
+    padding: 12px 0 0 0;
     font-style: inherit;
-    left: -60px;
-    top: -2px;
+    left: 0;
+    top: 0;
+    margin: 22px 0 0 0;
 }
-.map_info .inner .area .tab_content .list ul li strong {
+.map_info .inner .area .tab_content .list ul li .submap_info strong {
     font-weight: var(--bold-weight);
     font-size: 1.17rem;
     display: block;
@@ -527,9 +568,7 @@
     border-radius: 5px;
     font-weight: var(--bold-weight);
     color: var(--point-color);
-    position: absolute;
-    right: 21px;
-    top: 5px;
+    position: relative;
 }
 .map_info .inner .area .tab_content .tab_item .list ul li a button::after {
     content: '';
@@ -539,16 +578,14 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='16' viewBox='0 0 8 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.85499 7.99609L0.34249 2.48359C0.15499 2.29609 0.0643649 2.07422 0.0706149 1.81797C0.0768649 1.56172 0.17374 1.33984 0.36124 1.15234C0.54874 0.964844 0.770615 0.871094 1.02686 0.871094C1.28311 0.871094 1.50499 0.964844 1.69249 1.15234L7.44874 6.92734C7.59874 7.07734 7.71124 7.24609 7.78624 7.43359C7.86124 7.62109 7.89874 7.80859 7.89874 7.99609C7.89874 8.18359 7.86124 8.37109 7.78624 8.55859C7.71124 8.74609 7.59874 8.91484 7.44874 9.06484L1.67374 14.8398C1.48624 15.0273 1.26749 15.118 1.01749 15.1117C0.76749 15.1055 0.54874 15.0086 0.36124 14.8211C0.17374 14.6336 0.0799899 14.4117 0.0799899 14.1555C0.0799899 13.8992 0.17374 13.6773 0.36124 13.4898L5.85499 7.99609Z' fill='%233BA479'/%3E%3C/svg%3E%0A");
-    right: 17px;
+    right: 15px;
     top: 11px;
 }
-
-
 .map_info .inner .area .tab_list ul li.active button {
     background-color: var(--point-color);
     border-radius: 20px;
     color: #fff;
-}  
+} 
 
 @media screen and (max-width: 1024px) {
                     .map_info {
@@ -588,18 +625,14 @@
                         margin: 10px;
                     }
                     .map_info .inner .area .tab_content .list ul li {
-                        margin-left: 63px;
+                        margin-left: 0;
                         padding-bottom: 12px;
                     }
-                    .map_info .inner .area .tab_content .list ul li strong {
-                        font-weight: var(--bold-weight);
-                        font-size: 1.17rem;
-                        display: block;
-                        margin: 22px 0 10px 0;
+                    .map_info .inner .area .tab_content .list ul li a .submap_info {/**/
+                        width: auto;
                     }
                     .map_info .inner .area .tab_content .tab_item .list ul li a button {
                         padding: 5px;
-                        position: absolute;
                         right: 21px;
                         top: 5px;
                         background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.33268 8.99935H10.2493V10.0827C10.2493 10.2771 10.3327 10.4091 10.4993 10.4785C10.666 10.548 10.8188 10.5132 10.9577 10.3743L12.5827 8.74935C12.7493 8.58268 12.8327 8.38824 12.8327 8.16602C12.8327 7.94379 12.7493 7.74935 12.5827 7.58268L10.9577 5.95768C10.8188 5.81879 10.666 5.78407 10.4993 5.85352C10.3327 5.92296 10.2493 6.0549 10.2493 6.24935V7.33268H6.49935C6.26324 7.33268 6.06532 7.41254 5.9056 7.57227C5.74588 7.73199 5.66602 7.9299 5.66602 8.16602V10.666C5.66602 10.9021 5.74588 11.1 5.9056 11.2598C6.06532 11.4195 6.26324 11.4993 6.49935 11.4993C6.73546 11.4993 6.93338 11.4195 7.0931 11.2598C7.25282 11.1 7.33268 10.9021 7.33268 10.666V8.99935ZM8.99935 17.3327C8.79102 17.3327 8.58615 17.291 8.38477 17.2077C8.18338 17.1243 7.99935 16.9993 7.83268 16.8327L1.16602 10.166C0.999349 9.99935 0.874349 9.81532 0.791016 9.61393C0.707682 9.41254 0.666016 9.20768 0.666016 8.99935C0.666016 8.79102 0.707682 8.58615 0.791016 8.38477C0.874349 8.18338 0.999349 7.99935 1.16602 7.83268L7.83268 1.16602C7.99935 0.999349 8.18338 0.874349 8.38477 0.791016C8.58615 0.707682 8.79102 0.666016 8.99935 0.666016C9.20768 0.666016 9.41254 0.707682 9.61393 0.791016C9.81532 0.874349 9.99935 0.999349 10.166 1.16602L16.8327 7.83268C16.9993 7.99935 17.1243 8.18338 17.2077 8.38477C17.291 8.58615 17.3327 8.79102 17.3327 8.99935C17.3327 9.20768 17.291 9.41254 17.2077 9.61393C17.1243 9.81532 16.9993 9.99935 16.8327 10.166L10.166 16.8327C9.99935 16.9993 9.81532 17.1243 9.61393 17.2077C9.41254 17.291 9.20768 17.3327 8.99935 17.3327ZM8.99935 15.666L15.666 8.99935L8.99935 2.33268L2.33268 8.99935L8.99935 15.666Z' fill='%233BA479'/%3E%3C/svg%3E%0A");
