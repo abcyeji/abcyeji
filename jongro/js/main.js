@@ -170,3 +170,70 @@
         })
 
        
+
+
+
+
+
+
+        $(document).ready(function(){
+            //    /**********header시작*********** */((((((((((common으로 이동)))))))))))))
+                    //header .gnb .gnb_wrap ul.depth1 > li 
+                    // $('header .gnb .gnb_wrap ul.depth1 > li').addClass('over') 클래스추가삭제확인
+                    // $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            
+                    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
+                        if(device_status == 'pc'){}
+                            $('header').addClass('menu_over')
+            
+                        $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:last-child').on('focusout', function(){/*?????**/
+                            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')  //탭으로이동시 마지막 하위메뉴에서 메뉴사라지게
+                    })
+            
+                        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over') //마우스오버삭제
+                            $(this).addClass('over')
+                        })
+            
+                        $('header .gnb').on('mouseleave', function(){
+                            $('header').removeClass('menu_over')
+                            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+                        })
+            
+            
+                     /**모바일-메뉴열고닫기* */
+                        $('header .gnb .gnb_open').on('click', function(){
+                            $('header').addClass('menu_open')
+                        })
+                        $('header .gnb .gnb_close').on('click', function(){
+                            $('header').removeClass('menu_open')
+                        })
+            
+                    /****모바일* */
+            
+                    let device_status
+                    let depth1_open
+            
+                    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+                        if(device_status == 'mobile'){
+                            e.preventDefault()
+                            // console.log('눌렀니?')
+                            // $(this).parents('li').addClass('open')//li선택할려고
+                            
+                            depth1_open =  $(this).parents('li').hasClass('open') //나자신
+                            // console.log(depth1_open) //클릭된애 ture 아닌거 false
+                            if(depth1_open == true){ //열려있는상태
+                                $(this).parents('li').removeClass('open')
+                            }else{ //닫혀있는상태
+                                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open') //클릭된거 삭제
+                                $(this).parents('li').addClass('open')
+                            }
+                        }
+                    })
+            
+                    
+                
+                    $(function(){
+                        $("html, body").animate({ scrollTop: 0 }, "fast"); 
+                    });
+            
+            })
