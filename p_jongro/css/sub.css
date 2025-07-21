@@ -561,7 +561,7 @@
     display: block;
     margin: 22px 0 10px 0;
 }
-.ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a button {
+.ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a span.rode {
     border: 1px solid var(--point-color);
     padding: 10px 40px 10px 20px;
     border-radius: 5px;
@@ -569,7 +569,7 @@
     color: var(--point-color);
     position: relative;
 }
-.ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a button::after {
+.ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a span.rode::after {
     content: '';
     position: absolute;
     width: 18px;
@@ -580,12 +580,14 @@
     right: 15px;
     top: 11px;
 }
-.ctn_bokchon .map_info .inner .area .tab_list ul li.active button {
+.ctn_bokchon .map_info .inner .area .tab_list ul li.active span.rode {
     background-color: var(--point-color);
     border-radius: 20px;
     color: #fff;
 } 
-
+.ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a span.m_rode {
+    display: none;
+}
 @media screen and (max-width: 1024px) {
                     .ctn_bokchon .map_info {
                         padding: 0 0 58px 0;
@@ -630,23 +632,27 @@
                     .ctn_bokchon .map_info .inner .area .tab_content .list ul li a .submap_info {/**/
                         width: auto;
                     }
-                    .ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a button {
+                    .ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a span.rode {
+                        display: none;
+                    }
+                    .ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a span.m_rode {
+                        display: block;
+                        border: 1px solid var(--point-color);
                         padding: 5px;
-                        right: 21px;
-                        top: 5px;
                         background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.33268 8.99935H10.2493V10.0827C10.2493 10.2771 10.3327 10.4091 10.4993 10.4785C10.666 10.548 10.8188 10.5132 10.9577 10.3743L12.5827 8.74935C12.7493 8.58268 12.8327 8.38824 12.8327 8.16602C12.8327 7.94379 12.7493 7.74935 12.5827 7.58268L10.9577 5.95768C10.8188 5.81879 10.666 5.78407 10.4993 5.85352C10.3327 5.92296 10.2493 6.0549 10.2493 6.24935V7.33268H6.49935C6.26324 7.33268 6.06532 7.41254 5.9056 7.57227C5.74588 7.73199 5.66602 7.9299 5.66602 8.16602V10.666C5.66602 10.9021 5.74588 11.1 5.9056 11.2598C6.06532 11.4195 6.26324 11.4993 6.49935 11.4993C6.73546 11.4993 6.93338 11.4195 7.0931 11.2598C7.25282 11.1 7.33268 10.9021 7.33268 10.666V8.99935ZM8.99935 17.3327C8.79102 17.3327 8.58615 17.291 8.38477 17.2077C8.18338 17.1243 7.99935 16.9993 7.83268 16.8327L1.16602 10.166C0.999349 9.99935 0.874349 9.81532 0.791016 9.61393C0.707682 9.41254 0.666016 9.20768 0.666016 8.99935C0.666016 8.79102 0.707682 8.58615 0.791016 8.38477C0.874349 8.18338 0.999349 7.99935 1.16602 7.83268L7.83268 1.16602C7.99935 0.999349 8.18338 0.874349 8.38477 0.791016C8.58615 0.707682 8.79102 0.666016 8.99935 0.666016C9.20768 0.666016 9.41254 0.707682 9.61393 0.791016C9.81532 0.874349 9.99935 0.999349 10.166 1.16602L16.8327 7.83268C16.9993 7.99935 17.1243 8.18338 17.2077 8.38477C17.291 8.58615 17.3327 8.79102 17.3327 8.99935C17.3327 9.20768 17.291 9.41254 17.2077 9.61393C17.1243 9.81532 16.9993 9.99935 16.8327 10.166L10.166 16.8327C9.99935 16.9993 9.81532 17.1243 9.61393 17.2077C9.41254 17.291 9.20768 17.3327 8.99935 17.3327ZM8.99935 15.666L15.666 8.99935L8.99935 2.33268L2.33268 8.99935L8.99935 15.666Z' fill='%233BA479'/%3E%3C/svg%3E%0A");
                         background-position: center center;
                         background-repeat: no-repeat;
                         width: 30px;
                         height: 30px;
+                        border-radius: 5px;
                     }
-                    .ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a button span {
+                    .ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a span.rode span {
                         display: none;
                     }
-                    .ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a button::after {
+                    .ctn_bokchon .map_info .inner .area .tab_content .tab_item .list ul li a span.rode::after {
                         display: none;
                     }
-                    .ctn_bokchon .map_info .inner .area .tab_list ul li.active button {
+                    .ctn_bokchon .map_info .inner .area .tab_list ul li.active span.rode {
                         background-color: var(--point-color);
                         border-radius: 20px;
                         color: #fff;
