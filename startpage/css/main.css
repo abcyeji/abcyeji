@@ -1,0 +1,113 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css); 
+
+
+.home {
+    background-image: url(../images/Rectangle\ 2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+ 
+.home h2 {
+    font-size: var(--display-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-font-color);
+    padding: 428px 0 0 0;
+}
+.home p {
+    margin: 107px 0 242px 0;
+}
+
+
+.profile .wrapper .inner {
+    display: flex;
+}
+
+.profile .wrapper .inner .inner_left {
+    text-align: center;
+    width: 404px;
+    position: relative;
+}
+.profile .wrapper .inner .inner_left h2 {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    background-image: url(../images/portpolio.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 157px;
+    height: 100px;
+    top: -80px;
+    
+}
+.profile .wrapper .inner .inner_left .photo {
+    width: 282px;
+    height: 233px;
+    border: 5px solid #ccc;
+    border-radius: 50%;
+    margin: 0 0 0 54px;
+} 
+.profile .wrapper .inner .inner_left .name {
+    margin-top: 32px;
+}
+.profile .wrapper .inner .inner_left .name h3 {
+    font-size: 1.76rem;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-font-color);
+    margin-bottom: 9px;
+}
+.profile .wrapper .inner .inner_left .name strong {
+    display: block;
+    margin: 0 0 45px 0;
+}
+.profile .wrapper .inner .inner_right {
+   width: calc(100% - 450px);
+}
+.profile .wrapper .inner .inner_right .education {
+    height: 204px;
+    background-color: #F6F6F6;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.1);
+    border-radius: 20px; 
+    display: flex;
+    padding: 30px 50px;
+    margin: 0 0 24px 0;
+}
+.profile .wrapper .inner .inner_right .education h3 {
+    font-size: 1.29rem;
+    font-weight: var(--bold-weight);
+} 
+.profile .wrapper .inner .inner_right .education .txt {
+    margin: 0 0 0 80px;
+}
+.profile .wrapper .inner .inner_right .education .txt strong {
+    display: block;
+}
+.profile .wrapper .inner .inner_right .education .txt strong.sub_txt {
+    margin: 25px 0 0 0;
+}
+.profile .wrapper .inner .inner_right .skills {
+    height: 204px;
+    background-color: #F6F6F6;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.1);
+    border-radius: 20px; 
+    display: flex;
+    padding: 30px 50px;
+}
+.profile .wrapper .inner .inner_right .skills h3 {
+    font-size: 1.29rem;
+    font-weight: var(--bold-weight);
+} 
+.profile .wrapper .inner .inner_right .skills .txt {
+    margin: 0 0 0 137px;
+}
+.profile .wrapper .inner .inner_right .skills .txt strong {
+    line-height: 1.8;
+}
